@@ -17,7 +17,7 @@ Google and Microsoft review this site before they approve the CRM's access to ma
 | `/terms` | `src/app/terms/page.tsx` | Terms of service |
 | `/sitemap.xml`, `/robots.txt` | `src/app/sitemap.ts`, `src/app/robots.ts` | For search engines |
 
-The name, the addresses and the company details the legal pages quote are in `src/config/site.ts`. The values in square brackets there are not decided yet; the site must not go live while one is left.
+The name, the addresses and the company details the legal pages quote are in `src/config/site.ts`. The company details (Every1drives Inc., which develops Every1Connects) were given by Gabriel on 2026-10-14.
 
 The privacy policy describes what the CRM really does with Gmail and Outlook data. A change to the CRM's email integration that touches what is read, stored or shown must change section 3 of the policy in the same release.
 

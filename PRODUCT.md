@@ -60,11 +60,10 @@ Constraints:
 - The site has no sign-up, no pricing, no free trial and no sales form.
 - The site is in English now. French comes later, so a layout must hold text that runs longer. Spanish is not planned for the site.
 
-Terms: "Chloe" is the name of the AI assistant. In every public picture the sample dealership is called "Dealership"; "Every1Drives" is a real customer and never appears.
+Terms: "Chloe" is the name of the AI assistant. In every public picture the sample dealership is called "Dealership"; "Every1Drives" (legal name Every1drives Inc.) is the company that develops Every1Connects, not a customer: it appears only as the operator on the legal pages and never in a picture of the CRM, whose name is Every1Connects (Gabriel, 2026-10-14).
 
 Not decided yet:
 
-- The four values in brackets in `src/config/site.ts` (the company's legal name, its mailing address, the contact e-mail and the governing law). Gabriel provides them; they are never filled in or invented, and the site does not go live while one is left.
 - Whether the site grows beyond its three pages, for example one page per function.
 - Whether the four email screens added to the canvas (see Evidence on Hand) match the CRM closely enough to go public; Gabriel reviews them.
 

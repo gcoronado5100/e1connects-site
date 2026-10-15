@@ -18,20 +18,20 @@ export const site = {
   appUrl: "https://app.e1dconnect.cloud",
 
   /**
-   * Quoted by the privacy policy and the terms. The values in brackets are
-   * not decided yet: the pages must not go live while one of them is left.
+   * Quoted by the privacy policy and the terms, as given by Gabriel on
+   * 2026-10-14. Every1drives Inc. is the company that develops Every1Connects.
    */
   legal: {
     /** The company that runs the service and signs the policies. */
-    operator: "[LEGAL NAME OF THE COMPANY]",
+    operator: "Every1drives Inc.",
     /** Its mailing address. */
-    address: "[MAILING ADDRESS]",
+    address: "441 Union St, Fredericton, NB E3A 2R4, Canada",
     /** Where privacy requests and questions are answered. */
-    contactEmail: "[CONTACT E-MAIL]",
+    contactEmail: "info@every1drives.ca",
     /** The law the terms are read under. */
-    governingLaw: "[PROVINCE / COUNTRY]",
+    governingLaw: "the Province of New Brunswick and the federal laws of Canada applicable therein",
     /** The day the current text of the policies took effect (YYYY-MM-DD). */
-    effective: "2026-10-13",
+    effective: "2026-10-14",
   },
 } as const;
 

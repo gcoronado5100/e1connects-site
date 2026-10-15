@@ -20,7 +20,8 @@ const SCREENS_DIR = path.join(ROOT, ".claude/crm-screens");
 const OUT_DIR = path.join(ROOT, "src/components/crm-shots");
 
 /**
- * Public pictures show invented data only: never the real customer's name, domains or city
+ * Public pictures show invented data only: never Every1Drives (the company that develops the CRM,
+ * which the canvas uses as its sample organization), its domains or the city the screens place it in
  * (.claude/crm-screens/README.md). writeShots() refuses a picture where one survives.
  */
 const SAMPLE_DATA_SWAPS = [

@@ -22,6 +22,8 @@ npm run start            # serves the build
 
 Node 20.9 or later. There is no test suite.
 
+Deployment: Coolify builds the `Dockerfile` (Build Pack: Dockerfile, port 3000) from the GitHub repo. `next.config.ts` sets `output: "standalone"`, so the image runs only `.next/standalone/server.js` plus `public` and `.next/static`, which the Dockerfile copies in; Coolify's proxy handles HTTPS. `.dockerignore` keeps the agent tooling, mockups and CRM screens out of the image. To try the same server locally after `npm run build`: copy `public` and `.next/static` into `.next/standalone` (as the Dockerfile does) and run `PORT=3100 node .next/standalone/server.js`; it starts a `next-server` child process, so stop that one too.
+
 The parent `../CLAUDE.md` applies here too, with two exceptions for this project only: `npm run dev` may be run to see pages in the browser (allowed by Gabriel on 2026-10-13), and `npm run build` may be run to check the production build and measure the pages (allowed by Gabriel on 2026-10-14). Installing dependencies still needs his approval, and code changes are proposed before they are applied. Port 3000 on this machine is taken by another app ("Local"). Next refuses to start a second dev server for the same project, so if one is already running (Gabriel often has one on 3001), use it.
 
 ## Next.js 16 is not the Next.js you know
@@ -65,4 +67,4 @@ These come from the provider reviews. Breaking one can fail the CRM's verificati
 - The text of every page arrives in the server-rendered HTML, so a reviewer or crawler reads all of it without running JavaScript. Client components and client-side script are allowed (Gabriel lifted the earlier no-script rule on 2026-10-13), but they may only add interaction; no content may depend on them to appear.
 - Section 3 of the privacy policy ("Connected mailboxes") describes what the CRM really does with Gmail and Outlook data. A change to the CRM's email integration that touches what is read, stored or shown must change that section in the same release.
 - `site.legal.effective` is the date both policies show and the `lastModified` of every sitemap entry. It is the day the current policy text took effect.
-- `site.legal` still holds placeholders in square brackets (`operator`, `address`, `contactEmail`, `governingLaw`). The site must not go live while one is left. The footer also renders `contactEmail` as a `mailto:` link.
+- `site.legal` holds the operator's details as Gabriel gave them on 2026-10-14: Every1drives Inc. (the legal name, spelled so), the company that develops Every1Connects. They are never invented or reworded; a change comes from Gabriel. The footer also renders `contactEmail` as a `mailto:` link.

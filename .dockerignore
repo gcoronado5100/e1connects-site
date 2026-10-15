@@ -1,0 +1,12 @@
+# What the Docker build never needs: git history, local builds and dependencies (the image
+# installs its own), and the agent tooling, design mockups and CRM screens, which the site's build
+# does not read (the CRM pictures it shows are already generated in src/components/crm-shots).
+.git
+node_modules
+.next
+*.tsbuildinfo
+.env*
+.claude
+.agents
+.codex
+.impeccable
