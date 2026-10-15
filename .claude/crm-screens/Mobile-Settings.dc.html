@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone · Settings, General (390 px)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:16px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.dev{display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px}
+.pill{border-radius:9999px;padding:2px 8px;font-size:11px;line-height:16px;font-weight:500;white-space:nowrap}
+.opt{display:flex;align-items:center;justify-content:space-between;padding:16px;border:1px solid var(--border);border-radius:10.4px}
+.opt-on{border-color:var(--primary);background:oklch(0.623 0.214 259.815 / .05)}
+.rad{width:16px;height:16px;border-radius:9999px;border:2px solid var(--border);flex-shrink:0}
+.rad-on{border-color:var(--primary);background:var(--primary);display:flex;align-items:center;justify-content:center}
+
+</style>
+</helmet>
+<div class="app" style="position:relative;width:390px;height:844px;display:flex;flex-direction:column;overflow:hidden"><header style="width:390px;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--border);background:var(--bg)"><div style="display:flex;align-items:center;gap:8px;min-width:0"><button type="button" style="position:relative;width:28px;height:28px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;margin-left:-4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg></button><div style="width:1px;height:16px;flex-shrink:0;background:oklch(0.92 0.004 286.32);margin-right:8px"></div></div><div style="display:flex;align-items:center;gap:8px"><button type="button" aria-label="6 teammates online" style="position:relative;flex-shrink:0;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span style="font-variant-numeric:tabular-nums">6</span><span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px var(--bg)"></span></button><button type="button" style="position:relative;width:32px;height:32px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px var(--bg)"></span></button><button type="button" aria-label="Search" style="flex-shrink:0;width:34px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;border:1px solid oklch(0.92 0.004 286.32);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><button type="button" style="position:relative;width:36px;height:36px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:var(--destructive);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span></button><div style="display:flex;align-items:center;gap:8px;flex-shrink:0;height:48px;width:137px;padding:8px;border-radius:8.4px;box-sizing:border-box;overflow:hidden"><div style="width:32px;height:32px;flex-shrink:0;border-radius:8.4px;background:var(--muted);display:flex;align-items:center;justify-content:center">J</div><div style="display:grid;flex:1;min-width:0;line-height:1.25"><span style="font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Jordan Blake</span><span style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">jordan.blake@example.com</span></div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></div></div></header><div style="height:16px;flex-shrink:0"></div><main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden"><div style="flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden"><div style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--border);flex-shrink:0"><button type="button" aria-label="Open settings menu" style="width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:inherit;display:inline-flex;align-items:center;justify-content:center"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg></button><span style="font-size:14px;line-height:20px;font-weight:500">General</span></div><div style="flex:1;padding:16px;overflow:hidden"><div style="display:flex;flex-direction:column;gap:32px">
+
+          <!-- User preferences -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">User Preferences</div><p class="card-d">Personal preferences that apply only to your account.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span class="lab">Call Preferences</span>
+                <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                  <div style="padding-right:12px"><p style="margin:0;font-size:14px;font-weight:500">Auto-Record Calls</p><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Automatically record your calls. When off, calls start unrecorded and you can record on demand with the Record button.</p></div>
+                  <button type="button" role="switch" aria-checked="true" aria-label="Auto-Record Calls" class="sw sw-on"><span class="knob" style="left:14px"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active sessions -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Active sessions</div><p class="card-d">Devices currently signed in to your account. You can be signed in on up to 3 devices at a time.</p></div>
+            <div class="card-b" style="gap:12px">
+              <div class="dev">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                <div style="min-width:0;flex:1">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;font-weight:500">Chrome on macOS</span><span class="pill" style="background:rgb(16 185 129 / .1);color:#047857">This device</span><span class="pill" style="background:var(--muted);color:var(--muted-fg)">Remembered (3 days)</span></div>
+                  <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Halifax, NS · 24.114.0.21 · active just now</p>
+                </div>
+              </div>
+              <div class="dev">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                <div style="min-width:0;flex:1">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;font-weight:500">Safari on iPhone</span></div>
+                  <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Halifax, NS · 24.114.3.87 · active 3 hours ago</p>
+                </div>
+                <button type="button" class="btn btn-sm" style="padding:0 12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>Sign out</button>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" style="align-self:flex-start">Sign out all other devices</button>
+              <button type="button" style="display:inline-flex;align-items:center;gap:4px;align-self:flex-start;border:0;background:transparent;padding:0;font-family:inherit;font-size:14px;color:var(--muted-fg);cursor:pointer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>Recent sign-ins</button>
+              <p style="margin:0;font-size:11px;line-height:16px;color:var(--muted-fg)">Locations are approximate. This product includes GeoLite2 data created by MaxMind.</p>
+            </div>
+          </div>
+
+          <!-- Timezone -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Timezone</div><p class="card-d">This timezone is used for all date filters and period presets (Today, This Week, etc.) across the entire app. Set it to match your dealership’s local timezone.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span class="lab">App Timezone</span>
+                <button type="button" class="trig" role="combobox" aria-expanded="false" style="width:320px;font-weight:400"><span>America/Halifax</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></button>
+              </div>
+              <div><button type="button" class="btn btn-pri" disabled style="opacity:.5">Save Timezone</button></div>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Language</div><p class="card-d">Choose the language for the app interface. Each user can set their own preference.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px;max-width:320px">
+                <span class="lab">Language</span>
+                <button type="button" class="trig"><span>English</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Choose the language for the app interface.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Appearance</div><p class="card-d">Personalize the appearance of the application.</p></div>
+            <div class="card-b" style="gap:16px">
+              <div class="opt opt-on">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#eab308"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><div><p style="margin:0;font-weight:500">Light</p><p style="margin:0;color:var(--muted-fg)">Light theme for better visibility during the day</p></div></div>
+                <span class="rad rad-on"><span style="width:8px;height:8px;border-radius:9999px;background:#fff"></span></span>
+              </div>
+              <div class="opt">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#3b82f6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><div><p style="margin:0;font-weight:500">Dark</p><p style="margin:0;color:var(--muted-fg)">Dark theme to reduce visual fatigue</p></div></div>
+                <span class="rad"></span>
+              </div>
+              <div class="opt">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#6b7280"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg><div><p style="margin:0;font-weight:500">System</p><p style="margin:0;color:var(--muted-fg)">Follow the system configuration</p></div></div>
+                <span class="rad"></span>
+              </div>
+            </div>
+          </div>
+
+        </div></div></div></main></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

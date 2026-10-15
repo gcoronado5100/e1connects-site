@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact detail · Chat</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-7{height:28px;padding:0 8px;gap:4px;font-size:12px}
+.btn-i7{width:28px;height:28px;padding:0}
+.btn-i9{width:36px;height:36px;padding:0}
+.tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}
+.ghost-x{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap}
+.bub{border-radius:16px;padding:8px 16px;font-size:14px;line-height:20px;white-space:pre-wrap;overflow-wrap:anywhere}
+.bub-in{background:var(--muted);color:var(--fg);border-top-left-radius:4px}
+.bub-out{background:var(--primary);color:var(--primary-fg);border-top-right-radius:4px}
+.meta{display:flex;align-items:center;gap:4px;font-size:12px;line-height:16px;color:var(--muted-fg)}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="clients" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Contacts" current="Marcus Ellery" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <button type="button" class="btn btn-sm" style="height:32px;padding:0 8px;gap:4px;color:var(--muted-fg)">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Back
+        </button>
+        <div style="display:flex;align-items:center;gap:4px;min-width:0">
+          <h1 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Marcus Ellery</h1>
+          <button type="button" aria-label="Edit name" class="btn btn-i7" style="width:24px;height:24px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+        </div>
+        <span style="font-size:12px;color:var(--muted-fg)">@marcus.ellery</span>
+        <button type="button" style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:inherit;cursor:pointer">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#3b82f6"></span>
+          <span>Hot lead</span>
+          <svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <span style="margin-left:auto;display:inline-flex">
+          <button type="button" class="btn btn-outline btn-sm" style="border-top-right-radius:0;border-bottom-right-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</button>
+          <button type="button" class="btn btn-outline btn-sm" aria-label="Choose line" style="padding:0 6px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </span>
+      </div>
+
+      <div style="flex:1;min-height:0;display:flex;overflow:hidden">
+
+        <aside style="width:320px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:8px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Details</button>
+            <button type="button" class="tab" aria-pressed="false">Schedule</button>
+            <button type="button" class="tab" aria-pressed="false">Files</button>
+          </div>
+          <div style="flex:1;min-height:0;overflow:hidden">
+            <dc-import name="Contact-Info-Panel" hint-size="320px,1040px"></dc-import>
+          </div>
+        </aside>
+
+        <section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="false">Activity</button>
+            <button type="button" class="tab" aria-pressed="true">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7" style="padding:0 10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></button>
+          </div>
+
+          <!-- Chat feed -->
+          <div style="flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden">
+
+            <!-- Feed header -->
+            <div style="flex-shrink:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border)">
+              <button type="button" class="btn btn-outline btn-7" style="background:rgb(234 179 8 / .1);color:#a16207;border-color:#fef08a;box-shadow:none" title="Who is replying in this chat">
+                <span style="width:6px;height:6px;border-radius:9999px;background:currentColor"></span>
+                Agent Control
+                <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <button type="button" class="ghost-x" title="Chloe actions"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>Chloe<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button type="button" class="ghost-x" title="Chat language"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>Auto<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button type="button" class="ghost-x" title="More actions for this conversation"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>Actions<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+              <div style="flex:1"></div>
+              <button type="button" class="ghost-x" title="All Chats"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>All Chats (2)</button>
+              <!-- From / To line picker -->
+              <div style="width:100%;display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px;padding-top:4px;border-top:1px solid var(--border);font-size:12px;line-height:16px;color:var(--muted-fg)">
+                <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>From:</span>
+                <button type="button" style="display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0 4px;margin:0 -4px;border-radius:4px;font-family:inherit;font-size:12px;color:inherit;cursor:pointer">Halifax Sales · (902) 555-0100<svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                <span style="opacity:.4;margin:0 2px">→</span>
+                <span>To:</span>
+                <span>(902) 555-0142</span>
+              </div>
+            </div>
+
+            <!-- Thread -->
+            <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{thread}}" as="m" hint-placeholder-count="5">
+                  <div>
+                    <sc-if value="{{m.sep}}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex;align-items:center;gap:12px;margin:12px 0">
+                        <div style="flex:1;height:1px;background:var(--border)"></div>
+                        <span style="font-size:12px;color:var(--muted-fg);flex-shrink:0">{{m.date}}</span>
+                        <div style="flex:1;height:1px;background:var(--border)"></div>
+                      </div>
+                    </sc-if>
+                    <div style="{{m.rowStyle}}">
+                      <div style="max-width:75%;display:flex;flex-direction:column;gap:4px">
+                        <div class="{{m.bubClass}}">{{m.body}}</div>
+                        <div class="meta" style="{{m.metaStyle}}">
+                          <sc-if value="{{m.isChloe}}" hint-placeholder-val="{{ false }}"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.7"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg></sc-if>
+                          <sc-if value="{{m.hasWho}}" hint-placeholder-val="{{ false }}"><span style="opacity:.7">{{m.who}}</span></sc-if>
+                          <span>{{m.time}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <!-- Composer (agent control) -->
+            <div style="flex-shrink:0;padding:12px 16px;border-top:1px solid var(--border)">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:8px">
+                <button type="button" class="ghost-x"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Templates</button>
+                <button type="button" class="ghost-x"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Schedule</button>
+                <button type="button" class="ghost-x"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>New template</button>
+                <button type="button" class="ghost-x"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>Translate</button>
+              </div>
+              <div style="display:flex;gap:8px">
+                <label for="composer" style="position:absolute;left:-9999px">Message</label>
+                <textarea id="composer" placeholder="Type a message…" style="flex:1;min-height:72px;resize:none;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)"></textarea>
+                <div style="display:flex;flex-direction:column;gap:4px;align-self:flex-end">
+                  <button type="button" class="btn btn-i9" aria-label="Attach file" title="Attach file" style="color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+                  <button type="button" class="btn btn-primary btn-i9" aria-label="Send" disabled style="opacity:.5"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg></button>
+                </div>
+              </div>
+              <p style="margin:6px 0 0;font-size:12px;line-height:16px;color:var(--muted-fg)">Enter to send · Shift+Enter for new line</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const OUT = 'display:flex;justify-content:flex-end';
+    const IN = 'display:flex;justify-content:flex-start';
+    const mk = (kind, body, time, who, date) => {
+      const out = kind !== 'in';
+      return {
+        sep: !!date,
+        date: date || '',
+        rowStyle: out ? OUT : IN,
+        bubClass: out ? 'bub bub-out' : 'bub bub-in',
+        metaStyle: out ? 'justify-content:flex-end' : 'justify-content:flex-start',
+        isChloe: kind === 'chloe',
+        hasWho: !!who,
+        who: who || '',
+        body,
+        time,
+      };
+    };
+    return {
+      thread: [
+        mk('chloe', 'Hi Marcus! This is Chloe from Every1Drives. Thanks for your interest in the 2021 Civic Sport. Are you looking to finance or pay cash?', '9:38 AM', 'Chloe', 'Sep 28, 2026'),
+        mk('in', 'Finance. What would the monthly payments look like?', '9:40 AM'),
+        mk('chloe', 'Happy to help! Roughly how much would you like to put down?', '9:41 AM', 'Chloe'),
+        mk('in', 'About $2,000. Is the 2021 Civic still available?', '9:42 AM'),
+        mk('agent', 'Hi Marcus, Jordan here at Every1Drives. Yes, the Civic Sport is still available. Does Saturday at 10:30 work for a test drive?', '10:05 AM', 'Jordan Blake', 'Sep 30, 2026'),
+        mk('in', 'Saturday morning works for me', '10:12 AM'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

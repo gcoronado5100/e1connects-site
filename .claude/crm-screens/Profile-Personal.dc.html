@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Profile · personal information</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1764px;display:flex;overflow:hidden">
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="none" height="1764" hint-size="256px,1764px"></dc-import>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Home" current="My Profile" hint-size="1184px,64px"></dc-import>
+    </div>
+    <main style="flex:1;min-height:0;padding:0 16px 16px;overflow:hidden">
+      <div style="margin-bottom:32px"><h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em">My Profile</h1></div>
+      <div style="max-width:896px;margin:0 auto"><div style="display:flex;flex-direction:column;gap:24px"><div role="tablist" style="display:flex;align-items:center;height:36px;width:100%;padding:3px;border-radius:10.4px;background:var(--muted)"><button type="button" role="tab" aria-selected="true" style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:29px;padding:4px 8px;border:1px solid transparent;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;line-height:20px;font-weight:500;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .08);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Personal information</button><button type="button" role="tab" aria-selected="false" style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:29px;padding:4px 8px;border:1px solid transparent;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Settings</button></div><div class="card"><div class="card-h"><div class="card-t">Profile Information</div></div><div class="card-b"><div style="display:flex;flex-direction:column;gap:24px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:16px"><div style="position:relative"><span class="av-c" style="width:96px;height:96px;font-size:18px;line-height:28px">JB</span><button type="button" aria-label="Upload photo" class="btn btn-outline" style="position:absolute;right:-8px;bottom:-8px;width:32px;height:32px;padding:0;border-radius:9999px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg></button></div><p style="margin:0;text-align:center;font-size:12px;line-height:16px;color:var(--muted-fg)">Supported formats: JPG, PNG, GIF. Maximum 5MB.</p></div><div style="height:1px;background:var(--border)"></div>
+  <div style="display:grid;gap:16px"><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Name</label><input class="inp" type="text" value="Jordan Blake" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Email</label><input class="inp" type="email" value="jordan.blake@example.com" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Username</label><input class="inp" type="text" value="jordan" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Website</label><input class="inp" type="text" value="" placeholder="https://example.com" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Date of birth</label><input class="inp" type="text" value="1988-07-22" placeholder="" style="width:100%;height:36px;"></div></div>
+  <div style="height:1px;background:var(--border)"></div>
+  <div style="display:flex;flex-direction:column;gap:16px"><h4 style="margin:0;font-size:14px;line-height:20px;font-weight:500">Contact Information</h4><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Primary Phone</label><input class="inp" type="text" value="+1 (902) 555-0101" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Alternative Phone</label><input class="inp" type="text" value="" placeholder="+1 (555) 987-6543" style="width:100%;height:36px;"></div></div></div>
+  <div style="height:1px;background:var(--border)"></div>
+  <div style="display:flex;flex-direction:column;gap:16px"><h4 style="margin:0;font-size:14px;line-height:20px;font-weight:500">Address Information</h4>
+    <div style="display:grid;gap:16px"><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Address Line 1</label><input class="inp" type="text" value="" placeholder="Street address, P.O. box, company name" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Address Line 2</label><input class="inp" type="text" value="" placeholder="Apartment, suite, unit, building, floor, etc." style="width:100%;height:36px;"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px"><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">City</label><input class="inp" type="text" value="Halifax" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">State/Province</label><input class="inp" type="text" value="NS" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">ZIP/Postal Code</label><input class="inp" type="text" value="B3J 2K9" placeholder="" style="width:100%;height:36px;"></div></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Country</label><input class="inp" type="text" value="Canada" placeholder="United States" style="width:100%;height:36px;"></div></div></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px"><button type="button" class="btn btn-outline btn-def">Hide Password</button><button type="submit" class="btn btn-primary btn-def"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>Save Changes</button></div>
+  <div style="display:flex;flex-direction:column;gap:16px;padding:16px;border:1px solid var(--border);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .5)"><h4 style="margin:0;font-size:16px;line-height:24px;font-weight:500">Change Password</h4><div style="display:grid;gap:16px"><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Current Password</label><input class="inp" type="password" value="" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">New Password</label><input class="inp" type="password" value="" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:8px"><label style="font-size:14px;line-height:14px;font-weight:500">Confirm New Password</label><input class="inp" type="password" value="" placeholder="" style="width:100%;height:36px;"></div></div></div>
+</div></div></div></div></div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1764}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone number sheet</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;width:100%}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.grid{display:grid;gap:8px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.hint{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.swc{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--border);border-radius:10.4px;padding:12px}
+.swc b{display:block;font-size:14px;line-height:20px;font-weight:500}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.sw-off{background:var(--border)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.mav{display:inline-flex;height:20px;width:20px;align-items:center;justify-content:center;border-radius:9999px;background:oklch(0.623 0.214 259.815 / .15);color:var(--primary);font-size:9px;font-weight:500}
+</style>
+</helmet>
+<aside class="app" style="width:448px;height:1560px;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);position:relative">
+  <div style="padding:16px 16px 8px"><h2 style="margin:0;font-size:16px;line-height:24px;font-weight:600">Edit Phone Number</h2></div>
+  <button type="button" aria-label="Close" style="position:absolute;top:16px;right:16px;width:20px;height:20px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;background:transparent;opacity:.7;cursor:pointer;color:var(--fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:20px;padding:16px;overflow:hidden">
+
+    <div class="grid"><label class="lab" for="p-label">Label</label><input id="p-label" class="inp" value="Halifax Sales" placeholder="e.g. &quot;Main Line&quot;, &quot;Sales&quot;, &quot;Support&quot;"></div>
+
+    <div class="grid"><label class="lab" for="p-agent">Agent name (persona)</label><input id="p-agent" class="inp" value="Sofia" placeholder="e.g. Sofia"><p class="hint">Chloe introduces herself with this name when texting from this number. Leave empty to use "Chloe".</p></div>
+
+    <div class="grid"><span class="lab">Provider</span>
+      <button type="button" class="trig" disabled style="opacity:.5"><span>Twilio</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+      <p class="hint">Provider cannot be changed after creation.</p>
+    </div>
+
+    <div class="grid"><span class="lab">Provider Account <span style="color:var(--destructive)">*</span></span>
+      <button type="button" class="trig"><span>Main Twilio</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+      <p class="hint">Select the provider account whose credentials will be used for this number.</p>
+    </div>
+
+    <div class="grid"><label class="lab" for="p-num">Phone Number</label><input id="p-num" class="inp" value="+19025550100" disabled style="opacity:.5;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"><p class="hint">E.164 format required (e.g. +15551234567). Cannot be changed after creation.</p></div>
+
+    <div class="swc"><div><b>Active</b><p class="hint" style="margin-top:2px">Inactive numbers will not be used to start new conversations.</p></div><button type="button" role="switch" aria-checked="true" aria-label="Active" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+
+    <div class="swc"><div><b>Set as Default</b><p class="hint" style="margin-top:2px">Used when starting new conversations from leads or client pages.</p></div><button type="button" role="switch" aria-checked="true" aria-label="Set as default" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+
+    <div style="border:1px solid var(--border);border-radius:10.4px;padding:12px;display:flex;flex-direction:column;gap:8px">
+      <div><b style="display:block;font-size:14px;font-weight:500">Members</b><p class="hint" style="margin-top:2px">Only these users receive calls on this line and can dial out from it.</p></div>
+      <div style="display:grid;gap:6px;max-height:176px;overflow:hidden">
+        <label style="display:flex;align-items:center;gap:8px;font-size:14px"><input type="checkbox" class="cb" checked><span class="mav">JB</span>Jordan Blake</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:14px"><input type="checkbox" class="cb" checked><span class="mav">AR</span>Alex Rivera</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:14px"><input type="checkbox" class="cb" checked><span class="mav">SC</span>Sam Chen</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:14px"><input type="checkbox" class="cb"><span class="mav">DW</span>Dana Wright</label>
+      </div>
+    </div>
+
+    <div class="swc"><div><b>Custom Credentials</b><p class="hint" style="margin-top:2px">Override the provider account credentials for this specific number.</p></div><button type="button" role="switch" aria-checked="true" aria-label="Custom credentials" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+
+    <div style="display:grid;gap:16px;border:1px solid var(--border);border-radius:10.4px;padding:16px;background:oklch(0.967 0.001 286.375 / .3)">
+      <div class="grid"><label class="lab" for="p-sid">Account SID</label><input id="p-sid" class="inp" value="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px"></div>
+      <div class="grid"><label class="lab" for="p-tok">Auth Token</label><input id="p-tok" class="inp" type="password" placeholder="Leave blank to keep existing" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px"></div>
+      <p class="hint">Credentials are stored securely. The token is write-only and will not be shown again.</p>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;padding:12px 16px 16px;border-top:1px solid var(--border)">
+    <button type="button" class="btn btn-outline">Cancel</button>
+    <button type="button" class="btn btn-primary">Update</button>
+  </div>
+</aside>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":448,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

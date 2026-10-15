@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Users · detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1000px;display:flex;overflow:hidden">
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1000" hint-size="256px,1000px"></dc-import>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Users" current="Priya Nair" hint-size="1184px,64px"></dc-import>
+    </div>
+    <main style="flex:1;min-height:0;padding:0 16px 16px;overflow:hidden">
+      <div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:16px"><button type="button" class="btn btn-outline btn-def"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back</button><div><h1 style="margin:0;font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.025em">Priya Nair</h1><p style="margin:0;color:var(--muted-fg)">priya.nair@example.com</p></div></div><div style="display:flex;gap:8px"><button type="button" class="btn btn-primary btn-def"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>Edit</button><button type="button" class="btn btn-def" style="background:var(--destructive);color:#fff"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" x2="22" y1="8" y2="13"/><line x1="22" x2="17" y1="8" y2="13"/></svg>Deactivate</button><button type="button" class="btn btn-def" style="background:var(--destructive);color:#fff"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>Delete</button></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px"><div class="card"><div class="card-h"><div class="card-t" style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Personal Information</div></div><div class="card-b" style="display:flex;flex-direction:column;gap:16px">
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Full name</label><p style="margin:0;font-size:18px;line-height:28px">Priya Nair</p></div><div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Email</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><p style="margin:0;font-size:18px;line-height:28px">priya.nair@example.com</p></div></div><div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Username</label><p style="margin:0;font-size:18px;line-height:28px">@priya</p></div><div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Phone</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><p style="margin:0;font-size:18px;line-height:28px">+1 (902) 555-0166</p></div></div><div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Alternative Phone</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><p style="margin:0;font-size:18px;line-height:28px">+1 (902) 555-0199</p></div></div><div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Date of birth</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><p style="margin:0;font-size:18px;line-height:28px">March 14, 1991</p></div></div>
+</div></div><div class="card"><div class="card-h"><div class="card-t" style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>System Information</div></div><div class="card-b" style="display:flex;flex-direction:column;gap:16px">
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Role</label><div style="margin-top:4px"><span class="bdg bdg-def" style="">Admin</span></div></div>
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Status</label><div style="margin-top:4px"><span class="bdg bdg-def" style="">Active</span></div></div>
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Registration date</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><p style="margin:0">March 3, 2026 at 10:14 AM</p></div></div>
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Last updated</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><p style="margin:0">September 29, 2026 at 04:52 PM</p></div></div>
+</div></div></div>
+<div class="card"><div class="card-h"><div class="card-t" style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Contact Information</div></div><div class="card-b" style="display:flex;flex-direction:column;gap:16px">
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Address</label><p style="margin:0;font-size:18px;line-height:28px">128 Harbour View Rd</p><p style="margin:0;font-size:18px;line-height:28px">Unit 4</p></div>
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Location</label><p style="margin:0;font-size:18px;line-height:28px">Halifax, NS, B3J 2K9, Canada</p></div>
+  <div><label style="font-size:14px;line-height:20px;font-weight:500;color:var(--muted-fg)">Website</label><div style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;color:var(--muted-fg)"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><a href="#site" style="color:#2563eb;text-decoration:none">https://priyanair.example.com</a></div></div>
+</div></div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

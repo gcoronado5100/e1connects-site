@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pipeline · list</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-xs{font-size:12px;gap:6px}
+.btn-7{height:28px;padding:0 8px;font-size:14px}
+.seg{display:flex;align-items:center;border:1px solid var(--border);border-radius:8.4px;overflow:hidden}
+.seg button{display:flex;align-items:center;gap:6px;padding:6px 10px;border:0;background:transparent;font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--primary);color:var(--primary-fg)}
+.sel{height:32px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:0 12px;font-family:inherit;font-size:12px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.inp{height:32px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px 4px 32px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.th{padding:8px 16px 8px 0;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.025em;text-transform:uppercase;color:var(--muted-fg);text-align:left}
+.td{padding:10px 16px 10px 0;min-width:0}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.ib{display:inline-flex;align-items:center;justify-content:center;padding:4px;border:0;border-radius:9999px;background:transparent;color:var(--muted-fg);cursor:pointer}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="opportunities" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="" current="Opportunities" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button type="button" class="btn" aria-label="Back" style="width:32px;padding:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
+          <h1 style="margin:0;font-size:16px;line-height:24px;font-weight:600">Opportunities</h1>
+          <span style="font-size:12px;color:var(--muted-fg)">148 opportunities</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="seg">
+            <button type="button" aria-pressed="false"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>Pipeline</button>
+            <button type="button" aria-pressed="true"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>List</button>
+          </div>
+          <button type="button" class="btn btn-outline"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>Stages</button>
+          <button type="button" class="btn btn-primary"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>New</button>
+        </div>
+      </div>
+
+      <!-- Filter bar -->
+      <div style="flex-shrink:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <div style="position:relative;flex:1;min-width:180px;max-width:384px">
+          <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;left:10px;top:9px;color:var(--muted-fg)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="inp" type="search" placeholder="Search by title…" aria-label="Search by title">
+        </div>
+        <select class="sel" style="width:160px" aria-label="Stage"><option>All stages</option><option>New Lead</option><option>Contacted</option></select>
+        <button type="button" class="btn btn-outline btn-xs"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>Filter</button>
+        <select class="sel" style="width:200px" aria-label="Sort"><option>Recently Updated</option><option>Recently Created</option><option>Close Date (soonest)</option><option>Value (highest)</option></select>
+        <select class="sel" style="width:110px" aria-label="Rows per page"><option>10 per page</option><option selected>25 per page</option><option>50 per page</option></select>
+        <div style="margin-left:auto;font-size:12px;color:var(--muted-fg)">1–25 of 148</div>
+      </div>
+
+      <!-- Table -->
+      <div style="flex:1;min-height:0;overflow:hidden;padding:0 16px">
+        <div role="table" aria-label="Opportunities" style="--cols:minmax(140px,1.2fr) minmax(160px,1.4fr) 90px 130px 120px 150px minmax(100px,1fr) 40px">
+          <div role="row" class="row" style="background:var(--bg)">
+            <div role="columnheader" class="th">Contact</div>
+            <div role="columnheader" class="th">Title</div>
+            <div role="columnheader" class="th">Value</div>
+            <div role="columnheader" class="th">Confidence</div>
+            <div role="columnheader" class="th">Close Date</div>
+            <div role="columnheader" class="th">Stage</div>
+            <div role="columnheader" class="th">User</div>
+            <div role="columnheader" class="th" style="padding-right:0;text-align:right">Edit</div>
+          </div>
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+            <div role="row" class="row">
+              <div role="cell" class="td" style="font-weight:500"><a href="#contact" style="color:inherit;text-decoration:none">{{r.name}}</a></div>
+              <div role="cell" class="td" style="color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{r.title}}</div>
+              <div role="cell" class="td" style="font-weight:500">{{r.value}}</div>
+              <div role="cell" class="td">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="flex:1;height:6px;border-radius:9999px;background:var(--muted);overflow:hidden"><div style="height:100%;border-radius:9999px;background:var(--primary);width:{{r.conf}}%"></div></div>
+                  <span style="width:28px;text-align:right;font-size:12px;line-height:16px;color:var(--muted-fg);flex-shrink:0">{{r.conf}}%</span>
+                </div>
+              </div>
+              <div role="cell" class="td" style="color:var(--muted-fg)">{{r.date}}</div>
+              <div role="cell" class="td"><span class="pill" style="{{r.stageStyle}}">{{r.stage}}</span></div>
+              <div role="cell" class="td" style="color:var(--muted-fg)">{{r.user}}</div>
+              <div role="cell" class="td" style="padding-right:0;text-align:right"><button type="button" class="ib" aria-label="Edit opportunity"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Pagination footer -->
+      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-top:1px solid var(--border);background:var(--bg);font-size:12px;color:var(--muted-fg)">
+        <span>Page 1 of 6</span>
+        <div style="display:flex;align-items:center;gap:4px">
+          <button type="button" class="btn btn-outline btn-7" disabled style="opacity:.5;font-size:12px;gap:2px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Previous</button>
+          <button type="button" class="btn btn-outline btn-7" style="font-size:12px;gap:2px">Next<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const ST = {
+      'New Lead': '#3b82f6',
+      'Contacted': '#f59e0b',
+      'Credit App Sent': '#8b5cf6',
+      'Test Drive Booked': '#10b981',
+      'Trade-in Quote': '#f97316',
+      'Follow Up': '#14b8a6',
+    };
+    const mk = (name, title, value, conf, date, stage, user) => ({
+      name,
+      title,
+      value: '$' + value.toLocaleString('en-CA'),
+      conf,
+      date: date || '—',
+      stage,
+      stageStyle: 'background:' + ST[stage] + '20;color:' + ST[stage] + ';border:1px solid ' + ST[stage],
+      user,
+    });
+    return {
+      rows: [
+        mk('Marcus Ellery', '2021 Honda Civic Sport', 24900, 62, 'Oct 12, 2026', 'New Lead', 'Jordan Blake'),
+        mk('Priya Nandakumar', '2023 Hyundai Tucson', 36200, 78, 'Oct 5, 2026', 'Credit App Sent', 'Jordan Blake'),
+        mk('Daniel Okafor', '2022 Honda Accord', 38700, 90, 'Oct 3, 2026', 'Test Drive Booked', 'Jordan Blake'),
+        mk('Sofia Marchetti', '2022 Toyota Tacoma TRD', 41500, 35, '', 'New Lead', 'Jordan Blake'),
+        mk('Jean-Luc Bouchard', '2019 Subaru Outback', 29900, 58, 'Oct 8, 2026', 'Contacted', 'Alex Rivera'),
+        mk('Aaliyah Brooks', '2020 Ford Escape', 18900, 41, '', 'Contacted', 'Jordan Blake'),
+        mk('Tom Whitfield', '2020 Ram 1500', 44900, 60, '', 'Trade-in Quote', 'Alex Rivera'),
+        mk('Brianna Foley', '2022 Mazda CX-5', 31000, 82, 'Oct 6, 2026', 'Credit App Sent', 'Alex Rivera'),
+        mk('Hannah Lindqvist', '2023 Subaru Crosstrek', 26400, 74, 'Oct 2, 2026', 'Test Drive Booked', 'Alex Rivera'),
+        mk('Omar Haddad', '2022 Chevrolet Silverado', 39900, 48, '', 'Follow Up', 'Alex Rivera'),
+        mk('Kevin Dubois', '2021 VW Tiguan', 33100, 88, 'Oct 4, 2026', 'Test Drive Booked', 'Jordan Blake'),
+        mk('Rachel Gagnon', '2021 Kia Sportage', 22400, 66, '', 'Contacted', 'Jordan Blake'),
+        mk('Isabelle Roy', '2021 Toyota RAV4', 33500, 71, '', 'Credit App Sent', 'Alex Rivera'),
+        mk('Nadia Rahman', '2019 Jeep Cherokee', 24800, 55, '', 'Trade-in Quote', 'Jordan Blake'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

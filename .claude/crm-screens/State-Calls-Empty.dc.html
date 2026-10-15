@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inbox calls · empty</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-7{height:28px;padding:0 8px;font-size:12px;gap:4px}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.badge-destructive{background:var(--destructive);color:#fff}
+.b10{font-size:10px}
+.tab{display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:14px;line-height:20px;border-bottom:2px solid transparent;color:var(--muted-fg);white-space:nowrap;text-decoration:none}
+.tab-on{border-bottom-color:var(--primary);color:var(--fg)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.th{padding:8px 16px;font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);text-align:left}
+.td{padding:10px 16px;min-width:0;font-size:12px}
+.tone-ok{background:#dcfce7;color:#166534}
+.tone-bad{background:#fee2e2;color:#991b1b}
+.tone-warn{background:#fef3c7;color:#92400e}
+.link{background:transparent;border:0;padding:0;display:inline-flex;align-items:center;gap:4px;font-family:inherit;font-size:12px;color:var(--primary);cursor:pointer;white-space:nowrap}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="inbox" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Inbox" current="Calls" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Inbox tabs -->
+      <div style="display:flex;align-items:center;gap:4px;border-bottom:1px solid var(--border);padding:0 16px;overflow:hidden">
+        <a href="#chloe" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg><span>Chloe chats</span><span class="badge badge-secondary b10" style="margin-left:4px">412</span></a>
+        <a href="#needs-agent" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><span>Needs Agent</span><span class="badge badge-destructive b10" style="margin-left:4px">8</span></a>
+        <a href="#agent" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg><span>Agent chats</span><span class="badge badge-secondary b10" style="margin-left:4px">3</span></a>
+        <a href="#unreachable" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/><line x1="22" x2="2" y1="2" y2="22"/></svg><span>Unreachable</span><span class="badge badge-secondary b10" style="margin-left:4px">58</span></a>
+        <a href="#opted-out" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg><span>Opted Out</span><span class="badge badge-secondary b10" style="margin-left:4px">126</span></a>
+        <a href="#email" class="tab" style="opacity:.6"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>Email</span><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+        <a href="#calls" class="tab tab-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Calls</span><span style="font-size:10px;line-height:16px;font-weight:600;padding:2px 6px;border-radius:9999px;background:#fbbf24;color:#451a03">New</span><span class="badge badge-secondary b10" style="margin-left:4px">5</span></a>
+        <a href="#tasks" class="tab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5"/><path d="m9 11 3 3L22 4"/></svg><span>Tasks</span></a>
+      </div>
+
+      <!-- Calls pane -->
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span style="font-size:14px;font-weight:500">Calls</span>
+            <div style="display:flex;align-items:center;gap:4px">
+              <button type="button" class="btn btn-pri btn-7">Current</button>
+              <button type="button" class="btn btn-outline btn-7">Done</button>
+              <button type="button" class="btn btn-outline btn-7">Future</button>
+            </div>
+            <div style="width:1px;height:16px;background:var(--border)"></div>
+            <div style="display:flex;align-items:center;gap:4px">
+              <button type="button" class="btn btn-sec btn-7">All</button>
+              <button type="button" class="btn btn-7">Missed</button>
+              <button type="button" class="btn btn-7">Voicemail</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline">Refresh</button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+          <button type="button" class="btn btn-outline btn-7" style="gap:6px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>Filter</button>
+        </div>
+
+        
+
+        <div style="flex:1;min-height:0;overflow:hidden">
+          <div style="display:flex;height:160px;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:32px;height:32px;opacity:.3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span style="font-size:14px">No calls yet</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const IN = 'M16 2v6h6 M22 2l-6 6 M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z';
+    const OUT = 'M22 8V2h-6 M16 8l6-6 M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z';
+    const TONE = { ok: 'tone-ok', bad: 'tone-bad', warn: 'tone-warn' };
+    const mk = (inbound, status, tone, name, line, dur, date, opts) => {
+      const o = opts || {};
+      return {
+        dir: inbound ? 'Inbound' : 'Outbound',
+        dirIcon: inbound ? IN : OUT,
+        dirColor: inbound ? '#059669' : '#0284c7',
+        status,
+        tone: TONE[tone],
+        hasDispo: !!o.dispo,
+        dispo: o.dispo || '',
+        name: name || o.number,
+        nameStyle: name ? 'color:inherit;text-decoration:none' : 'color:oklch(0.552 0.016 285.938);text-decoration:none',
+        hasCount: !!o.count,
+        count: o.count || 0,
+        line,
+        dur,
+        date,
+        hasAudio: !!o.audio,
+        noAudio: !o.audio,
+        hasVm: !!o.vm,
+        vm: o.vm || '',
+        sel: !!o.sel,
+        rowStyle: tone === 'bad' ? 'background:rgb(254 242 242 / .4)' : tone === 'warn' ? 'background:rgb(255 251 235 / .4)' : '',
+      };
+    };
+    return {
+      calls: [
+        mk(true, 'Missed', 'bad', 'Marcus Ellery', 'Halifax Sales', '—', 'Sep 30, 10:12 AM', { count: 2, sel: true }),
+        mk(true, 'Voicemail', 'warn', 'Priya Nandakumar', 'Halifax Sales', '—', 'Sep 30, 9:41 AM', { audio: true, vm: '0:17', sel: true }),
+        mk(false, 'Completed', 'ok', 'Daniel Okafor', 'Halifax Sales', '3:12', 'Sep 29, 4:20 PM', { dispo: 'Interested', audio: true }),
+        mk(true, 'Completed', 'ok', '', 'Moncton Sales', '1:05', 'Sep 29, 2:03 PM', { number: '(613) 555-0190' }),
+        mk(false, 'No answer', 'bad', 'Brianna Foley', 'Halifax Sales', '—', 'Sep 29, 11:30 AM', {}),
+        mk(false, 'Busy', 'bad', 'Kevin Dubois', 'Moncton Sales', '—', 'Sep 28, 5:12 PM', {}),
+        mk(true, 'Completed', 'ok', 'Hannah Lindqvist', 'Halifax Sales', '4:40', 'Sep 28, 3:48 PM', { audio: true }),
+        mk(false, 'Failed', 'bad', 'Tom Whitfield', 'Halifax Sales', '—', 'Sep 28, 1:15 PM', {}),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Chloe AI</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic12{width:12px;height:12px}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sm{height:32px;padding:0 12px}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{padding:0 24px}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:24px}
+.sec{margin:0;font-size:14px;line-height:20px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)}
+.fld{display:flex;flex-direction:column;gap:6px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.ta{width:100%;min-height:80px;resize:vertical;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;line-height:20px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.badge{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.seg{display:flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:10.4px;padding:4px}
+.seg button{display:flex;align-items:center;gap:6px;border:0;border-radius:6px;padding:6px 12px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1760px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1760" hint-size="256px,1760px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Chloe AI" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="chloe-ai" height="1680" hint-size="224px,1680px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="max-width:768px;display:flex;flex-direction:column;gap:32px">
+
+          <div>
+            <h2 style="margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em">Chloe AI</h2>
+            <p style="margin:4px 0 0;color:var(--muted-fg)">Configure AI integrations. Each service has independent test and production environments — test mode runs without reply delays.</p>
+            <div style="margin-top:12px;display:flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:8.4px;background:oklch(0.967 0.001 286.375 / .4);padding:8px 12px;font-size:12px;line-height:16px">
+              <span style="color:var(--muted-fg)">Editing config for:</span><span style="font-weight:500">Every1Drives</span><span style="color:var(--muted-fg)">— switch organization from the header to edit a different tenant.</span>
+            </div>
+          </div>
+
+          <section style="display:flex;flex-direction:column;gap:16px">
+            <p class="sec">Services</p>
+
+            <!-- SMS chatbot -->
+            <div class="card" style="border-width:2px;border-color:rgb(34 197 94 / .6)">
+              <div class="card-h">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;color:var(--primary)"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>
+                    <div><div style="font-size:16px;font-weight:600;line-height:1">SMS Chatbot</div><p style="margin:2px 0 0;font-size:14px;color:var(--muted-fg)">Chloe AI for SMS conversations</p></div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px"><span class="badge" style="background:#16a34a;color:#fff">Active</span><span class="badge" style="border-color:#fb923c;color:#ea580c;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">PROD</span></div>
+                </div>
+              </div>
+              <div class="card-b">
+
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px">
+                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><button type="button" role="switch" aria-checked="true" aria-label="Enabled" class="sw sw-on"><span class="knob" style="left:14px"></span></button><span style="font-size:14px;font-weight:500">Enabled</span></label>
+                  <div class="seg">
+                    <button type="button"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg>Test</button>
+                    <button type="button" style="background:#ffedd5;color:#c2410c"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Prod</button>
+                  </div>
+                </div>
+
+                <div style="border-top:1px solid var(--border)"></div>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <p style="margin:0;display:flex;align-items:center;gap:6px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#f97316"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Production Environment</p>
+                  <div class="fld"><label class="lab" for="wh">Webhook URL (prod)</label><input id="wh" class="inp" value="https://n8n.example.com/webhook/chloe-sms" placeholder="https://n8n.example.com/webhook/..."></div>
+                  <div class="fld"><label class="lab" for="sm">Summarizer URL (prod)</label><input id="sm" class="inp" value="https://n8n.example.com/webhook/summarize" placeholder="https://n8n.example.com/webhook/summarize"></div>
+
+                  <div style="border:1px solid var(--border);border-radius:10.4px;padding:12px;display:flex;flex-direction:column;gap:8px">
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></svg><span style="font-size:14px;font-weight:500">Chloe API Key (prod)</span><span style="font-size:12px;color:var(--muted-fg)">— used by n8n to call back into Laravel</span></div>
+                      <span class="badge" style="background:var(--muted);color:oklch(0.21 0.006 285.885)">Active</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px"><input class="inp" value="••••••••••••••••••••••••" readonly aria-label="API key" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;height:32px"><button type="button" class="btn btn-outline btn-sm">Regenerate</button></div>
+                  </div>
+                </div>
+
+                <div style="border-top:1px solid var(--border)"></div>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <p style="margin:0;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)">Dealership Context</p>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div class="fld"><label class="lab" for="dn">Dealership Name</label><input id="dn" class="inp" value="Every1Drives" placeholder="e.g. Every1Drives"></div>
+                    <div class="fld"><label class="lab" for="iu">Inventory Base URL</label><input id="iu" class="inp" type="url" value="https://inventory.example.com" placeholder="https://every1drives.store"></div>
+                  </div>
+                  <div class="fld"><label class="lab" for="sc">Site Context</label><textarea id="sc" class="ta" placeholder="Short description of the dealership for Chloe’s prompt…">Used and pre-owned vehicle dealership in Halifax, Nova Scotia. Specializes in financing for customers rebuilding their credit.</textarea></div>
+                  <div class="fld"><label class="lab" for="is">Inventory Snippet <span style="font-weight:400;color:var(--muted-fg)">(optional)</span></label><textarea id="is" class="ta" placeholder="Static inventory text appended to dynamic links…"></textarea></div>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;padding-top:8px;border-top:1px solid var(--border)">
+                  <button type="button" class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>Save Changes</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI call notes -->
+            <div class="card" style="padding:24px 0 12px;gap:0">
+              <div class="card-h">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;color:var(--primary)"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+                  <div style="min-width:0"><div style="font-size:16px;font-weight:600;line-height:1">AI call notes</div><p style="margin:2px 0 12px;font-size:14px;color:var(--muted-fg)">When enabled, finished calls will be transcribed and summarized by AI into a note on the contact. Dealership-wide setting. Even when off, a note can still be generated per call from the transcript window.</p></div>
+                  <button type="button" role="switch" aria-checked="true" aria-label="AI call notes" class="sw sw-on" style="margin-left:auto"><span class="knob" style="left:14px"></span></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coming soon -->
+            <div class="card" style="border-style:dashed;opacity:.6;padding:24px 0 12px;gap:0">
+              <div class="card-h"><div style="display:flex;align-items:center;gap:12px">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;color:var(--muted-fg)"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                <div><div style="font-size:16px;font-weight:600;line-height:1;color:var(--muted-fg)">Voice Assistant</div><p style="margin:2px 0 12px;font-size:14px;color:var(--muted-fg)">Chloe AI for voice commands and phone interactions.</p></div>
+                <span class="badge" style="margin-left:auto;border-color:var(--border);color:var(--fg)">Coming soon</span>
+              </div></div>
+            </div>
+            <div class="card" style="border-style:dashed;opacity:.6;padding:24px 0 12px;gap:0">
+              <div class="card-h"><div style="display:flex;align-items:center;gap:12px">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;color:var(--muted-fg)"><path d="M13 5h8"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="m3 17 2 2 4-4"/><rect x="3" y="4" width="6" height="6" rx="1"/></svg>
+                <div><div style="font-size:16px;font-weight:600;line-height:1;color:var(--muted-fg)">Task Creator</div><p style="margin:2px 0 12px;font-size:14px;color:var(--muted-fg)">AI-driven task creation and management via voice or chat.</p></div>
+                <span class="badge" style="margin-left:auto;border-color:var(--border);color:var(--fg)">Coming soon</span>
+              </div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

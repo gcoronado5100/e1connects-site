@@ -1,0 +1,47 @@
+{
+  "title": "Hero de la home: elige la composición",
+  "question": "Tres maneras de abrir la home con el mismo sistema visual y el mismo texto. Cambia solo la composición. Elige una, guíala con una línea o pide otra mano.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Del desorden a una sola ficha",
+      "kicker": "THE ROLL",
+      "thesis": "Lo que hoy le llega al concesionario por cuatro canales sueltos aparece, debajo del titular, reunido en la ficha de un solo lead.",
+      "palette": ["#061029", "#1463ff", "#ffffff", "#f5f6f8"],
+      "materials": ["banda azul marino", "fragmentos reales del CRM"],
+      "viewport": "Arriba, cuatro avisos sueltos del mismo cliente: el correo del formulario, una llamada perdida, un SMS y una nota. En medio, el titular a todo lo ancho con Log in. Abajo, la ficha real de Marcus sube desde el borde con esos mismos eventos en orden.",
+      "risk": "La idea de pasar del caos al orden es conocida. Los avisos de arriba son ilustración, no el producto, y tienen que quedarse chicos para que mande la ficha.",
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "record",
+      "label": "La ficha de Marcus",
+      "thesis": "La ficha real de un lead es el hero: el recorrido completo ya está ahí dentro, y el texto la anota.",
+      "palette": ["#061029", "#1463ff", "#ffffff", "#c5cbe9"],
+      "materials": ["banda azul marino", "ficha de contacto del CRM a tamaño legible"],
+      "viewport": "La ficha real de Marcus en el CRM entra desde la derecha y se sale del borde. A la izquierda, el titular y una leyenda de cuatro pasos (formulario, respuesta de Chloe, llamada, cambio de etapa) cuyos números marcan su entrada en la ficha.",
+      "risk": "Si los marcadores quedan tímidos se lee como el típico texto a un lado y captura al otro. La ficha es densa, y su panel de datos muestra la dirección y la fecha de nacimiento de ejemplo del canvas.",
+      "html": ".impeccable/mocks/decision/record.html"
+    },
+    {
+      "id": "steps",
+      "label": "El recorrido en cinco pasos",
+      "thesis": "Cinco pasos numerados, cada uno con su pieza real del CRM, que cuentan un lead de principio a fin y llevan a las secciones de abajo.",
+      "palette": ["#061029", "#1463ff", "#ffffff", "#4d8bff"],
+      "materials": ["banda azul marino", "cinco fragmentos reales del CRM"],
+      "viewport": "Titular grande arriba a la izquierda con Log in. Debajo, una fila de cinco pasos con numerales grandes: llega el formulario, Chloe responde, el equipo toma la conversación, se agenda el test drive, la oportunidad avanza en el pipeline. Cada paso con su fragmento real.",
+      "raised": [
+        {
+          "from": "Libro de instrucciones de armado",
+          "raise": "Cada paso agrega una sola pieza nueva y nada más, y el numeral grande lleva el orden."
+        }
+      ],
+      "risk": "Cinco fragmentos piden ancho: cada uno queda chico en escritorio, y en teléfono la fila se vuelve una lista vertical larga.",
+      "html": ".impeccable/mocks/decision/steps.html"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": false,
+  "steer": true
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>App header</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<header style="width:1184px;height:64px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid oklch(0.92 0.004 286.32);background:oklch(0.99 0 0);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="Toggle sidebar" style="margin-left:-4px;width:28px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+    </button>
+    <div style="width:1px;height:16px;background:oklch(0.92 0.004 286.32);margin-right:8px"></div>
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;color:oklch(0.552 0.016 285.938)">
+      <sc-if value="{{hasParent}}" hint-placeholder-val="{{ true }}">
+        <a href="#parent" style="color:oklch(0.552 0.016 285.938);text-decoration:none">{{parent}}</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </sc-if>
+      <span style="color:oklch(0.141 0.005 285.823)" aria-current="page">{{current}}</span>
+    </nav>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="6 teammates online" style="position:relative;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span style="font-variant-numeric:tabular-nums">6</span>
+      <span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Phone, available for calls" title="Phone, available for calls" style="position:relative;width:32px;height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Search" style="min-width:220px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;gap:8px;border:1px solid oklch(0.92 0.004 286.32 / .6);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938);font-family:inherit;font-size:14px;line-height:20px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span style="flex:1;text-align:left">Search…</span>
+      <span style="display:flex;align-items:center;gap:4px;margin-left:auto">
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">⌘</span>
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">K</span>
+      </span>
+    </button>
+
+    <button type="button" aria-label="Notifications, 3 unread" style="position:relative;width:36px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      <span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:oklch(0.577 0.245 27.325);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span>
+    </button>
+
+    <div style="display:flex;align-items:center;gap:8px;height:48px;padding:8px;min-width:224px;border-radius:8.4px;box-sizing:border-box">
+      <div style="width:32px;height:32px;border-radius:8.4px;background:oklch(0.967 0.001 286.375);display:flex;align-items:center;justify-content:center;flex-shrink:0">J</div>
+      <div style="display:grid;flex:1;min-width:0;line-height:1.25">
+        <span style="font-weight:500">Jordan Blake</span>
+        <span style="font-size:12px">jordan.blake@example.com</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"parent":{"editor":"text","default":"Inbox"},"current":{"editor":"text","default":"Chloe"},"$preview":{"width":1184,"height":64}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const parent = this.props.parent === undefined ? 'Inbox' : this.props.parent;
+    return {
+      parent,
+      hasParent: !!parent,
+      current: this.props.current ?? 'Chloe',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1340 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "AppHeader.dc.html": {
+      "h": 64,
+      "title": "App header (shared component)",
+      "w": 1184,
+      "x": 1856,
+      "y": 1080
+    },
+    "Contact-Detail-Activity.dc.html": {
+      "h": 960,
+      "title": "Contact · Activity tab",
+      "w": 1440,
+      "x": 0,
+      "y": 4430
+    },
+    "Contact-Detail-Chat.dc.html": {
+      "h": 960,
+      "title": "Contact · Chat tab (agent control)",
+      "w": 1440,
+      "x": 1520,
+      "y": 4430
+    },
+    "Contact-Info-Panel.dc.html": {
+      "h": 1040,
+      "title": "Contact details panel (shared component)",
+      "w": 320,
+      "x": 3040,
+      "y": 4430
+    },
+    "Contacts-List.dc.html": {
+      "h": 960,
+      "title": "Contacts · List",
+      "w": 1440,
+      "x": 1520,
+      "y": 3350
+    },
+    "Foundations.dc.html": {
+      "h": 2150,
+      "title": "Foundations",
+      "w": 1440,
+      "x": -1952,
+      "y": 0
+    },
+    "Inbox-Needs-Agent.dc.html": {
+      "h": 960,
+      "title": "Inbox · Needs Agent (3 selected)",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Leads-List.dc.html": {
+      "h": 960,
+      "title": "Leads · List",
+      "w": 1440,
+      "x": 0,
+      "y": 3350
+    },
+    "List-Settings-Drawer.dc.html": {
+      "h": 960,
+      "title": "List settings drawer (Leads, Contacts, Smart Views)",
+      "w": 448,
+      "x": 3040,
+      "y": 3350
+    },
+    "Main.dc.html": {
+      "h": 960,
+      "title": "Inbox · Chloe chats",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Sidebar.dc.html": {
+      "h": 960,
+      "title": "Sidebar (shared component)",
+      "w": 256,
+      "x": 1520,
+      "y": 1080
+    },
+    "Lead-Detail-Linked.dc.html": {
+      "h": 960,
+      "title": "Lead · detail with linked contact (Tasks tab)",
+      "w": 1440,
+      "x": 0,
+      "y": 5590
+    },
+    "Lead-Detail-Unlinked.dc.html": {
+      "h": 960,
+      "title": "Lead · detail without linked contact",
+      "w": 1440,
+      "x": 1520,
+      "y": 5590
+    },
+    "Filter-Drawer-Root.dc.html": {
+      "h": 960,
+      "title": "Filter drawer · categories",
+      "w": 448,
+      "x": 3040,
+      "y": 5590
+    },
+    "Leads-List-Bulk.dc.html": {
+      "h": 960,
+      "title": "Leads · filters active + 3 selected",
+      "w": 1440,
+      "x": 0,
+      "y": 6670
+    },
+    "Filter-Drawer-Category.dc.html": {
+      "h": 960,
+      "title": "Filter drawer · category with active filters",
+      "w": 448,
+      "x": 1520,
+      "y": 6670
+    },
+    "Menus-Reference.dc.html": {
+      "h": 1380,
+      "title": "Menus and popovers (open states)",
+      "w": 1440,
+      "x": 2048,
+      "y": 6670
+    },
+    "Pipeline-Board.dc.html": {
+      "h": 960,
+      "title": "Pipeline · board",
+      "w": 1440,
+      "x": 0,
+      "y": 8170
+    },
+    "Pipeline-List.dc.html": {
+      "h": 960,
+      "title": "Pipeline · list view",
+      "w": 1440,
+      "x": 1520,
+      "y": 8170
+    },
+    "Opportunity-Dialog.dc.html": {
+      "h": 840,
+      "title": "Opportunity dialog (edit)",
+      "w": 640,
+      "x": 3040,
+      "y": 8170
+    },
+    "Smart-View-Detail.dc.html": {
+      "h": 960,
+      "title": "Smart View · detail",
+      "w": 1440,
+      "x": 0,
+      "y": 9250
+    },
+    "Settings-Smart-Views.dc.html": {
+      "h": 960,
+      "title": "Settings · Smart Views",
+      "w": 1440,
+      "x": 1520,
+      "y": 9250
+    },
+    "Smart-View-Sheet.dc.html": {
+      "h": 960,
+      "title": "Smart View sheet (edit)",
+      "w": 384,
+      "x": 3040,
+      "y": 9250
+    },
+    "Settings-Pipeline-Stages.dc.html": {
+      "h": 960,
+      "title": "Settings · Pipeline Stages",
+      "w": 1440,
+      "x": 0,
+      "y": 10330
+    },
+    "Stage-Sheet.dc.html": {
+      "h": 1260,
+      "title": "Pipeline stage sheet (edit)",
+      "w": 448,
+      "x": 1520,
+      "y": 10330
+    },
+    "Settings-Nav.dc.html": {
+      "h": 880,
+      "title": "Settings navigation (shared component)",
+      "w": 224,
+      "x": 2048,
+      "y": 10330
+    },
+    "Softphone-States.dc.html": {
+      "h": 1500,
+      "title": "Softphone and dialer states",
+      "w": 1440,
+      "x": 0,
+      "y": 11710
+    },
+    "Call-Dialogs.dc.html": {
+      "h": 760,
+      "title": "Call outcome and Start dialer dialogs",
+      "w": 1360,
+      "x": 1520,
+      "y": 11710
+    },
+    "Task-Drawer.dc.html": {
+      "h": 960,
+      "title": "Task drawer (new and edit)",
+      "w": 976,
+      "x": 3040,
+      "y": 11710
+    },
+    "Tasks-Inbox.dc.html": {
+      "h": 960,
+      "title": "Inbox · Tasks tab",
+      "w": 1440,
+      "x": 0,
+      "y": 13330
+    },
+    "Calls-Inbox.dc.html": {
+      "h": 960,
+      "title": "Inbox · Calls tab",
+      "w": 1440,
+      "x": 1520,
+      "y": 13330
+    },
+    "Task-Blocking-Modals.dc.html": {
+      "h": 680,
+      "title": "Task blocking modals (hard block and reminder)",
+      "w": 1360,
+      "x": 3040,
+      "y": 13330
+    },
+    "Settings-General.dc.html": {
+      "h": 1600,
+      "title": "Settings · General",
+      "w": 1440,
+      "x": 0,
+      "y": 14410
+    },
+    "Settings-Notifications.dc.html": {
+      "h": 1760,
+      "title": "Settings · Notifications",
+      "w": 1440,
+      "x": 1520,
+      "y": 14410
+    },
+    "Settings-Chloe-AI.dc.html": {
+      "h": 1760,
+      "title": "Settings · Chloe AI",
+      "w": 1440,
+      "x": 3040,
+      "y": 14410
+    },
+    "Settings-States.dc.html": {
+      "h": 960,
+      "title": "Settings · Lead/Client States",
+      "w": 1440,
+      "x": 0,
+      "y": 16290
+    },
+    "Settings-Phone-Numbers.dc.html": {
+      "h": 960,
+      "title": "Settings · Phone Numbers",
+      "w": 1440,
+      "x": 1520,
+      "y": 16290
+    },
+    "Phone-Sheet.dc.html": {
+      "h": 1560,
+      "title": "Phone number sheet (edit)",
+      "w": 448,
+      "x": 3040,
+      "y": 16290
+    },
+    "Settings-SMS-Templates.dc.html": {
+      "h": 960,
+      "title": "Settings · SMS Templates",
+      "w": 1440,
+      "x": 0,
+      "y": 17970
+    },
+    "Template-Dialog.dc.html": {
+      "h": 900,
+      "title": "SMS template dialog with phone preview",
+      "w": 1000,
+      "x": 1520,
+      "y": 17970
+    },
+    "Settings-Shortcuts.dc.html": {
+      "h": 960,
+      "title": "Settings · Shortcuts",
+      "w": 1440,
+      "x": 2600,
+      "y": 17970
+    },
+    "Settings-Follow-up-Hours.dc.html": {
+      "h": 1240,
+      "title": "Settings · Follow-up Hours",
+      "w": 1440,
+      "x": 0,
+      "y": 19050
+    },
+    "Settings-Follow-up-Tiers.dc.html": {
+      "h": 1080,
+      "title": "Settings · Follow-up Tiers",
+      "w": 1440,
+      "x": 1520,
+      "y": 19050
+    },
+    "Dashboard.dc.html": {
+      "x": 0,
+      "y": 20370,
+      "w": 1440,
+      "h": 1464,
+      "title": "Dashboard · Home"
+    },
+    "Reports-Overview.dc.html": {
+      "x": 1520,
+      "y": 20370,
+      "w": 1440,
+      "h": 920,
+      "title": "Reports · Activity Overview (with comparison)"
+    },
+    "Reports-Comparison.dc.html": {
+      "x": 3040,
+      "y": 20370,
+      "w": 1440,
+      "h": 820,
+      "title": "Reports · Activity Comparison"
+    },
+    "Reports-Calls.dc.html": {
+      "x": 0,
+      "y": 21850,
+      "w": 1440,
+      "h": 1380,
+      "title": "Reports · Calls"
+    },
+    "Reports-Status-Changes.dc.html": {
+      "x": 1520,
+      "y": 21850,
+      "w": 1440,
+      "h": 1100,
+      "title": "Reports · Status Changes (row expanded)"
+    },
+    "Reports-Funnel.dc.html": {
+      "x": 3040,
+      "y": 21850,
+      "w": 1440,
+      "h": 1040,
+      "title": "Reports · Sales Funnel"
+    },
+    "Reports-Explorer.dc.html": {
+      "x": 0,
+      "y": 23310,
+      "w": 1440,
+      "h": 980,
+      "title": "Reports · Explorer (timeline)"
+    },
+    "Reports-Explorer-Bars.dc.html": {
+      "x": 1520,
+      "y": 23310,
+      "w": 1440,
+      "h": 1010,
+      "title": "Reports · Explorer (stacked bars)"
+    },
+    "Reports-Activity-Log.dc.html": {
+      "x": 3040,
+      "y": 23310,
+      "w": 1440,
+      "h": 840,
+      "title": "Reports · Activity Log"
+    },
+    "Reports-Popovers.dc.html": {
+      "x": 0,
+      "y": 24400,
+      "w": 1440,
+      "h": 1020,
+      "title": "Reports · popovers and menus (open states)"
+    },
+    "Report-Save-Dialog.dc.html": {
+      "x": 1520,
+      "y": 24400,
+      "w": 640,
+      "h": 320,
+      "title": "Report · Save as dialog"
+    },
+    "Inventory-Catalog.dc.html": {
+      "x": 0,
+      "y": 25500,
+      "w": 1440,
+      "h": 1040,
+      "title": "Inventory · catalog"
+    },
+    "Followups-Monitor.dc.html": {
+      "x": 1520,
+      "y": 25500,
+      "w": 1440,
+      "h": 960,
+      "title": "Follow-ups · monitor (3 selected)"
+    },
+    "Followups-Filters-Sheet.dc.html": {
+      "x": 3040,
+      "y": 25500,
+      "w": 384,
+      "h": 520,
+      "title": "Follow-ups · filters sheet"
+    },
+    "Followups-Stats.dc.html": {
+      "x": 0,
+      "y": 26620,
+      "w": 1440,
+      "h": 1960,
+      "title": "Follow-ups · stats"
+    },
+    "Health-Messaging.dc.html": {
+      "x": 1520,
+      "y": 26620,
+      "w": 1440,
+      "h": 1424,
+      "title": "Health · Messaging tab"
+    },
+    "Health-Log-Drawer.dc.html": {
+      "x": 3040,
+      "y": 26620,
+      "w": 600,
+      "h": 1080,
+      "title": "Health · log detail drawer"
+    },
+    "Health-QA-Reports.dc.html": {
+      "x": 0,
+      "y": 28660,
+      "w": 1440,
+      "h": 1164,
+      "title": "Health · Chloe QA (reports list)"
+    },
+    "Health-QA-Report-Detail.dc.html": {
+      "x": 1520,
+      "y": 28660,
+      "w": 1440,
+      "h": 1024,
+      "title": "Health · Chloe QA (report detail)"
+    },
+    "User-Invite.dc.html": {
+      "x": 3040,
+      "y": 28660,
+      "w": 1440,
+      "h": 660,
+      "title": "Users · invite"
+    },
+    "User-Detail.dc.html": {
+      "x": 0,
+      "y": 29840,
+      "w": 1440,
+      "h": 1000,
+      "title": "Users · detail"
+    },
+    "User-Edit.dc.html": {
+      "x": 1520,
+      "y": 29840,
+      "w": 1440,
+      "h": 1220,
+      "title": "Users · edit"
+    },
+    "Login.dc.html": {
+      "x": 3040,
+      "y": 29840,
+      "w": 1440,
+      "h": 900,
+      "title": "Login"
+    },
+    "Auth-States.dc.html": {
+      "x": 0,
+      "y": 31140,
+      "w": 1680,
+      "h": 1300,
+      "title": "Login · 2FA, forgot, reset and device-limit states"
+    },
+    "Invite-Onboarding.dc.html": {
+      "x": 1760,
+      "y": 31140,
+      "w": 1440,
+      "h": 900,
+      "title": "Invite · onboarding form"
+    },
+    "Invite-States.dc.html": {
+      "x": 3280,
+      "y": 31140,
+      "w": 1520,
+      "h": 360,
+      "title": "Invite · result states"
+    },
+    "Profile-Personal.dc.html": {
+      "x": 0,
+      "y": 32520,
+      "w": 1440,
+      "h": 1764,
+      "title": "Profile · personal information"
+    },
+    "Profile-Settings.dc.html": {
+      "x": 1520,
+      "y": 32520,
+      "w": 1440,
+      "h": 1064,
+      "title": "Profile · settings tab"
+    },
+    "Notifications-Page.dc.html": {
+      "x": 3040,
+      "y": 32520,
+      "w": 1440,
+      "h": 1340,
+      "title": "Notifications · page"
+    },
+    "Settings-Account.dc.html": {
+      "x": 0,
+      "y": 34300,
+      "w": 1440,
+      "h": 1960,
+      "title": "Settings · Account"
+    },
+    "Settings-Account-Overlays.dc.html": {
+      "x": 1520,
+      "y": 34300,
+      "w": 1440,
+      "h": 900,
+      "title": "Settings · Account overlays (invite sheet, org dialog, confirmations)"
+    },
+    "Settings-Voice.dc.html": {
+      "x": 3040,
+      "y": 34300,
+      "w": 1440,
+      "h": 920,
+      "title": "Settings · Voice & calls"
+    },
+    "Settings-Org.dc.html": {
+      "x": 0,
+      "y": 36380,
+      "w": 1440,
+      "h": 3100,
+      "title": "Settings · Organization"
+    },
+    "Settings-Org-Overlays.dc.html": {
+      "x": 1520,
+      "y": 36380,
+      "w": 1380,
+      "h": 620,
+      "title": "Settings · Organization overlays (member sheets, remove)"
+    },
+    "Voice-Dialer-Confirm.dc.html": {
+      "x": 2980,
+      "y": 36380,
+      "w": 640,
+      "h": 640,
+      "title": "Voice · dialer outside-hours confirmation"
+    },
+    "Settings-SMS-Providers.dc.html": {
+      "x": 0,
+      "y": 39560,
+      "w": 1440,
+      "h": 600,
+      "title": "Settings · SMS Providers"
+    },
+    "SMS-Provider-Sheet.dc.html": {
+      "x": 1520,
+      "y": 39560,
+      "w": 448,
+      "h": 760,
+      "title": "SMS provider sheet (add)"
+    },
+    "Settings-Users-Team.dc.html": {
+      "x": 2048,
+      "y": 39560,
+      "w": 1440,
+      "h": 920,
+      "title": "Settings · Platform users (team)"
+    },
+    "Support-User-Sheet.dc.html": {
+      "x": 3568,
+      "y": 39560,
+      "w": 384,
+      "h": 560,
+      "title": "Platform users · create support user"
+    },
+    "Settings-Site-Connections.dc.html": {
+      "x": 0,
+      "y": 40640,
+      "w": 1440,
+      "h": 1260,
+      "title": "Settings · Connectors"
+    },
+    "Site-Connection-Dialogs.dc.html": {
+      "x": 1520,
+      "y": 40640,
+      "w": 1440,
+      "h": 1000,
+      "title": "Connectors · dialogs and menus"
+    },
+    "Settings-Users-Accounts.dc.html": {
+      "x": 3040,
+      "y": 40640,
+      "w": 1440,
+      "h": 920,
+      "title": "Settings · Platform users (accounts)"
+    },
+    "About.dc.html": {
+      "x": 0,
+      "y": 41980,
+      "w": 1440,
+      "h": 560,
+      "title": "About"
+    },
+    "Changelog.dc.html": {
+      "x": 1520,
+      "y": 41980,
+      "w": 1440,
+      "h": 2343,
+      "title": "Changelog (first 3 of 14 versions)"
+    },
+    "Changelog-Modal.dc.html": {
+      "x": 3040,
+      "y": 41980,
+      "w": 640,
+      "h": 960,
+      "title": "Changelog · what's new modal (after login)"
+    },
+    "Not-Ready.dc.html": {
+      "x": 0,
+      "y": 44335,
+      "w": 1440,
+      "h": 700,
+      "title": "Feature not ready (/unavailable and 404)"
+    },
+    "Search-Results.dc.html": {
+      "x": 1520,
+      "y": 44335,
+      "w": 1440,
+      "h": 920,
+      "title": "Search · results"
+    },
+    "Search-Empty.dc.html": {
+      "x": 3040,
+      "y": 44335,
+      "w": 1440,
+      "h": 520,
+      "title": "Search · no term"
+    },
+    "Client-Create.dc.html": {
+      "x": 0,
+      "y": 45415,
+      "w": 1440,
+      "h": 980,
+      "title": "Contacts · new client"
+    },
+    "Import-Upload.dc.html": {
+      "x": 1520,
+      "y": 45415,
+      "w": 1440,
+      "h": 640,
+      "title": "Import leads · 1 upload"
+    },
+    "Import-Mapping.dc.html": {
+      "x": 3040,
+      "y": 45415,
+      "w": 1440,
+      "h": 1080,
+      "title": "Import leads · 2 map columns"
+    },
+    "Import-Result.dc.html": {
+      "x": 0,
+      "y": 46575,
+      "w": 1440,
+      "h": 1100,
+      "title": "Import leads · 3 result"
+    },
+    "Import-Review.dc.html": {
+      "x": 1520,
+      "y": 46575,
+      "w": 1440,
+      "h": 1060,
+      "title": "Import leads · 4 review new leads"
+    },
+    "Bulk-Dialogs.dc.html": {
+      "x": 3040,
+      "y": 46575,
+      "w": 1700,
+      "h": 900,
+      "title": "Bulk actions · template, Start Chloe and Chloe menu"
+    },
+    "Chat-Unlinked.dc.html": {
+      "x": 0,
+      "y": 47755,
+      "w": 1440,
+      "h": 960,
+      "title": "Chat · conversation without a contact"
+    },
+    "Unlinked-Create-Form.dc.html": {
+      "x": 1520,
+      "y": 47755,
+      "w": 320,
+      "h": 520,
+      "title": "Chat · create contact form (side panel)"
+    },
+    "Header-Menus-2.dc.html": {
+      "x": 0,
+      "y": 48795,
+      "w": 1440,
+      "h": 1040,
+      "title": "Header and sidebar menus (team presence, org switcher, phone button)"
+    },
+    "Command-Palette.dc.html": {
+      "x": 1520,
+      "y": 48795,
+      "w": 1700,
+      "h": 520,
+      "title": "Command palette (⌘K) · empty, searching, no results"
+    },
+    "Status-Banners.dc.html": {
+      "x": 0,
+      "y": 49915,
+      "w": 1440,
+      "h": 440,
+      "title": "Top banners · session expiry and connection lost"
+    },
+    "Tour-Center.dc.html": {
+      "x": 1520,
+      "y": 49915,
+      "w": 640,
+      "h": 560,
+      "title": "Product tour · center dialog"
+    },
+    "Tour-Step-Sidebar.dc.html": {
+      "x": 0,
+      "y": 50555,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · step on the sidebar"
+    },
+    "Tour-Step-Search.dc.html": {
+      "x": 1520,
+      "y": 50555,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · step on the search box"
+    },
+    "State-Inbox-Loading.dc.html": {
+      "x": 0,
+      "y": 51595,
+      "w": 1440,
+      "h": 960,
+      "title": "Inbox · loading (skeleton list)"
+    },
+    "State-Inbox-Empty.dc.html": {
+      "x": 1520,
+      "y": 51595,
+      "w": 1440,
+      "h": 960,
+      "title": "Inbox · empty tab"
+    },
+    "State-Leads-Loading.dc.html": {
+      "x": 3040,
+      "y": 51595,
+      "w": 1440,
+      "h": 960,
+      "title": "Leads · loading (skeleton table)"
+    },
+    "State-Leads-Empty.dc.html": {
+      "x": 0,
+      "y": 52635,
+      "w": 1440,
+      "h": 960,
+      "title": "Leads · empty"
+    },
+    "State-Contacts-Loading.dc.html": {
+      "x": 1520,
+      "y": 52635,
+      "w": 1440,
+      "h": 960,
+      "title": "Contacts · loading"
+    },
+    "State-Contacts-Empty.dc.html": {
+      "x": 3040,
+      "y": 52635,
+      "w": 1440,
+      "h": 960,
+      "title": "Contacts · empty"
+    },
+    "State-Pipeline-Loading.dc.html": {
+      "x": 0,
+      "y": 53675,
+      "w": 1440,
+      "h": 960,
+      "title": "Pipeline · loading (skeleton board)"
+    },
+    "State-Tasks-Empty.dc.html": {
+      "x": 1520,
+      "y": 53675,
+      "w": 1440,
+      "h": 960,
+      "title": "Inbox · Tasks tab empty"
+    },
+    "State-Calls-Empty.dc.html": {
+      "x": 3040,
+      "y": 53675,
+      "w": 1440,
+      "h": 960,
+      "title": "Inbox · Calls tab empty"
+    },
+    "States-Skeletons.dc.html": {
+      "x": 0,
+      "y": 54715,
+      "w": 1440,
+      "h": 1160,
+      "title": "States · skeleton components"
+    },
+    "States-Empty.dc.html": {
+      "x": 1520,
+      "y": 54715,
+      "w": 1440,
+      "h": 1100,
+      "title": "States · empty states (all screens)"
+    },
+    "States-Errors.dc.html": {
+      "x": 3040,
+      "y": 54715,
+      "w": 1440,
+      "h": 900,
+      "title": "States · errors, notices and toasts"
+    },
+    "Review-Index.dc.html": {
+      "x": -1952,
+      "y": -3800,
+      "w": 1440,
+      "h": 3640,
+      "title": "Índice de revisión (por módulo)"
+    },
+    "State-Contact-Loading.dc.html": {
+      "x": 0,
+      "y": 55955,
+      "w": 1440,
+      "h": 960,
+      "title": "Contact detail · loading (skeleton)"
+    },
+    "State-Lead-Loading.dc.html": {
+      "x": 1520,
+      "y": 55955,
+      "w": 1440,
+      "h": 960,
+      "title": "Lead detail · loading (skeleton)"
+    },
+    "State-Chat-Loading.dc.html": {
+      "x": 3040,
+      "y": 55955,
+      "w": 1440,
+      "h": 960,
+      "title": "Contact · Chat tab loading"
+    },
+    "State-Chat-NoConversation.dc.html": {
+      "x": 0,
+      "y": 56995,
+      "w": 1440,
+      "h": 960,
+      "title": "Contact · Chat tab, no conversation"
+    },
+    "State-Chat-Empty.dc.html": {
+      "x": 1520,
+      "y": 56995,
+      "w": 1440,
+      "h": 960,
+      "title": "Contact · Chat tab, no activity yet"
+    },
+    "State-Chat-Chloe-Active.dc.html": {
+      "x": 3040,
+      "y": 56995,
+      "w": 1440,
+      "h": 960,
+      "title": "Contact · Chat tab (Chloe active, no message box)"
+    },
+    "State-Settings-Account-Loading.dc.html": {
+      "x": 0,
+      "y": 58035,
+      "w": 1440,
+      "h": 1160,
+      "title": "Settings · Account loading"
+    },
+    "State-Settings-Org-Loading.dc.html": {
+      "x": 1520,
+      "y": 58035,
+      "w": 1440,
+      "h": 1180,
+      "title": "Settings · Organization loading"
+    },
+    "State-Settings-FollowUp-Loading.dc.html": {
+      "x": 3040,
+      "y": 58035,
+      "w": 1440,
+      "h": 1000,
+      "title": "Settings · Follow-up Hours loading"
+    },
+    "State-Settings-Users-Loading.dc.html": {
+      "x": 0,
+      "y": 59295,
+      "w": 1440,
+      "h": 900,
+      "title": "Settings · Platform users loading"
+    },
+    "States-Settings-Loading.dc.html": {
+      "x": 1520,
+      "y": 59295,
+      "w": 1440,
+      "h": 1100,
+      "title": "States · Settings loading pieces"
+    },
+    "States-Reports-Loading.dc.html": {
+      "x": 0,
+      "y": 60475,
+      "w": 1440,
+      "h": 5100,
+      "title": "States · Reports loading (all 7 reports)"
+    },
+    "State-App-Shell-Loading.dc.html": {
+      "x": 0,
+      "y": 65655,
+      "w": 1440,
+      "h": 960,
+      "title": "App shell · checking the session (skeleton)"
+    },
+    "Tour-Step-Intro.dc.html": {
+      "x": 1520,
+      "y": 65655,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · opening step (centered)"
+    },
+    "Tour-Step-Sidebar-Group.dc.html": {
+      "x": 3040,
+      "y": 65655,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · step on the whole sidebar"
+    },
+    "Tour-Step-Nav-Contacts.dc.html": {
+      "x": 0,
+      "y": 66695,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · step on Contacts"
+    },
+    "Tour-Step-Nav-Pipeline.dc.html": {
+      "x": 1520,
+      "y": 66695,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · step on Pipeline"
+    },
+    "Tour-Steps-Header.dc.html": {
+      "x": 3040,
+      "y": 66695,
+      "w": 1440,
+      "h": 1140,
+      "title": "Product tour · the three header steps"
+    },
+    "Tour-Step-Inbox-Tabs.dc.html": {
+      "x": 0,
+      "y": 67735,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · Inbox tour, step on the tab bar"
+    },
+    "Tour-Step-Chat-TakeControl.dc.html": {
+      "x": 1520,
+      "y": 67735,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · Chat tour, step on the status menu"
+    },
+    "Tour-Step-Chat-Composer.dc.html": {
+      "x": 3040,
+      "y": 67735,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · Chat tour, step on the message box"
+    },
+    "Tour-Step-Chat-Chloe-Driving.dc.html": {
+      "x": 0,
+      "y": 68775,
+      "w": 1440,
+      "h": 960,
+      "title": "Product tour · Chat tour, Chloe is driving (centered)"
+    },
+    "Image-Cropper-Dialog.dc.html": {
+      "x": 1520,
+      "y": 68775,
+      "w": 1180,
+      "h": 700,
+      "title": "Organization · logo cropper"
+    },
+    "Site-Connection-Dialogs-2.dc.html": {
+      "x": 3040,
+      "y": 68775,
+      "w": 1440,
+      "h": 940,
+      "title": "Connectors · edit and forms upload"
+    },
+    "Settings-Org-Overrides.dc.html": {
+      "x": 0,
+      "y": 69815,
+      "w": 1440,
+      "h": 1000,
+      "title": "Organization · webhooks and tiers overrides"
+    },
+    "Settings-Follow-up-Tiers-States.dc.html": {
+      "x": 1520,
+      "y": 69815,
+      "w": 1440,
+      "h": 1480,
+      "title": "Follow-up Tiers · empty, add, validation, picker, delete"
+    },
+    "Tour-Copy-Reference.dc.html": {
+      "x": 0,
+      "y": 71375,
+      "w": 1440,
+      "h": 2910,
+      "title": "Product tour · every step and its text"
+    },
+    "Phone-Panel-States.dc.html": {
+      "x": 0,
+      "y": 74365,
+      "w": 1440,
+      "h": 900,
+      "title": "Header · phone panel states"
+    },
+    "Mobile-Dashboard.dc.html": {
+      "x": 0,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Dashboard (390 px)"
+    },
+    "Mobile-Menu-Open.dc.html": {
+      "x": 470,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · sidebar sheet open (390 px)"
+    },
+    "Mobile-Inbox.dc.html": {
+      "x": 940,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Inbox (390 px)"
+    },
+    "Mobile-Contact-Chat.dc.html": {
+      "x": 1410,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Contact, Chat tab (390 px)"
+    },
+    "Mobile-Contact-Details.dc.html": {
+      "x": 1880,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Contact details panel open (390 px)"
+    },
+    "Mobile-Settings.dc.html": {
+      "x": 2350,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Settings, General (390 px)"
+    },
+    "Mobile-Settings-Nav.dc.html": {
+      "x": 2820,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Settings menu open (390 px)"
+    },
+    "Mobile-Login.dc.html": {
+      "x": 3290,
+      "y": 75345,
+      "w": 390,
+      "h": 844,
+      "title": "Phone · Login (390 px)"
+    },
+    "Tablet-Dashboard.dc.html": {
+      "x": 0,
+      "y": 76269,
+      "w": 768,
+      "h": 1024,
+      "title": "Tablet · Dashboard (768 px)"
+    },
+    "Tablet-Inbox.dc.html": {
+      "x": 848,
+      "y": 76269,
+      "w": 768,
+      "h": 1024,
+      "title": "Tablet · Inbox (768 px)"
+    },
+    "Tablet-Contact-Chat.dc.html": {
+      "x": 1696,
+      "y": 76269,
+      "w": 768,
+      "h": 1024,
+      "title": "Tablet · Contact, Chat tab (768 px)"
+    },
+    "Responsive-Audit.dc.html": {
+      "x": 2544,
+      "y": 76269,
+      "w": 1440,
+      "h": 1400,
+      "title": "Móvil y tablet · cómo se ve hoy"
+    },
+    "Caller-ID-Persona-Proposals.dc.html": {
+      "x": 1520,
+      "y": 74365,
+      "w": 1440,
+      "h": 900,
+      "title": "Header · Caller ID with the line's persona · proposals"
+    },
+    "Caller-ID-Persona-Other-Pickers.dc.html": {
+      "x": 3040,
+      "y": 74365,
+      "w": 1440,
+      "h": 900,
+      "title": "Header · Caller ID persona · the other two pickers and the source of the name"
+    },
+    "Contact-Detail-Email.dc.html": {
+      "h": 960,
+      "title": "Contact · Email tab (email integration on)",
+      "w": 1440,
+      "x": 3440,
+      "y": 4430
+    },
+    "Email-Composer.dc.html": {
+      "h": 720,
+      "title": "New email dialog",
+      "w": 760,
+      "x": 4960,
+      "y": 4430
+    },
+    "Settings-Email.dc.html": {
+      "h": 900,
+      "title": "Settings · Email (connected accounts)",
+      "w": 1440,
+      "x": 4560,
+      "y": 14410
+    },
+    "Mobile-Settings-Email.dc.html": {
+      "h": 844,
+      "title": "Phone · Settings, Email (390 px)",
+      "w": 390,
+      "x": 4700,
+      "y": 75345
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-30T18:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "t1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Part 1 · Inbox + foundations",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Review-Index.dc.html",
+    "Main.dc.html",
+    "Inbox-Needs-Agent.dc.html",
+    "Foundations.dc.html",
+    "Sidebar.dc.html",
+    "AppHeader.dc.html",
+    "Leads-List.dc.html",
+    "Contacts-List.dc.html",
+    "List-Settings-Drawer.dc.html",
+    "Contact-Detail-Activity.dc.html",
+    "Contact-Detail-Chat.dc.html",
+    "Contact-Info-Panel.dc.html",
+    "Lead-Detail-Linked.dc.html",
+    "Lead-Detail-Unlinked.dc.html",
+    "Filter-Drawer-Root.dc.html",
+    "Leads-List-Bulk.dc.html",
+    "Filter-Drawer-Category.dc.html",
+    "Menus-Reference.dc.html",
+    "Pipeline-Board.dc.html",
+    "Pipeline-List.dc.html",
+    "Opportunity-Dialog.dc.html",
+    "Smart-View-Detail.dc.html",
+    "Settings-Smart-Views.dc.html",
+    "Smart-View-Sheet.dc.html",
+    "Settings-Pipeline-Stages.dc.html",
+    "Stage-Sheet.dc.html",
+    "Settings-Nav.dc.html",
+    "Softphone-States.dc.html",
+    "Call-Dialogs.dc.html",
+    "Task-Drawer.dc.html",
+    "Tasks-Inbox.dc.html",
+    "Calls-Inbox.dc.html",
+    "Task-Blocking-Modals.dc.html",
+    "Settings-General.dc.html",
+    "Settings-Notifications.dc.html",
+    "Settings-Chloe-AI.dc.html",
+    "Settings-States.dc.html",
+    "Settings-Phone-Numbers.dc.html",
+    "Phone-Sheet.dc.html",
+    "Settings-SMS-Templates.dc.html",
+    "Template-Dialog.dc.html",
+    "Settings-Shortcuts.dc.html",
+    "Settings-Follow-up-Hours.dc.html",
+    "Settings-Follow-up-Tiers.dc.html",
+    "Dashboard.dc.html",
+    "Reports-Overview.dc.html",
+    "Reports-Comparison.dc.html",
+    "Reports-Calls.dc.html",
+    "Reports-Status-Changes.dc.html",
+    "Reports-Funnel.dc.html",
+    "Reports-Explorer.dc.html",
+    "Reports-Explorer-Bars.dc.html",
+    "Reports-Activity-Log.dc.html",
+    "Reports-Popovers.dc.html",
+    "Report-Save-Dialog.dc.html",
+    "Inventory-Catalog.dc.html",
+    "Followups-Monitor.dc.html",
+    "Followups-Filters-Sheet.dc.html",
+    "Followups-Stats.dc.html",
+    "Health-Messaging.dc.html",
+    "Health-Log-Drawer.dc.html",
+    "Health-QA-Reports.dc.html",
+    "Health-QA-Report-Detail.dc.html",
+    "User-Invite.dc.html",
+    "User-Detail.dc.html",
+    "User-Edit.dc.html",
+    "Login.dc.html",
+    "Auth-States.dc.html",
+    "Invite-Onboarding.dc.html",
+    "Invite-States.dc.html",
+    "Profile-Personal.dc.html",
+    "Profile-Settings.dc.html",
+    "Notifications-Page.dc.html",
+    "Settings-Account.dc.html",
+    "Settings-Account-Overlays.dc.html",
+    "Settings-Voice.dc.html",
+    "Settings-Org.dc.html",
+    "Settings-Org-Overlays.dc.html",
+    "Voice-Dialer-Confirm.dc.html",
+    "Settings-SMS-Providers.dc.html",
+    "SMS-Provider-Sheet.dc.html",
+    "Settings-Users-Team.dc.html",
+    "Support-User-Sheet.dc.html",
+    "Settings-Site-Connections.dc.html",
+    "Site-Connection-Dialogs.dc.html",
+    "Settings-Users-Accounts.dc.html",
+    "About.dc.html",
+    "Changelog.dc.html",
+    "Changelog-Modal.dc.html",
+    "Not-Ready.dc.html",
+    "Search-Results.dc.html",
+    "Search-Empty.dc.html",
+    "Client-Create.dc.html",
+    "Import-Upload.dc.html",
+    "Import-Mapping.dc.html",
+    "Import-Result.dc.html",
+    "Import-Review.dc.html",
+    "Bulk-Dialogs.dc.html",
+    "Chat-Unlinked.dc.html",
+    "Unlinked-Create-Form.dc.html",
+    "Header-Menus-2.dc.html",
+    "Command-Palette.dc.html",
+    "Status-Banners.dc.html",
+    "Tour-Center.dc.html",
+    "Tour-Step-Sidebar.dc.html",
+    "Tour-Step-Search.dc.html",
+    "State-Inbox-Loading.dc.html",
+    "State-Inbox-Empty.dc.html",
+    "State-Leads-Loading.dc.html",
+    "State-Leads-Empty.dc.html",
+    "State-Contacts-Loading.dc.html",
+    "State-Contacts-Empty.dc.html",
+    "State-Pipeline-Loading.dc.html",
+    "State-Tasks-Empty.dc.html",
+    "State-Calls-Empty.dc.html",
+    "States-Skeletons.dc.html",
+    "States-Empty.dc.html",
+    "States-Errors.dc.html",
+    "State-Contact-Loading.dc.html",
+    "State-Lead-Loading.dc.html",
+    "State-Chat-Loading.dc.html",
+    "State-Chat-NoConversation.dc.html",
+    "State-Chat-Empty.dc.html",
+    "State-Chat-Chloe-Active.dc.html",
+    "State-Settings-Account-Loading.dc.html",
+    "State-Settings-Org-Loading.dc.html",
+    "State-Settings-FollowUp-Loading.dc.html",
+    "State-Settings-Users-Loading.dc.html",
+    "States-Settings-Loading.dc.html",
+    "States-Reports-Loading.dc.html",
+    "State-App-Shell-Loading.dc.html",
+    "Tour-Step-Intro.dc.html",
+    "Tour-Step-Sidebar-Group.dc.html",
+    "Tour-Step-Nav-Contacts.dc.html",
+    "Tour-Step-Nav-Pipeline.dc.html",
+    "Tour-Steps-Header.dc.html",
+    "Tour-Step-Inbox-Tabs.dc.html",
+    "Tour-Step-Chat-TakeControl.dc.html",
+    "Tour-Step-Chat-Composer.dc.html",
+    "Tour-Step-Chat-Chloe-Driving.dc.html",
+    "Image-Cropper-Dialog.dc.html",
+    "Site-Connection-Dialogs-2.dc.html",
+    "Settings-Org-Overrides.dc.html",
+    "Settings-Follow-up-Tiers-States.dc.html",
+    "Tour-Copy-Reference.dc.html",
+    "Phone-Panel-States.dc.html",
+    "Mobile-Dashboard.dc.html",
+    "Mobile-Menu-Open.dc.html",
+    "Mobile-Inbox.dc.html",
+    "Mobile-Contact-Chat.dc.html",
+    "Mobile-Contact-Details.dc.html",
+    "Mobile-Settings.dc.html",
+    "Mobile-Settings-Nav.dc.html",
+    "Mobile-Login.dc.html",
+    "Tablet-Dashboard.dc.html",
+    "Tablet-Inbox.dc.html",
+    "Tablet-Contact-Chat.dc.html",
+    "Responsive-Audit.dc.html",
+    "Caller-ID-Persona-Proposals.dc.html",
+    "Caller-ID-Persona-Other-Pickers.dc.html",
+    "Contact-Detail-Email.dc.html",
+    "Email-Composer.dc.html",
+    "Settings-Email.dc.html",
+    "Mobile-Settings-Email.dc.html"
+  ],
+  "pages": [],
+  "title": "Every1Connects Screens"
+}

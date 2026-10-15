@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings navigation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<aside style="width:224px;height:{{height}}px;box-sizing:border-box;display:flex;flex-direction:column;gap:2px;padding:12px;border-right:1px solid oklch(0.92 0.004 286.32);background:oklch(0.967 0.001 286.375 / .3);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+  <div style="padding:4px 8px 8px">
+    <p style="margin:0;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.552 0.016 285.938)">Settings</p>
+  </div>
+  <sc-for list="{{items}}" as="i" hint-placeholder-count="8">
+    <button type="button" style="width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:0;border-radius:8.4px;text-align:left;font-family:inherit;font-size:14px;line-height:20px;cursor:pointer;{{i.style}}">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="{{i.icon}}"/></svg>
+      {{i.label}}
+    </button>
+  </sc-for>
+</aside>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["account","voice","general","notifications","team","email","smart-views","states","pipeline-stages","phone-numbers","sms-providers","shortcuts","sms-templates","chloe-ai","follow-ups","follow-up-tiers","sites-connections","users"],"default":"smart-views"},"email":{"editor":"boolean","default":false},"height":{"editor":"int","default":880,"min":600,"max":4000},"$preview":{"width":224,"height":880}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? 'smart-views';
+    const ON = 'background:oklch(0.99 0 0);box-shadow:0 1px 2px rgb(0 0 0 / .05);font-weight:500;color:oklch(0.141 0.005 285.823)';
+    const OFF = 'background:transparent;color:oklch(0.552 0.016 285.938)';
+    const PHONE = 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z';
+    const BUILDING = 'M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2 M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2 M10 6h4 M10 10h4 M10 14h4 M10 18h4';
+    const COG = 'M20 7h-9 M14 17H5 M14 17a3 3 0 1 0 6 0a3 3 0 1 0-6 0 M4 7a3 3 0 1 0 6 0a3 3 0 1 0-6 0';
+    const defs = [
+      ['account', 'Account', BUILDING],
+      ['voice', 'Voice & calls', 'M13 2a9 9 0 0 1 9 9 M13 6a5 5 0 0 1 5 5 ' + PHONE],
+      ['general', 'General', COG],
+      ['notifications', 'Notifications', 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9 M10.3 21a1.94 1.94 0 0 0 3.4 0'],
+      ['smart-views', 'Smart Views', 'M4 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1z M14 4h7 M14 9h7 M14 15h7 M14 20h7'],
+      ['states', 'Lead/Client States', COG],
+      ['pipeline-stages', 'Pipeline Stages', 'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M8 7v7 M12 7v4 M16 7v9'],
+      ['phone-numbers', 'Phone Numbers', PHONE],
+      ['sms-providers', 'SMS Providers', BUILDING],
+      ['shortcuts', 'Shortcuts', 'M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M10 8h.01 M12 12h.01 M14 8h.01 M16 12h.01 M18 8h.01 M6 8h.01 M7 16h10 M8 12h.01'],
+      ['sms-templates', 'SMS Templates', 'M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M14 2v4a2 2 0 0 0 2 2h4 M10 9H8 M16 13H8 M16 17H8'],
+      ['chloe-ai', 'Chloe AI', 'M12 6V2H8 M8 18l-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z M2 12h2 M9 11v2 M15 11v2 M20 12h2'],
+      ['follow-ups', 'Follow-up Hours', 'M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5 M16 2v4 M8 2v4 M3 10h5 M17.5 17.5 16 16.3V14 M10 16a6 6 0 1 0 12 0a6 6 0 1 0-12 0'],
+      ['follow-up-tiers', 'Follow-up Tiers', 'M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z M22 17.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65 M22 12.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65'],
+      ['sites-connections', 'Connectors', 'M9 17H7A5 5 0 0 1 7 7h2 M15 7h2a5 5 0 1 1 0 10h-2 M8 12h8'],
+      ['users', 'User Management', 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M6.376 18.91a6 6 0 0 1 11.249.003 M8 11a4 4 0 1 0 8 0a4 4 0 1 0-8 0'],
+    ];
+    // Where the email integration is on, the CRM adds Team Management and Email after Notifications.
+    if (this.props.email) {
+      defs.splice(4, 0,
+        ['team', 'Team Management', 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M16 3.128a4 4 0 0 1 0 7.744 M22 21v-2a4 4 0 0 0-3-3.87 M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0'],
+        ['email', 'Email', 'm22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7 M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z'],
+      );
+    }
+    return { height: this.props.height ?? 880, items: defs.map((d) => ({ label: d[1], icon: d[2], style: active === d[0] ? ON : OFF })) };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Follow-up Hours</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{display:flex;align-items:center;gap:8px;font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:20px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.trig{display:flex;align-items:center;justify-content:space-between;height:40px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.day{width:56px;height:56px;border:2px solid var(--border);border-radius:14.4px;background:var(--bg);color:var(--muted-fg);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.day-on{border-color:var(--primary);background:var(--primary);color:var(--primary-fg)}
+.bdg{display:inline-flex;align-items:center;border-radius:8.4px;background:var(--muted);color:oklch(0.21 0.006 285.885);padding:2px 8px;font-size:12px;line-height:16px;font-weight:500}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1240px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1240" hint-size="256px,1240px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Follow-up Hours" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="follow-ups" height="1160" hint-size="224px,1160px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="max-width:672px;display:flex;flex-direction:column;gap:24px">
+
+          <div>
+            <h1 style="margin:0;display:flex;align-items:center;gap:8px;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/></svg>Follow-up Hours</h1>
+            <p style="margin:4px 0 0;color:var(--muted-fg)">Configure the business-hours window for Chloe follow-ups.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Business Hours</div><p class="card-d">Chloe will only send follow-ups within this time window (unless the customer consented to messages at any time).</p></div>
+            <div class="card-b">
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+                <div class="fld" style="flex:1;min-width:160px"><span class="lab">Start time</span><button type="button" class="trig"><span>9:00 AM</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+                <div class="fld" style="flex:1;min-width:160px"><span class="lab">End time</span><button type="button" class="trig"><span>9:00 PM</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+              </div>
+              <div class="fld"><span class="lab">Timezone</span><button type="button" class="trig"><span>America/Halifax</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+              <p style="margin:0;font-size:14px;color:var(--muted-fg)">Current window: <span style="font-weight:500;color:var(--fg)">9:00 AM – 9:00 PM</span> (America/Halifax)</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>Allowed Days</div><p class="card-d">Chloe will only send follow-ups on these days of the week.</p></div>
+            <div class="card-b" style="gap:16px">
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <button type="button" class="day">Sun</button>
+                <button type="button" class="day day-on">Mon</button>
+                <button type="button" class="day day-on">Tue</button>
+                <button type="button" class="day day-on">Wed</button>
+                <button type="button" class="day day-on">Thu</button>
+                <button type="button" class="day day-on">Fri</button>
+                <button type="button" class="day day-on">Sat</button>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;padding-top:4px"><span class="bdg">Mon</span><span class="bdg">Tue</span><span class="bdg">Wed</span><span class="bdg">Thu</span><span class="bdg">Fri</span><span class="bdg">Sat</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/></svg>Re-engagement Cycles</div><p class="card-d">How many times Chloe will loop through all follow-up tiers before stopping for a conversation. Set to 0 for unlimited cycles.</p></div>
+            <div class="card-b" style="gap:8px">
+              <div class="fld" style="max-width:220px"><label class="lab" for="cycles">Max re-engagement cycles (0 = infinite)</label><input id="cycles" type="number" value="2" min="0" style="height:40px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)"></div>
+            </div>
+          </div>
+
+          <div class="card" style="border-style:dashed;background:oklch(0.967 0.001 286.375 / .4);padding-top:20px">
+            <div class="card-b" style="gap:8px">
+              <p style="margin:0;font-size:14px;font-weight:500">How snapping works</p>
+              <p style="margin:0;font-size:14px;color:var(--muted-fg)">When Chloe or an agent schedules a follow-up for a time outside the allowed window, it is automatically moved to the next valid business-hours slot. The customer can override this by explicitly asking to be contacted at a specific time — in that case the "Ignore hours" flag is set.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:flex-end;gap:12px">
+            <button type="button" class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>Save Settings</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

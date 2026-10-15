@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Phone Numbers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:var(--fg);cursor:pointer}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:0}
+.th{height:40px;padding:0 8px;display:flex;align-items:center;font-weight:500;white-space:nowrap;font-size:13px}
+.td{padding:8px;min-width:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 24px}
+.card-b{padding:0 24px}
+.badge{display:inline-flex;align-items:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.b-def{background:var(--primary);color:var(--primary-fg)}
+.b-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.b-out{border-color:var(--border);color:var(--fg);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.av{display:inline-flex;height:24px;width:24px;align-items:center;justify-content:center;border-radius:9999px;background:oklch(0.623 0.214 259.815 / .15);color:var(--primary);box-shadow:0 0 0 2px var(--bg);font-size:10px;font-weight:500}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Phone Numbers" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="phone-numbers" hint-size="224px,880px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div class="card">
+          <div class="card-h">
+            <div style="max-width:560px">
+              <div style="font-weight:600;line-height:1">SMS Phone Numbers</div>
+              <p style="margin:6px 0 0;font-size:14px;color:var(--muted-fg)">Phone numbers Chloe uses to send and receive SMS. The default is used when starting new conversations.</p>
+            </div>
+            <button type="button" class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add Number</button>
+          </div>
+          <div class="card-b">
+            <div style="overflow:hidden;border:1px solid var(--border);border-radius:10.4px">
+              <div role="table" aria-label="Phone numbers" style="--cols:140px 66px 124px 84px 62px 90px 70px 48px 66px 78px 72px">
+                <div role="row" class="row" style="background:oklch(0.967 0.001 286.375 / .5)">
+                  <div role="columnheader" class="th">Label</div>
+                  <div role="columnheader" class="th">Provider</div>
+                  <div role="columnheader" class="th">Phone Number</div>
+                  <div role="columnheader" class="th">Members</div>
+                  <div role="columnheader" class="th" style="justify-content:center">Voicemail</div>
+                  <div role="columnheader" class="th">Account</div>
+                  <div role="columnheader" class="th" style="justify-content:center">Status</div>
+                  <div role="columnheader" class="th" style="justify-content:center">Creds</div>
+                  <div role="columnheader" class="th" style="justify-content:center">Chats</div>
+                  <div role="columnheader" class="th" style="justify-content:center">Default</div>
+                  <div role="columnheader" class="th" style="justify-content:flex-end">Actions</div>
+                </div>
+
+                <sc-for list="{{phones}}" as="p" hint-placeholder-count="3">
+                  <div role="row" class="row">
+                    <div role="cell" class="td" style="font-weight:500">{{p.label}}<span style="display:block;font-size:12px;line-height:16px;font-weight:400;color:var(--muted-fg)">texts as {{p.agent}}</span></div>
+                    <div role="cell" class="td"><span class="badge b-out" style="font-size:12px">Twilio</span></div>
+                    <div role="cell" class="td mono" style="font-size:13px">{{p.number}}</div>
+                    <div role="cell" class="td">
+                      <sc-if value="{{p.hasMembers}}" hint-placeholder-val="{{ true }}">
+                        <div style="display:flex;margin-left:6px"><span class="av" style="margin-left:-6px">{{p.m1}}</span><sc-if value="{{p.hasM2}}" hint-placeholder-val="{{ false }}"><span class="av" style="margin-left:-6px">{{p.m2}}</span></sc-if><sc-if value="{{p.hasM3}}" hint-placeholder-val="{{ false }}"><span class="av" style="margin-left:-6px">{{p.m3}}</span></sc-if></div>
+                      </sc-if>
+                      <sc-if value="{{p.noMembers}}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:#d97706">No members</span></sc-if>
+                    </div>
+                    <div role="cell" class="td" style="text-align:center"><a href="#vm" aria-label="View voicemails" style="display:inline-flex;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><line x1="6" x2="18" y1="16" y2="16"/></svg></a></div>
+                    <div role="cell" class="td" style="font-size:13px;color:var(--muted-fg)">{{p.account}}</div>
+                    <div role="cell" class="td" style="text-align:center"><span class="{{p.statusClass}}" style="display:inline-flex;align-items:center;border-radius:8.4px;padding:2px 8px;font-size:12px;font-weight:500">{{p.status}}</span></div>
+                    <div role="cell" class="td" style="text-align:center">
+                      <sc-if value="{{p.custom}}" hint-placeholder-val="{{ false }}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#22c55e"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></sc-if>
+                      <sc-if value="{{p.acct}}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:#3b82f6">Acct</span></sc-if>
+                    </div>
+                    <div role="cell" class="td" style="text-align:center"><a href="#chats" style="display:inline-flex;align-items:center;gap:4px;font-size:14px;color:{{p.convColor}};text-decoration:none"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{{p.convs}}</a></div>
+                    <div role="cell" class="td" style="display:flex;align-items:center;justify-content:center">
+                      <button type="button" class="ib" aria-label="Default number" style="width:28px;height:28px;{{p.starStyle}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="fill:{{p.starFill}}"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button>
+                    </div>
+                    <div role="cell" class="td" style="display:flex;align-items:center;justify-content:flex-end;gap:2px">
+                      <button type="button" class="ib" aria-label="Edit" style="width:28px;height:28px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+                      <button type="button" class="ib" aria-label="Delete" style="width:28px;height:28px;color:var(--destructive)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></button>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = (label, agent, number, members, account, active, creds, convs, def) => ({
+      label,
+      agent,
+      number,
+      hasMembers: members.length > 0,
+      noMembers: members.length === 0,
+      m1: members[0] || '',
+      m2: members[1] || '',
+      m3: members[2] || '',
+      hasM2: members.length > 1,
+      hasM3: members.length > 2,
+      account,
+      status: active ? 'Active' : 'Inactive',
+      statusClass: active ? 'b-def' : 'b-sec',
+      custom: creds === 'custom',
+      acct: creds === 'acct',
+      convs,
+      convColor: convs > 0 ? 'oklch(0.623 0.214 259.815)' : 'oklch(0.552 0.016 285.938)',
+      starStyle: def ? 'color:#f59e0b' : 'color:oklch(0.552 0.016 285.938)',
+      starFill: def ? '#f59e0b' : 'none',
+    });
+    return {
+      phones: [
+        mk('Halifax Sales', 'Sofia', '+19025550100', ['JB', 'AR', 'SC'], 'Main Twilio', true, 'custom', 214, true),
+        mk('Moncton Sales', 'Chloe', '+15065550144', ['JB', 'AR'], 'Main Twilio', true, 'acct', 96, false),
+        mk('Support', 'Chloe', '+19025550177', [], 'Main Twilio', false, 'acct', 0, false),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

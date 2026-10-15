@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone · Settings, Email</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:16px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.dev{display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px}
+.pill{border-radius:9999px;padding:2px 8px;font-size:11px;line-height:16px;font-weight:500;white-space:nowrap}
+.opt{display:flex;align-items:center;justify-content:space-between;padding:16px;border:1px solid var(--border);border-radius:10.4px}
+.opt-on{border-color:var(--primary);background:oklch(0.623 0.214 259.815 / .05)}
+.rad{width:16px;height:16px;border-radius:9999px;border:2px solid var(--border);flex-shrink:0}
+.rad-on{border-color:var(--primary);background:var(--primary);display:flex;align-items:center;justify-content:center}
+
+</style>
+</helmet>
+<div class="app" style="position:relative;width:390px;height:844px;display:flex;flex-direction:column;overflow:hidden"><header style="width:390px;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--border);background:var(--bg)"><div style="display:flex;align-items:center;gap:8px;min-width:0"><button type="button" style="position:relative;width:28px;height:28px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;margin-left:-4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg></button><div style="width:1px;height:16px;flex-shrink:0;background:oklch(0.92 0.004 286.32);margin-right:8px"></div></div><div style="display:flex;align-items:center;gap:8px"><button type="button" aria-label="6 teammates online" style="position:relative;flex-shrink:0;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span style="font-variant-numeric:tabular-nums">6</span><span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px var(--bg)"></span></button><button type="button" style="position:relative;width:32px;height:32px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px var(--bg)"></span></button><button type="button" aria-label="Search" style="flex-shrink:0;width:34px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;border:1px solid oklch(0.92 0.004 286.32);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button><button type="button" style="position:relative;width:36px;height:36px;padding:0;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:var(--destructive);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span></button><div style="display:flex;align-items:center;gap:8px;flex-shrink:0;height:48px;width:137px;padding:8px;border-radius:8.4px;box-sizing:border-box;overflow:hidden"><div style="width:32px;height:32px;flex-shrink:0;border-radius:8.4px;background:var(--muted);display:flex;align-items:center;justify-content:center">J</div><div style="display:grid;flex:1;min-width:0;line-height:1.25"><span style="font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Jordan Blake</span><span style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">jordan.blake@example.com</span></div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></div></div></header><div style="height:16px;flex-shrink:0"></div><main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden"><div style="flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden"><div style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--border);flex-shrink:0"><button type="button" aria-label="Open settings menu" style="width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:inherit;display:inline-flex;align-items:center;justify-content:center"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg></button><span style="font-size:14px;line-height:20px;font-weight:500">Email</span></div><div style="flex:1;padding:16px;overflow:hidden"><div style="display:flex;flex-direction:column;gap:32px">
+
+          <!-- Connected accounts (SettingsEmailTab), below 640px: Disconnect shows its icon only -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Connected accounts</div><p class="card-d">Connect your mailbox to send and receive customer email from the CRM.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                <div style="min-width:0;flex:1">
+                  <p style="margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;font-weight:500">jordan.blake@example.com</p>
+                  <p style="margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)">Jordan Blake · Google</p>
+                </div>
+                <button type="button" class="btn btn-sm" title="Disconnect" aria-label="Disconnect"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg></button>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <button type="button" class="btn btn-outline"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>Connect with Google…</button>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:14px;color:var(--muted-fg)">or</span>
+                  <button type="button" class="btn btn-outline"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>Connect with Microsoft…</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div></div></div></main></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

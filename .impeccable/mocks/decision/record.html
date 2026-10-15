@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero sketch: Marcus's record</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#061029;color:#fff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.top{height:64px;padding-top:10px;padding-bottom:10px;background:#fff;border-bottom:1px solid #d0d4e4;display:flex;align-items:center;justify-content:space-between;padding-left:120px;padding-right:120px;color:#0f0d16}
+.logo{font-size:18px;font-weight:600;letter-spacing:-.025em}
+.nav{display:flex;gap:32px;font-size:14px;font-weight:500;color:#535768}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;font-weight:600;line-height:1;white-space:nowrap}
+.pill-sm{height:44px;padding:0 20px;font-size:14px;background:#1463ff;color:#fff}
+.pill-lg{height:48px;padding:0 24px;font-size:16px}
+.primary{background:#1463ff;color:#fff}
+.ghost{border:1px solid rgb(255 255 255 / .2);color:#fff}
+.lead{font-size:18px;line-height:1.75;color:#c5cbe9}
+.crop{position:relative;overflow:hidden}
+
+.crm-cda .app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}.crm-cda .app *{box-sizing:border-box}.crm-cda .ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.crm-cda .ic14{width:14px;height:14px}.crm-cda .ic12{width:12px;height:12px}.crm-cda .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}.crm-cda .btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-cda .btn-sm{height:32px;padding:0 12px;gap:6px}.crm-cda .btn-7{height:28px;padding:0 10px;gap:4px;font-size:12px}.crm-cda .btn-i7{width:28px;height:28px;padding:0}.crm-cda .badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}.crm-cda .badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}.crm-cda .pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}.crm-cda .tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}.crm-cda .tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}.crm-cda .li{display:flex;gap:12px}.crm-cda .rail{display:flex;flex-direction:column;align-items:center}.crm-cda .dot{margin-top:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);flex-shrink:0}.crm-cda .line{flex:1;width:1px;background:var(--border);margin-top:4px}.crm-cda .card{flex:1;min-width:0;padding-bottom:16px}.crm-cda .card-in{border:1px solid var(--border);border-radius:10.4px;background:var(--bg);overflow:hidden}.crm-cda .card-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px}.crm-cda .card-h-b{border-bottom:1px solid var(--border);background:oklch(0.967 0.001 286.375 / .3)}.crm-cda .card-b{padding:10px 12px}.crm-cda .ttl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;font-size:14px;font-weight:500;line-height:1.25}.crm-cda .by{margin-left:6px;font-size:12px;font-weight:400;color:var(--muted-fg)}.crm-cda .when{font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap;flex-shrink:0}
+
+
+
+
+
+
+
+
+
+
+.band{position:relative;height:836px;background:radial-gradient(60% 70% at 30% 0%,rgb(20 99 255 / .3),transparent 70%),#061029}
+.copy{position:absolute;left:120px;top:64px;width:420px}
+h1{font-size:48px;line-height:1.15;font-weight:600;letter-spacing:-.025em;text-wrap:balance}
+.legend{margin-top:32px;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.5;color:#c5cbe9}
+.legend div{display:flex;align-items:center;gap:12px}
+.num{flex-shrink:0;width:24px;height:24px;border-radius:9999px;background:#4d8bff;color:#061029;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.sheet{position:absolute;left:600px;top:72px;width:900px;height:800px;padding:12px;border-radius:24px 0 0 0;background:#fff}
+.pin{position:absolute;left:872px;z-index:2;box-shadow:0 0 0 3px #fff}
+
+</style>
+</head>
+<body>
+<div class="top"><span class="logo">Every1Connects</span><div class="nav"><span>Product</span><span>Email</span><span>Security</span><span>Privacy</span></div><span class="pill pill-sm">Log in</span></div>
+<section class="band">
+  <div class="copy">
+    <h1>Every lead, from the form on your website to the sale.</h1>
+    <p class="lead" style="margin-top:16px">Text messages, calls, email and the pipeline, in one record per customer.</p>
+    <div style="margin-top:24px;display:flex;gap:12px"><span class="pill pill-lg primary">Log in</span><span class="pill pill-lg ghost">See what it does</span></div>
+    <div class="legend">
+      <div><span class="num">1</span>The form arrives from the website</div>
+      <div><span class="num">2</span>Chloe answers by text</div>
+      <div><span class="num">3</span>Jordan calls him</div>
+      <div><span class="num">4</span>The deal moves to Test Drive Booked</div>
+    </div>
+  </div>
+  <div class="sheet"><div class="crop" aria-hidden="true" inert style="width:888px;height:788px;border-radius:12px 0 0 0"><div class="crm-cda" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.8) translate(0px,0px)"><div class="app" style="width:1184px"><main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <button type="button" class="btn btn-sm" style="height:32px;padding:0 8px;gap:4px;color:var(--muted-fg)">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+          Back
+        </button>
+        <div style="display:flex;align-items:center;gap:4px;min-width:0">
+          <h1 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Marcus Ellery</h1>
+          <button type="button" aria-label="Edit name" class="btn btn-i7" style="width:24px;height:24px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+        </div>
+        <span style="font-size:12px;color:var(--muted-fg)">@marcus.ellery</span>
+        <button type="button" style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:inherit;cursor:pointer">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#3b82f6"></span>
+          <span>Hot lead</span>
+          <svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <span style="margin-left:auto;display:inline-flex">
+          <button type="button" class="btn btn-outline btn-sm" style="border-top-right-radius:0;border-bottom-right-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call</button>
+          <button type="button" class="btn btn-outline btn-sm" aria-label="Choose line" style="padding:0 6px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+        </span>
+      </div>
+
+      <!-- Two columns -->
+      <div style="flex:1;min-height:0;display:flex;overflow:hidden">
+
+        <aside style="width:320px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:8px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Details</button>
+            <button type="button" class="tab" aria-pressed="false">Schedule</button>
+            <button type="button" class="tab" aria-pressed="false">Files</button>
+          </div>
+          <div style="flex:1;min-height:0;overflow:hidden">
+            
+<div style="width:320px;height:1040px;box-sizing:border-box;display:flex;flex-direction:column;background:oklch(0.99 0 0);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+
+  <!-- Panel header -->
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid oklch(0.92 0.004 286.32)">
+    <span style="font-size:12px;line-height:16px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.552 0.016 285.938)">Client Info</span>
+    <span style="display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;background:#6366f122;color:#6366f1">Main site</span>
+  </div>
+
+  <!-- Personal (open) -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32)">
+    <div style="display:flex;align-items:center;padding:12px 16px">
+      <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Personal</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m6 9 6 6 6-6"></path></svg>
+      </div>
+      <button type="button" aria-label="Edit section" style="margin-left:8px;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:oklch(0.552 0.016 285.938);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:4px 16px 16px">
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Name</span><span>Marcus Ellery</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Preferred language</span><span>English</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Username</span><span>marcus.ellery</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Email</span>
+        <a href="#mail" style="display:flex;align-items:center;gap:4px;color:oklch(0.623 0.214 259.815);text-decoration:none"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>marcus.ellery@example.com</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Phone</span>
+        <div style="display:flex;align-items:center;gap:6px">
+          <a href="#tel" style="display:flex;align-items:center;gap:4px;font-size:12px;color:oklch(0.623 0.214 259.815);text-decoration:none"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(902) 555-0142</a>
+          <span style="display:inline-flex;align-items:center;height:16px;padding:0 8px;border-radius:8.4px;background:oklch(0.967 0.001 286.375);font-size:10px;font-weight:500">Primary</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Address</span>
+        <span style="display:flex;align-items:flex-start;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:4px;flex-shrink:0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>118 Harbour Rd, Halifax, NS, B3H 2K4</span></span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Date of Birth</span>
+        <span style="display:flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>Mar 14, 1991</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Purchased a vehicle</span><span>No</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Purchased with us</span><span>No</span></div>
+    </div>
+  </div>
+
+  <!-- Employment & Income -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+      <span>Employment &amp; Income</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+    <button type="button" aria-label="Edit section" style="margin-left:8px;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:oklch(0.552 0.016 285.938);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+  </div>
+
+  <!-- Vehicle Preferences -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+      <span>Vehicle Preferences</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+    <button type="button" aria-label="Edit section" style="margin-left:8px;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:oklch(0.552 0.016 285.938);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+  </div>
+
+  <!-- Trade-in Vehicle -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+      <span>Trade-in Vehicle</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+    <button type="button" aria-label="Edit section" style="margin-left:8px;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:oklch(0.552 0.016 285.938);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+  </div>
+
+  <!-- Co-signer -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <span>Co-signer</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+  </div>
+
+  <!-- Owned vehicles -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+      <span>Owned Vehicles</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+  </div>
+
+  <!-- Purchase interests -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      <span>Purchase Interests</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+  </div>
+
+  <!-- Technical -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
+      <span>Technical</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+  </div>
+
+  <!-- Opportunities -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32);display:flex;align-items:center;padding:12px 16px">
+    <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 7v7"></path><path d="M12 7v4"></path><path d="M16 7v9"></path></svg>
+      <span>Opportunities</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m9 18 6-6-6-6"></path></svg>
+    </div>
+    <button type="button" aria-label="New opportunity" style="margin-left:8px;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:oklch(0.141 0.005 285.823);cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+  </div>
+
+  <!-- Notes (open) -->
+  <div style="border-bottom:1px solid oklch(0.92 0.004 286.32)">
+    <div style="display:flex;align-items:center;padding:12px 16px">
+      <div style="display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path></svg>
+        <span>Notes</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.552 0.016 285.938)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto"><path d="m6 9 6 6 6-6"></path></svg>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:4px 16px 16px">
+      <label for="note-new" style="position:absolute;left:-9999px">Add a note</label>
+      <textarea id="note-new" placeholder="Add a note…" style="min-height:64px;resize:none;border:1px solid oklch(0.92 0.004 286.32);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;color:inherit;box-shadow:0 1px 2px rgb(0 0 0 / .05)"></textarea>
+      <div style="border:1px solid oklch(0.92 0.004 286.32);border-radius:8.4px;padding:8px 12px;background:oklch(0.967 0.001 286.375 / .4)">
+        <p style="margin:0;font-size:14px;line-height:1.35">Interested in a 2021 Civic Sport, wants a test drive on Saturday morning.</p>
+        <p style="margin:4px 0 0;font-size:12px;line-height:16px;color:oklch(0.552 0.016 285.938)">Chloe · Sep 30, 9:42 AM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </aside>
+
+        <section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg></button>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+            <div style="max-width:768px">
+
+              <!-- Filter chips -->
+              <div style="display:flex;align-items:center;gap:2px;margin-bottom:16px;flex-wrap:wrap">
+                <button type="button" class="tab" aria-pressed="true">All</button>
+                <button type="button" class="tab" aria-pressed="false">Chats</button>
+                <button type="button" class="tab" aria-pressed="false">Notes</button>
+                <button type="button" class="tab" aria-pressed="false">Follow-ups</button>
+                <button type="button" class="tab" aria-pressed="false">Calls</button>
+                <button type="button" class="tab" aria-pressed="false">Forms</button>
+                <button type="button" class="tab" aria-pressed="false">Changes</button>
+              </div>
+
+              <ul style="list-style:none;margin:0;padding:0">
+
+                <!-- SMS burst -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#8b5cf6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">SMS with Marcus Ellery</div><time class="when">4 minutes ago</time></div>
+                    <div class="card-b" style="display:flex;flex-direction:column;gap:10px">
+                      <button type="button" style="align-self:center;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:9999px;background:oklch(0.967 0.001 286.375 / .5);padding:2px 10px;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show 2 more messages</button>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:40 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Finance. What would the monthly payments look like?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Chloe</span><time style="margin-left:6px;color:var(--muted-fg)">9:41 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Happy to help! Roughly how much would you like to put down?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:42 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Is the 2021 Civic still available?</p>
+                        </div>
+                      
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Stage move -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 7v7"></path><path d="M12 7v4"></path><path d="M16 7v9"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Opportunity moved<span class="by">· Chloe</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:6px"><span class="pill" style="background:#3b82f622;color:#3b82f6">New Lead</span><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span class="pill" style="background:#10b98122;color:#10b981">Test Drive Booked</span></span></div>
+                      <time class="when">2 hours ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Call -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#0ea5e9"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 8 22 2 16 2"></polyline><line x1="16" x2="22" y1="8" y2="2"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Outbound call<span class="by">· Jordan Blake</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="badge badge-secondary" style="font-size:10px">Completed</span><span style="font-size:12px;color:var(--muted-fg);font-variant-numeric:tabular-nums">02:14</span></span></div>
+                      <time class="when">1 day ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Note -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#eab308"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">Note<span class="by">· Jordan Blake</span></div><time class="when">1 day ago</time></div>
+                    <div class="card-b"><p style="margin:0;font-size:14px;line-height:1.35">Called after the form came in. Wants a Civic Sport, needs financing, trade-in is a 2014 Corolla. Booked a test drive for Saturday 10:30.</p></div>
+                  </div></div>
+                </li>
+
+                <!-- Form -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl"><span>Form submitted: Get Pre-Approved</span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="pill" style="background:#6366f122;color:#6366f1">Main site</span><a href="#form" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">Open form</a></span></div>
+                      <time class="when">2 days ago</time></div>
+                    <div class="card-b">
+                      <dl style="margin:0;display:grid;grid-template-columns:minmax(0,40%) 1fr;gap:4px 12px;font-size:12px;line-height:16px">
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Vehicle of interest</dt>
+                          <dd style="margin:0">2021 Honda Civic Sport</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Monthly budget</dt>
+                          <dd style="margin:0">$350</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Down payment</dt>
+                          <dd style="margin:0">$2,000</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Do you have a trade-in?</dt>
+                          <dd style="margin:0">Yes</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Employment status</dt>
+                          <dd style="margin:0">Full-time</dd>
+                        
+                      </dl>
+                      <button type="button" style="margin-top:6px;display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show all 14 fields</button>
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Chat started (last) -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"></path><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"></path><path d="M2 12h2"></path><path d="M9 11v2"></path><path d="M15 11v2"></path><path d="M20 12h2"></path></svg></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Chloe started a chat</span><a href="#chat" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">View chat →</a></div><time class="when">2 days ago</time></div>
+                  </div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main></div></div></div></div>
+  <span class="num pin" style="top:570px">1</span>
+  <span class="num pin" style="top:206px">2</span>
+  <span class="num pin" style="top:437px">3</span>
+  <span class="num pin" style="top:393px">4</span>
+</section>
+</body>
+</html>

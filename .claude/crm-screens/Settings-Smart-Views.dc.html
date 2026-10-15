@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Smart Views</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:var(--fg);cursor:pointer}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.row:last-child{border-bottom:0}
+.th{height:40px;padding:0 8px;display:flex;align-items:center;font-weight:500;white-space:nowrap}
+.td{padding:8px;min-width:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 24px}
+.card-b{padding:0 24px}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Smart Views" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="smart-views" hint-size="224px,880px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="display:flex;flex-direction:column;gap:24px">
+
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px">
+            <button type="button" class="btn btn-outline btn-sm"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Export JSON</button>
+            <button type="button" class="btn btn-outline btn-sm"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Export CSV</button>
+            <button type="button" class="btn btn-outline btn-sm"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>Import</button>
+            <button type="button" class="btn btn-primary"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add Smart View</button>
+          </div>
+
+          <div class="card">
+            <div class="card-h">
+              <div>
+                <div style="font-weight:600;line-height:1">Saved views</div>
+                <p style="margin:6px 0 0;font-size:14px;color:var(--muted-fg)">Click a view in the sidebar to see leads in that stage. Drag to reorder. Only you can see private views.</p>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Customize Columns<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div>
+            <div class="card-b">
+              <div style="overflow:hidden;border:1px solid var(--border);border-radius:10.4px">
+                <div role="table" aria-label="Smart views" style="--cols:40px minmax(180px,1.4fr) minmax(140px,1fr) 110px 100px minmax(110px,1fr) 88px">
+                  <div role="row" class="row" style="background:var(--muted)">
+                    <div role="columnheader" class="th"></div>
+                    <div role="columnheader" class="th">Name</div>
+                    <div role="columnheader" class="th">Stage</div>
+                    <div role="columnheader" class="th">Filters</div>
+                    <div role="columnheader" class="th">Visibility</div>
+                    <div role="columnheader" class="th">Created by</div>
+                    <div role="columnheader" class="th"></div>
+                  </div>
+                  <sc-for list="{{views}}" as="v" hint-placeholder-count="4">
+                    <div role="row" class="row">
+                      <div role="cell" class="td"><button type="button" class="ib" aria-label="Drag to reorder" style="width:28px;height:28px;color:var(--muted-fg);cursor:grab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg></button></div>
+                      <div role="cell" class="td" style="font-weight:500">{{v.name}}</div>
+                      <div role="cell" class="td">{{v.stage}}</div>
+                      <div role="cell" class="td"><span style="{{v.filtersStyle}}">{{v.filters}}</span></div>
+                      <div role="cell" class="td">{{v.visibility}}</div>
+                      <div role="cell" class="td" style="color:var(--muted-fg)">{{v.by}}</div>
+                      <div role="cell" class="td" style="display:flex;align-items:center;justify-content:flex-end;gap:4px">
+                        <button type="button" class="ib" aria-label="Edit"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+                        <button type="button" class="ib" aria-label="Delete" style="color:var(--destructive)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></button>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const LINK = 'color:oklch(0.623 0.214 259.815)';
+    const NONE = 'color:oklch(0.552 0.016 285.938)';
+    const mk = (name, stage, filters, visibility, by) => ({
+      name,
+      stage,
+      filters: filters || '—',
+      filtersStyle: filters ? LINK : NONE,
+      visibility,
+      by,
+    });
+    return {
+      views: [
+        mk('New Leads', 'New Lead', '', 'Everyone', 'Jordan Blake'),
+        mk('Credit Apps Pending', 'Credit App Sent', '2 filter(s)', 'Everyone', 'Jordan Blake'),
+        mk('Test Drives This Week', 'Test Drive Booked', '1 filter(s)', 'Everyone', 'Alex Rivera'),
+        mk('Trade-in Quotes', 'Trade-in Quote', '', 'Everyone', 'Alex Rivera'),
+        mk('Hot leads, any card', 'All leads', '3 filter(s)', 'Private', 'Jordan Blake'),
+        mk('My follow-ups', 'Follow Up', '', 'Private', 'Jordan Blake'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

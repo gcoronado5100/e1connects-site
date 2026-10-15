@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Task drawer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.sheet{position:relative;width:448px;height:960px;display:flex;flex-direction:column;background:var(--bg);border-left:1px solid var(--border);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.fld{display:flex;flex-direction:column;gap:6px}
+.lab{font-size:12px;line-height:12px;font-weight:500}
+.opt{font-weight:400;color:var(--muted-fg)}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:12px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+.chip-on{background:var(--primary);color:var(--primary-fg);border-color:var(--primary)}
+.chip-off{border-style:dashed;color:oklch(0.552 0.016 285.938 / .4);cursor:not-allowed}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.close{position:absolute;top:16px;right:16px;width:20px;height:20px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;background:transparent;opacity:.7;cursor:pointer;color:var(--fg)}
+</style>
+</helmet>
+<div class="app" style="width:976px;display:flex;gap:80px;background:oklch(0.975 0.002 286)">
+
+  <!-- New task -->
+  <aside class="sheet">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid var(--border)"><h2 style="margin:0;font-size:16px;line-height:24px;font-weight:600">New task</h2></div>
+    <button type="button" class="close" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <div style="flex:1;min-height:0;overflow:hidden;padding:20px 24px;display:flex;flex-direction:column;gap:16px">
+
+      <div class="fld"><label class="lab" for="t-title">Title</label><input id="t-title" class="inp" placeholder="Task title…" value="Call Marcus about financing documents"></div>
+
+      <div class="fld"><span class="lab">Type</span>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <button type="button" class="chip chip-on"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>Reminder</button>
+          <button type="button" class="chip"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>SMS</button>
+          <span class="chip chip-off"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call<span style="margin-left:2px;border-radius:4px;background:var(--muted);padding:0 4px;font-size:10px;color:oklch(0.552 0.016 285.938 / .5)">Soon</span></span>
+          <span class="chip chip-off"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.4"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email<span style="margin-left:2px;border-radius:4px;background:var(--muted);padding:0 4px;font-size:10px;color:oklch(0.552 0.016 285.938 / .5)">Soon</span></span>
+        </div>
+      </div>
+
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" class="cb" checked><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:500"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--destructive)"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>High Priority</span></label>
+
+      <div class="fld" style="position:relative"><span class="lab">Link to client or lead <span class="opt">(optional)</span></span>
+        <input class="inp" placeholder="Search by name…" value="Marc" aria-label="Search by name">
+        <div style="position:absolute;z-index:5;top:62px;left:0;right:0;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1);overflow:hidden">
+          <button type="button" style="display:block;width:100%;text-align:left;padding:6px 12px;border:0;background:var(--muted);font-family:inherit;font-size:14px;color:var(--fg)">Marcus Ellery (client)</button>
+          <button type="button" style="display:block;width:100%;text-align:left;padding:6px 12px;border:0;background:transparent;font-family:inherit;font-size:14px;color:var(--fg)">Marcus Webb (lead)</button>
+          <button type="button" style="display:block;width:100%;text-align:left;padding:6px 12px;border:0;background:transparent;font-family:inherit;font-size:14px;color:var(--fg)">Marcia Tremblay (client)</button>
+        </div>
+      </div>
+
+      <div class="fld"><span class="lab">Assign to</span>
+        <button type="button" class="trig"><span>Jordan Blake</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+
+      <div class="g2">
+        <div class="fld"><label class="lab" for="t-date">Due date</label><input id="t-date" class="inp" type="date" value="2026-09-30"></div>
+        <div class="fld"><label class="lab" for="t-time">Due time <span class="opt">(optional)</span></label><input id="t-time" class="inp" type="time" value="16:00"></div>
+      </div>
+
+      <button type="button" style="align-self:flex-start;border:0;background:transparent;padding:0;font-family:inherit;font-size:12px;color:var(--primary);cursor:pointer">+ Add notes</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;justify-content:flex-end;padding:12px 24px;border-top:1px solid var(--border)">
+      <button type="button" class="btn btn-outline">Cancel</button>
+      <button type="button" class="btn btn-pri">Create task</button>
+    </div>
+  </aside>
+
+  <!-- Task details (edit) -->
+  <aside class="sheet">
+    <div style="padding:24px 24px 16px;border-bottom:1px solid var(--border)"><h2 style="margin:0;font-size:16px;line-height:24px;font-weight:600">Task details</h2></div>
+    <button type="button" class="close" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <div style="flex:1;min-height:0;overflow:hidden;padding:20px 24px;display:flex;flex-direction:column;gap:16px">
+
+      <div class="fld"><label class="lab" for="e-title">Title</label><input id="e-title" class="inp" value="Text the trade-in photo checklist"></div>
+
+      <div class="fld"><span class="lab">Type</span>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <button type="button" class="chip"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>Reminder</button>
+          <button type="button" class="chip chip-on"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>SMS</button>
+          <span class="chip chip-off"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call<span style="margin-left:2px;border-radius:4px;background:var(--muted);padding:0 4px;font-size:10px;color:oklch(0.552 0.016 285.938 / .5)">Soon</span></span>
+          <span class="chip chip-off"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.4"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email<span style="margin-left:2px;border-radius:4px;background:var(--muted);padding:0 4px;font-size:10px;color:oklch(0.552 0.016 285.938 / .5)">Soon</span></span>
+        </div>
+      </div>
+
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" class="cb"><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:500"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--destructive)"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>High Priority</span></label>
+
+      <div class="fld"><span class="lab">Linked to</span>
+        <div style="border:1px solid var(--border);border-radius:8.4px;padding:6px 12px;background:oklch(0.967 0.001 286.375 / .4);font-size:14px">Marcus Ellery (client)</div>
+      </div>
+
+      <div class="fld"><span class="lab">Assign to</span>
+        <button type="button" class="trig"><span>Jordan Blake</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+
+      <div class="g2">
+        <div class="fld"><label class="lab" for="e-date">Due date</label><input id="e-date" class="inp" type="date" value="2026-10-01"></div>
+        <div class="fld"><label class="lab" for="e-time">Due time <span class="opt">(optional)</span></label><input id="e-time" class="inp" type="time" value="09:00"></div>
+      </div>
+
+      <div class="fld"><label class="lab" for="e-notes">Notes</label><textarea id="e-notes" placeholder="Additional context…" style="min-height:80px;resize:none;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)">Ask for the front, back and odometer photos.</textarea></div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 24px;border-top:1px solid var(--border)">
+      <button type="button" class="btn" style="color:var(--destructive);height:32px;padding:0 12px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>Delete</button>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button type="button" class="btn btn-outline">Cancel</button>
+        <button type="button" class="btn btn-pri">Save changes</button>
+      </div>
+    </div>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":976,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

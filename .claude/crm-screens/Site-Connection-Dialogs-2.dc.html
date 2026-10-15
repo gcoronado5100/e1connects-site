@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Connectors · edit and forms upload</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="width:1440px;height:940px;padding:32px 40px;background:oklch(0.967 0.001 286.375);display:flex;gap:40px;align-items:flex-start;overflow:hidden">
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Edit connection · website</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Row menu → Edit / Configure Pull. The password stays blank unless you type a new one</div></div><div role="dialog" aria-label="Edit Connection" style="position:relative;width:448px;display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--border);border-radius:10.4px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)"><button type="button" aria-label="Close" style="position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;color:var(--fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="display:flex;flex-direction:column;gap:8px"><h2 style="margin:0;font-size:18px;line-height:18px;font-weight:600">Edit Connection</h2><p style="margin:0;font-size:14px;line-height:20px;color:var(--muted-fg)">Update connection details and WordPress credentials for Pull.</p></div><div style="display:flex;flex-direction:column;gap:16px"><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Name *</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="text" placeholder="" value="Every1Drives Store" aria-label="input" style="width:100%;height:36px;"></span></div><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Site URL (for Pull)</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="text" placeholder="https://yoursite.com" value="https://every1drives.example.com" aria-label="https://yoursite.com" style="width:100%;height:36px;"></span></div><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Logo (URL)</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="text" placeholder="https://example.com/logo.png" value="https://every1drives.example.com/logo.png" aria-label="https://example.com/logo.png" style="width:100%;height:36px;"></span></div><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Color</label><div style="display:flex;align-items:center;gap:8px"><span style="width:56px;height:36px;border:1px solid var(--border);border-radius:6px;background:#3b82f6;display:block"></span><input class="inp" value="#3b82f6" style="width:96px;height:36px;font-family:ui-monospace,Menlo,monospace;font-size:14px"></div></div><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">WordPress Username</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="text" placeholder="admin" value="admin" aria-label="admin" style="width:100%;height:36px;"></span></div><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">WordPress Application Password</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="password" placeholder="Leave blank to keep current" value="" aria-label="Leave blank to keep current" style="width:100%;height:36px;"></span><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg);">Leave blank to keep the existing password.</p></div><div style="display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:10.4px;padding:16px"><div><label style="font-size:14px;line-height:14px;font-weight:500">Verify SSL certificate</label><p style="margin:4px 0 0;font-size:12px;line-height:16px;color:var(--muted-fg)">Disable for local dev (self-signed certs)</p></div><button type="button" role="switch" aria-checked="true" aria-label="Verify SSL certificate" style="position:relative;flex-shrink:0;width:32px;height:18.4px;padding:0;border:1px solid transparent;border-radius:9999px;background:var(--primary);"><span style="position:absolute;top:0.7px;left:14px;width:16px;height:16px;border-radius:9999px;background:#fff"></span></button></div></div><div style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn btn-outline btn-def">Cancel</button><button type="button" class="btn btn-primary btn-def">Save</button></div></div></div>
+  <div style="display:flex;flex-direction:column;gap:32px"><div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Upload Gravity Forms configuration</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Row menu → Upload Forms JSON (website connectors only)</div></div><div role="dialog" aria-label="Upload Gravity Forms Configuration" style="position:relative;width:672px;display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--border);border-radius:10.4px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)"><button type="button" aria-label="Close" style="position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;color:var(--fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="display:flex;flex-direction:column;gap:8px"><h2 style="margin:0;font-size:18px;line-height:18px;font-weight:600">Upload Gravity Forms Configuration</h2><p style="margin:0;font-size:14px;line-height:20px;color:var(--muted-fg)">Paste the JSON export from Gravity Forms (Export → Select All Forms → Download Export File). This configures field mappings specific to this site.</p></div><div style="display:flex;flex-direction:column;gap:16px"><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Forms JSON *</label><div style="display:flex;min-height:300px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:16px;color:var(--muted-fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)">Paste JSON here: [{"title": "Vehicle Enquiry", "fields": [...]}]</div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg);">Export from WordPress → Forms → Import/Export → Export → Select All → Download. Then open the file and paste its content here.</p></div></div><div style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn btn-outline btn-def">Cancel</button><button type="button" class="btn btn-primary btn-def">Upload &amp; Parse</button></div></div></div>
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Edit connection · external service</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Only the name can be edited; every WordPress field is hidden</div></div><div role="dialog" aria-label="Edit Connection" style="position:relative;width:448px;display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--border);border-radius:10.4px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)"><button type="button" aria-label="Close" style="position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;color:var(--fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="display:flex;flex-direction:column;gap:8px"><h2 style="margin:0;font-size:18px;line-height:18px;font-weight:600">Edit Connection</h2><p style="margin:0;font-size:14px;line-height:20px;color:var(--muted-fg)">Update connection details and WordPress credentials for Pull.</p></div><div style="display:flex;flex-direction:column;gap:16px"><div style="display:grid;gap:8px;"><label style="font-size:14px;line-height:14px;font-weight:500">Name *</label><span style="position:relative;display:inline-block;width:100%;"><input class="inp" type="text" placeholder="" value="n8n · Chloe workflows" aria-label="input" style="width:100%;height:36px;"></span></div></div><div style="display:flex;justify-content:flex-end;gap:8px"><button type="button" class="btn btn-outline btn-def">Cancel</button><button type="button" class="btn btn-primary btn-def">Save</button></div></div></div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":940}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

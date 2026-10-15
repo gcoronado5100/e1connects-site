@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact detail · Email</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-7{height:28px;padding:0 10px;gap:4px;font-size:12px}
+.btn-i7{width:28px;height:28px;padding:0}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-pri{background:var(--primary);color:var(--primary-fg)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}
+.li{display:flex;gap:12px}
+.rail{display:flex;flex-direction:column;align-items:center}
+.dot{margin-top:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);flex-shrink:0}
+.line{flex:1;width:1px;background:var(--border);margin-top:4px}
+.card{flex:1;min-width:0;padding-bottom:16px}
+.card-in{border:1px solid var(--border);border-radius:10.4px;background:var(--bg);overflow:hidden}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px}
+.card-h-b{border-bottom:1px solid var(--border);background:oklch(0.967 0.001 286.375 / .3)}
+.card-b{padding:10px 12px}
+.ttl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;font-size:14px;font-weight:500;line-height:1.25}
+.by{margin-left:6px;font-size:12px;font-weight:400;color:var(--muted-fg)}
+.when{font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap;flex-shrink:0}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="clients" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Contacts" current="Marcus Ellery" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <button type="button" class="btn btn-sm" style="height:32px;padding:0 8px;gap:4px;color:var(--muted-fg)">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Back
+        </button>
+        <div style="display:flex;align-items:center;gap:4px;min-width:0">
+          <h1 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Marcus Ellery</h1>
+          <button type="button" aria-label="Edit name" class="btn btn-i7" style="width:24px;height:24px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+        </div>
+        <span style="font-size:12px;color:var(--muted-fg)">@marcus.ellery</span>
+        <button type="button" style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:inherit;cursor:pointer">
+          <span style="width:8px;height:8px;border-radius:9999px;background:#3b82f6"></span>
+          <span>Hot lead</span>
+          <svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <span style="margin-left:auto;display:inline-flex">
+          <button type="button" class="btn btn-outline btn-sm" style="border-top-right-radius:0;border-bottom-right-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</button>
+          <button type="button" class="btn btn-outline btn-sm" aria-label="Choose line" style="padding:0 6px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </span>
+      </div>
+
+      <!-- Two columns -->
+      <div style="flex:1;min-height:0;display:flex;overflow:hidden">
+
+        <aside style="width:320px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:8px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Details</button>
+            <button type="button" class="tab" aria-pressed="false">Schedule</button>
+            <button type="button" class="tab" aria-pressed="false">Files</button>
+          </div>
+          <div style="flex:1;min-height:0;overflow:hidden">
+            <dc-import name="Contact-Info-Panel" hint-size="320px,1040px"></dc-import>
+          </div>
+        </aside>
+
+        <section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="false">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <button type="button" class="tab" aria-pressed="true">Email</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></button>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+            <!-- EmailPane: the e-mails exchanged with this person, newest first -->
+            <div style="max-width:768px;display:flex;flex-direction:column;gap:12px">
+
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+                <button type="button" class="btn btn-sm btn-pri"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>New email</button>
+                <button type="button" class="btn btn-sm btn-outline"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>Refresh</button>
+              </div>
+
+              <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+                <li style="border:1px solid oklch(0.623 0.214 259.815 / .5);border-radius:8.4px;padding:8px 12px;background:oklch(0.623 0.214 259.815 / .05)">
+                  <button type="button" aria-expanded="true" style="display:flex;width:100%;align-items:flex-start;gap:8px;padding:0;border:0;background:transparent;font-family:inherit;text-align:left;color:inherit;cursor:pointer">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px"><path d="m6 9 6 6 6-6"/></svg>
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px;color:#059669"><path d="M17 7 7 17"/><path d="M17 17H7V7"/></svg>
+                    <span style="min-width:0;flex:1">
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:20px;font-weight:600">Re: Your 2021 Civic Sport — financing options</span>
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)">From: Marcus Ellery · Sep 30, 2026, 10:12 AM</span>
+                    </span>
+                    <span class="badge badge-pri">New</span>
+                  </button>
+                  <div style="margin-top:8px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--border);padding-top:8px">
+                    <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">From: marcus.ellery@example.com · To: jordan.blake@example.com</p>
+                    <p style="margin:0;white-space:pre-wrap;overflow-wrap:break-word;font-size:14px;line-height:20px">Hi Jordan,
+
+The 60-month option works for me.
+I can come by on Thursday afternoon
+for the test drive, with my car.
+
+Marcus</p>
+                    <button type="button" class="btn btn-sm btn-outline" style="align-self:flex-start"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 18v-2a4 4 0 0 0-4-4H4"/><path d="m9 17-5-5 5-5"/></svg>Reply</button>
+                  </div>
+                </li>
+                <li style="border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                  <button type="button" aria-expanded="false" style="display:flex;width:100%;align-items:flex-start;gap:8px;padding:0;border:0;background:transparent;font-family:inherit;text-align:left;color:inherit;cursor:pointer">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px;color:#0284c7"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                    <span style="min-width:0;flex:1">
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:20px;font-weight:500">Your 2021 Civic Sport — financing options</span>
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)">To: marcus.ellery@example.com · Jordan Blake · Sep 29, 2026, 4:05 PM</span>
+                    </span>
+                  </button>
+                </li>
+                <li style="border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                  <button type="button" aria-expanded="false" style="display:flex;width:100%;align-items:flex-start;gap:8px;padding:0;border:0;background:transparent;font-family:inherit;text-align:left;color:inherit;cursor:pointer">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px;color:#059669"><path d="M17 7 7 17"/><path d="M17 17H7V7"/></svg>
+                    <span style="min-width:0;flex:1">
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:20px;font-weight:500">Trade-in photos</span>
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)">From: Marcus Ellery · Sep 28, 2026, 6:47 PM</span>
+                    </span>
+                    <span class="badge badge-secondary">Received</span>
+                  </button>
+                </li>
+                <li style="border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                  <button type="button" aria-expanded="false" style="display:flex;width:100%;align-items:flex-start;gap:8px;padding:0;border:0;background:transparent;font-family:inherit;text-align:left;color:inherit;cursor:pointer">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px;color:#0284c7"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                    <span style="min-width:0;flex:1">
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:20px;font-weight:500">Thanks for your interest in the 2021 Civic Sport</span>
+                      <span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)">To: marcus.ellery@example.com · Jordan Blake · Sep 28, 2026, 9:58 AM</span>
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

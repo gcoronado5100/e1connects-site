@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Menus and popovers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:oklch(0.975 0.002 286);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic12{width:12px;height:12px}
+.ic14{width:14px;height:14px}
+.h1{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em}
+.cap{margin:0 0 8px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:16px;color:var(--muted-fg)}
+.col{display:flex;flex-direction:column;gap:28px;min-width:0}
+.menu{background:var(--bg);border:1px solid var(--border);border-radius:8.4px;padding:4px;box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.pop{background:var(--bg);border:1px solid var(--border);border-radius:8.4px;box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.lbl{padding:6px 8px;font-size:14px;line-height:20px;font-weight:500}
+.lbl-s{font-size:12px;line-height:16px;font-weight:400;color:var(--muted-fg)}
+.mi{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6.4px;font-size:14px;line-height:20px;color:var(--fg)}
+.mi svg.ic{color:var(--muted-fg)}
+.mi2{align-items:flex-start}
+.mi2 svg.ic{margin-top:2px}
+.mi-f{background:var(--muted)}
+.t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.t b{font-weight:400;line-height:1.25}
+.t span{font-size:12px;line-height:1.35;color:var(--muted-fg)}
+.sep{height:1px;background:var(--border);margin:4px -4px}
+.ri{position:relative;padding-left:32px}
+.rd{position:absolute;left:8px;top:11px;width:8px;height:8px;border-radius:9999px;background:currentColor}
+.dot{width:8px;height:8px;border-radius:9999px;flex-shrink:0}
+.pi{display:block;width:100%;text-align:left;border:0;background:transparent;font-family:inherit;font-size:14px;line-height:20px;padding:6px 8px;border-radius:6.4px;color:var(--fg)}
+.badge{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:32px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:12px;font-weight:500;color:var(--fg)}
+</style>
+</helmet>
+<div class="app" style="width:1440px;padding:48px;display:flex;flex-direction:column;gap:32px">
+
+  <div>
+    <h1 class="h1">Menus and popovers</h1>
+    <p class="cap" style="margin-top:8px">Dropdown menus, popovers and the notifications panel as they look when open. Panels use bg-popover, 1px border, 8px radius, shadow-md.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start">
+
+    <!-- Column 1 -->
+    <div class="col">
+
+      <div>
+        <p class="cap">Chat header · Status (w-72)</p>
+        <div class="menu" style="width:288px">
+          <div class="lbl lbl-s">Who is replying in this chat</div>
+          <div class="mi mi2 ri"><div class="t"><b>Chloe Active</b><span>Chloe replies to the customer automatically</span></div></div>
+          <div class="mi mi2 ri"><span class="rd"></span><div class="t"><b>Take Control</b><span>You reply; Chloe stays silent until you hand it back</span></div></div>
+          <div class="sep"></div>
+          <div class="mi mi2"><div class="t" style="flex:1"><b>Return to Chloe from another number</b><span>Chloe takes over from the number you pick; the current chat is closed.</span></div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px"><path d="m9 18 6-6-6-6"/></svg></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Click-to-call · line picker</p>
+        <div class="menu" style="width:256px">
+          <div class="lbl">Call from</div>
+          <div class="sep"></div>
+          <div class="mi"><span style="width:16px;display:flex;justify-content:center"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--fg)"><path d="M20 6 9 17l-5-5"/></svg></span><div class="t"><b>Halifax Sales · +19025550100</b><span>My default line</span></div></div>
+          <div class="mi"><span style="width:16px"></span><div class="t"><b>Moncton Sales · +15065550144</b><span>Conversation number</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Last Message · direction</p>
+        <div class="menu" style="width:200px">
+          <div class="lbl">Show direction</div>
+          <div class="mi ri"><span class="rd"></span>Latest (any)</div>
+          <div class="mi ri">Customer only</div>
+          <div class="mi ri">Chloe / Agent only</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Leads list · row actions</p>
+        <div class="menu" style="width:176px">
+          <div class="mi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>View</div>
+          <div class="mi mi-f"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>Edit</div>
+          <div class="mi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>Mark as unread</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col">
+
+      <div>
+        <p class="cap">Chat header · Chloe actions (w-72)</p>
+        <div class="menu" style="width:288px">
+          <div class="mi mi2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg><div class="t"><b>Trigger First</b><span>Chloe sends the welcome message now, using the latest lead as context</span></div></div>
+          <div class="mi mi2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg><div class="t" style="flex:1"><b>Continue Chloe</b><span>Chloe replies to the customer's last unanswered message</span></div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></div>
+          <div class="mi mi2 mi-f"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg><div class="t" style="flex:1"><b>Follow Up</b><span>Chloe sends a follow-up message right now</span></div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></div>
+          <div class="mi mi2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><div class="t"><b>Reset Chloe</b><span>Restarts Chloe's chat from scratch; the next message counts as the first</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">State selector · popover (w-48)</p>
+        <div class="pop" style="width:192px;padding:6px">
+          <button type="button" class="pi" style="color:var(--muted-fg)">No state</button>
+          <button type="button" class="pi" style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:#3b82f6"></span>New</button>
+          <button type="button" class="pi" style="display:flex;align-items:center;gap:8px;background:var(--muted)"><span class="dot" style="background:#f97316"></span>Hot lead</button>
+          <button type="button" class="pi" style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:#14b8a6"></span>Nurturing</button>
+          <button type="button" class="pi" style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:#94a3b8"></span>Cold</button>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Bulk bar · Set Opportunity</p>
+        <div class="menu" style="width:200px">
+          <div class="mi">New Lead</div>
+          <div class="mi">Contacted</div>
+          <div class="mi mi-f">Credit App Sent</div>
+          <div class="mi">Test Drive Booked</div>
+          <div class="mi">Trade-in Quote</div>
+          <div class="mi">Follow Up</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Header · user menu</p>
+        <div class="menu" style="width:224px;border-radius:10.4px">
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 4px">
+            <div style="width:32px;height:32px;border-radius:8.4px;background:var(--muted);display:flex;align-items:center;justify-content:center">J</div>
+            <div class="t" style="line-height:1.25"><b style="font-weight:500">Jordan Blake</b><span style="color:var(--fg)">jordan.blake@example.com</span></div>
+          </div>
+          <div class="sep"></div>
+          <div class="mi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>My Profile</div>
+          <div class="mi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>Product tour</div>
+          <div class="sep"></div>
+          <div class="mi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>Log out</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="col">
+
+      <div>
+        <p class="cap">Toolbar · saved views popover (w-220)</p>
+        <div class="pop" style="width:220px">
+          <div style="padding:8px"><input type="search" placeholder="Search views..." aria-label="Search views" style="width:100%;height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)"></div>
+          <div style="padding:0 4px 4px">
+            <p style="margin:0;padding:4px 8px;font-size:12px;line-height:16px;font-weight:600;color:var(--muted-fg)">Public</p>
+            <button type="button" class="pi" style="padding:6px 8px;border-radius:4px">Hot leads this week</button>
+            <button type="button" class="pi" style="padding:6px 8px;border-radius:4px;background:var(--muted)">Credit apps pending</button>
+            <button type="button" class="pi" style="padding:6px 8px;border-radius:4px">Test drives booked</button>
+          </div>
+          <div style="padding:0 4px 4px">
+            <p style="margin:0;padding:4px 8px;font-size:12px;line-height:16px;font-weight:600;color:var(--muted-fg)">Private</p>
+            <button type="button" class="pi" style="padding:6px 8px;border-radius:4px">My follow-ups</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="cap">Header · notifications popover (w-96)</p>
+        <div class="pop" style="width:384px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              <h3 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Notifications</h3>
+              <span class="badge">3 unread</span>
+            </div>
+            <button type="button" class="ghost">Mark all as read</button>
+          </div>
+
+          <sc-for list="{{notes}}" as="n" hint-placeholder-count="3">
+            <div style="padding:16px;border-bottom:1px solid var(--border);{{n.rowStyle}}">
+              <div style="display:flex;align-items:flex-start;gap:12px">
+                <div style="width:32px;height:32px;margin-top:2px;border-radius:9999px;background:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:{{n.color}}">
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="{{n.icon}}"/></svg>
+                </div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                  <div style="font-size:14px;line-height:20px;font-weight:500">{{n.title}}</div>
+                  <div style="font-size:12px;line-height:1.35;color:var(--muted-fg)">{{n.body}}</div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;color:var(--muted-fg)">
+                    <span>{{n.time}}</span>
+                    <span class="badge" style="{{n.badgeStyle}}">{{n.badge}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+
+          <div style="display:flex;gap:8px;padding:12px;background:oklch(0.967 0.001 286.375 / .3)">
+            <button type="button" class="ghost" style="flex:1">View all (9)</button>
+            <button type="button" class="ghost"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1380}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const INFO = 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 16v-4M12 8h.01';
+    const WARN = 'm21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3M12 9v4M12 17h.01';
+    const unread = 'border-left:4px solid oklch(0.623 0.214 259.815);background:oklch(0.967 0.001 286.375 / .6)';
+    return {
+      notes: [
+        { title: 'Marcus Ellery wants an agent', body: 'The customer asked to speak with a person in the Civic Sport chat.', time: 'A few minutes ago', badge: 'Information', badgeStyle: '', icon: INFO, color: '#3b82f6', rowStyle: unread },
+        { title: 'New lead: Sofia Marchetti', body: 'Get Pre-Approved form submitted on Main site.', time: '2 hours ago', badge: 'Information', badgeStyle: '', icon: INFO, color: '#3b82f6', rowStyle: unread },
+        { title: 'Chloe QA flagged 2 chats', body: 'Review the findings in Health, Chloe QA.', time: '1 day ago', badge: 'Chloe QA', badgeStyle: 'background:oklch(0.577 0.245 27.325);color:#fff', icon: WARN, color: '#ef4444', rowStyle: '' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

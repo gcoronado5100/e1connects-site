@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Follow-up Tiers</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.tier{border:1px solid var(--border);border-radius:14.4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);overflow:hidden}
+.tier-h{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.badge{display:inline-flex;align-items:center;gap:2px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.b-def{background:var(--primary);color:var(--primary-fg)}
+.b-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.b-out{border-color:var(--border);color:var(--fg)}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.sw-off{background:var(--border)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:var(--fg);cursor:pointer}
+.fld{display:flex;flex-direction:column;gap:6px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.hint{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)}
+.inp{height:36px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1080px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1080" hint-size="256px,1080px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Follow-up Tiers" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="follow-up-tiers" height="1000" hint-size="224px,1000px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="max-width:672px;display:flex;flex-direction:column;gap:24px">
+
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+            <div>
+              <h2 style="margin:0;font-size:18px;line-height:28px;font-weight:600;letter-spacing:-.025em">Follow-up Tiers</h2>
+              <p style="margin:4px 0 0;font-size:14px;color:var(--muted-fg)">Configure the sequence of automated follow-up attempts for idle conversations. Each tier defines when and how Chloe re-engages customers.</p>
+            </div>
+            <button type="button" class="btn btn-primary" style="flex-shrink:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Add Tier</button>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:12px">
+
+            <!-- Tier 1 collapsed -->
+            <div class="tier"><div class="tier-h">
+              <button type="button" aria-label="Drag to reorder" style="border:0;background:transparent;padding:0;color:var(--muted-fg);cursor:grab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg></button>
+              <span class="badge b-def" style="font-variant-numeric:tabular-nums">#1</span>
+              <span style="font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Quick check-in</span>
+              <span style="display:flex;align-items:center;gap:4px;font-size:14px;color:var(--muted-fg);flex-shrink:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>30m</span>
+              <span class="badge b-def"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>Chloe AI</span>
+              <div style="flex:1"></div>
+              <button type="button" role="switch" aria-checked="true" aria-label="Deactivate tier" class="sw sw-on"><span class="knob" style="left:14px"></span></button>
+              <button type="button" class="ib" aria-label="Expand tier"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div></div>
+
+            <!-- Tier 2 expanded -->
+            <div class="tier">
+              <div class="tier-h">
+                <button type="button" aria-label="Drag to reorder" style="border:0;background:transparent;padding:0;color:var(--muted-fg);cursor:grab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg></button>
+                <span class="badge b-def" style="font-variant-numeric:tabular-nums">#2</span>
+                <span style="font-size:14px;font-weight:600">Photos of the vehicle</span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:14px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1d</span>
+                <span style="font-size:12px;color:var(--muted-fg)">×2</span>
+                <span class="badge b-out" style="color:#0d9488"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>Inventory MMS</span>
+                <div style="flex:1"></div>
+                <button type="button" role="switch" aria-checked="true" aria-label="Deactivate tier" class="sw sw-on"><span class="knob" style="left:14px"></span></button>
+                <button type="button" class="ib" aria-label="Collapse tier"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:16px;padding:16px;background:oklch(0.967 0.001 286.375 / .3);border-top:1px solid var(--border)">
+                <div class="fld"><label class="lab" for="tl">Label</label><input id="tl" class="inp" value="Photos of the vehicle" placeholder="e.g., Quick check-in"></div>
+                <div class="fld"><span class="lab">Wait time</span>
+                  <div style="display:flex;align-items:center;gap:8px"><input class="inp" type="number" value="1" aria-label="Wait value" style="width:96px"><button type="button" class="trig" style="width:128px"><span>Days</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+                  <p class="hint">1440 minutes total — time to wait after previous tier</p>
+                </div>
+                <div class="fld"><span class="lab">Repeat</span>
+                  <div style="display:flex;align-items:center;gap:8px"><input class="inp" type="number" value="2" aria-label="Repeat" style="width:80px"><span style="font-size:14px;color:var(--muted-fg)">times</span></div>
+                  <p class="hint">How many times this tier fires before advancing to the next one.</p>
+                </div>
+                <div class="fld"><span class="lab">Strategy</span><button type="button" class="trig" style="width:100%"><span>Inventory MMS</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+                <div style="display:flex;align-items:center;gap:8px;padding-top:8px">
+                  <button type="button" class="btn btn-primary">Save Tier</button>
+                  <button type="button" class="btn btn-outline">Cancel</button>
+                  <div style="margin-left:auto"><button type="button" class="btn" style="color:var(--destructive)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:4px"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>Delete Tier</button></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 3 collapsed, SMS template -->
+            <div class="tier"><div class="tier-h">
+              <button type="button" aria-label="Drag to reorder" style="border:0;background:transparent;padding:0;color:var(--muted-fg);cursor:grab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg></button>
+              <span class="badge b-def" style="font-variant-numeric:tabular-nums">#3</span>
+              <span style="font-size:14px;font-weight:600">Last call to action</span>
+              <span style="display:flex;align-items:center;gap:4px;font-size:14px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3d</span>
+              <span class="badge b-sec"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>SMS Template</span>
+              <div style="flex:1"></div>
+              <button type="button" role="switch" aria-checked="true" aria-label="Deactivate tier" class="sw sw-on"><span class="knob" style="left:14px"></span></button>
+              <button type="button" class="ib" aria-label="Expand tier"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div></div>
+
+            <!-- Tier 4 inactive -->
+            <div class="tier" style="opacity:.5"><div class="tier-h">
+              <button type="button" aria-label="Drag to reorder" style="border:0;background:transparent;padding:0;color:var(--muted-fg);cursor:grab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><circle cx="9" cy="12" r="1"/><circle cx="9" cy="5" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="19" r="1"/></svg></button>
+              <span class="badge b-def" style="font-variant-numeric:tabular-nums">#4</span>
+              <span style="font-size:14px;font-weight:600">Weekly nudge</span>
+              <span style="display:flex;align-items:center;gap:4px;font-size:14px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7d</span>
+              <span class="badge b-def"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>Chloe AI</span>
+              <span class="badge b-out" style="color:var(--muted-fg);font-size:12px">Inactive</span>
+              <div style="flex:1"></div>
+              <button type="button" role="switch" aria-checked="false" aria-label="Activate tier" class="sw sw-off"><span class="knob" style="left:1px"></span></button>
+              <button type="button" class="ib" aria-label="Expand tier"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div></div>
+          </div>
+
+          <div style="border:1px dashed var(--border);border-radius:14.4px;background:oklch(0.967 0.001 286.375 / .3);padding:20px 24px;display:flex;flex-direction:column;gap:8px">
+            <p style="margin:0;font-size:14px;font-weight:500">What happens after all tiers?</p>
+            <p style="margin:0;font-size:14px;color:var(--muted-fg)">When a conversation exhausts all configured tiers with no customer reply, it transitions to “Needs Attention” and agents are notified by email and push notification.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+/*
+ * The email section of the home page (src/components/email-section.tsx): three cards above the
+ * heading, then a 12-column grid of two rows, each picture on a tinted panel over its text, and the
+ * Google block as a callout. HomeMotion adds .is-in and .is-out-up; the hidden states apply only
+ * once it has run (<html data-motion-ready>), so without JavaScript nothing is hidden.
+ */
+
+/* The cards: the hero's notices, closer together, overlapping only across their padding. */
+.email-cards {
+  position: relative;
+  height: 178px;
+  margin-bottom: 40px;
+}
+
+.email-card {
+  position: absolute;
+  width: 236px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+  font-size: var(--text-body-sm);
+  line-height: 1.45;
+}
+
+.email-card:nth-child(1) {
+  top: 14px;
+  left: 0;
+  z-index: 1;
+  rotate: -3deg;
+}
+
+.email-card:nth-child(2) {
+  top: 56px;
+  left: 204px;
+  z-index: 2;
+  rotate: 2deg;
+}
+
+.email-card:nth-child(3) {
+  top: 6px;
+  left: 432px;
+  z-index: 3;
+  rotate: -1.5deg;
+}
+
+/* Two rows of cells; subgrid keeps the pictures of a row the same height and their titles level. */
+.email-bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  margin-top: 4rem;
+}
+
+.email-cell {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  row-gap: 20px;
+  margin-bottom: 56px;
+}
+
+.email-cell-send {
+  grid-column: span 5;
+}
+
+.email-cell-filed {
+  grid-column: span 7;
+}
+
+.email-cell-control {
+  grid-column: span 7;
+  margin-bottom: 0;
+}
+
+.email-callout {
+  grid-row: span 2;
+  grid-column: span 5;
+  align-self: stretch;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--color-tint-blue);
+}
+
+.email-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--tint);
+}
+
+.email-frame {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-surface);
+}
+
+.email-frame .crm-shot {
+  border-radius: 12px;
+}
+
+/*
+ * Entering: the panel opens from a smaller rounded mask while its tint comes in; the window rises
+ * into place (the New email window instead grows from 95%, as the CRM opens its dialogs); then what
+ * is inside appears in order. Leaving: the inside fades, the window lifts away, the panel closes.
+ */
+[data-motion-ready] .email-card {
+  transition:
+    opacity 0.6s ease-in,
+    translate 0.6s ease-in,
+    scale 0.6s ease-in;
+}
+
+[data-motion-ready] .email-card.is-in {
+  transition:
+    opacity 1s var(--ease-arrive) calc(0.2s + var(--i) * 0.35s),
+    translate 1.2s var(--ease-arrive) calc(0.2s + var(--i) * 0.35s),
+    scale 1.2s var(--ease-arrive) calc(0.2s + var(--i) * 0.35s);
+}
+
+[data-motion-ready] .email-card:not(.is-in) {
+  opacity: 0;
+  translate: 0 -24px;
+  scale: 0.94;
+}
+
+[data-motion-ready] .email-panel {
+  clip-path: inset(0 round 24px);
+  transition:
+    clip-path 0.7s cubic-bezier(0.4, 0, 1, 1) 0.15s,
+    background-color 0.6s ease-in 0.15s;
+}
+
+[data-motion-ready] .email-panel.is-in {
+  transition:
+    clip-path 1.1s var(--ease-arrive),
+    background-color 1s var(--ease-arrive);
+}
+
+[data-motion-ready] .email-panel:not(.is-in) {
+  clip-path: inset(9% 7% round 40px);
+  background-color: var(--color-surface);
+}
+
+[data-motion-ready] .email-cell-filed .email-panel.is-in {
+  transition-delay: 0.15s;
+}
+
+[data-motion-ready] .email-frame {
+  transition:
+    opacity 0.45s ease-in,
+    transform 0.6s cubic-bezier(0.4, 0, 1, 1);
+}
+
+[data-motion-ready] .email-panel.is-in .email-frame {
+  transition:
+    opacity 0.9s var(--ease-arrive) 0.25s,
+    transform 1.3s var(--ease-arrive) 0.25s;
+}
+
+[data-motion-ready] .email-cell-filed .email-panel.is-in .email-frame {
+  transition-delay: 0.4s;
+}
+
+[data-motion-ready] .email-panel:not(.is-in) .email-frame {
+  opacity: 0;
+  transform: translateY(56px) scale(0.96);
+}
+
+[data-motion-ready] .email-panel.is-out-up .email-frame {
+  transform: translateY(-56px) scale(0.96);
+}
+
+[data-motion-ready] .email-cell-send .email-panel:not(.is-in) .email-frame {
+  transform: scale(0.95);
+}
+
+[data-motion-ready] .email-cell-send .email-panel.is-out-up .email-frame {
+  transform: scale(0.95) translateY(-24px);
+}
+
+/* Inside the pictures: the contact's e-mails one by one, newest first; the connected mailbox, then the ways to connect. */
+[data-motion-ready] :is(.crm-email ul > li, .crm-settings-email .card-b > *, .crm-settings-email-m .card-b > *) {
+  transition:
+    opacity 0.3s ease-in,
+    transform 0.3s ease-in;
+}
+
+[data-motion-ready] .email-panel:not(.is-in) :is(.crm-email ul > li, .crm-settings-email .card-b > *, .crm-settings-email-m .card-b > *) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+[data-motion-ready] .email-panel.is-in :is(.crm-email ul > li, .crm-settings-email .card-b > *, .crm-settings-email-m .card-b > *) {
+  transition:
+    opacity 0.7s var(--ease-arrive) var(--d, 0.8s),
+    transform 0.9s var(--ease-arrive) var(--d, 0.8s);
+}
+
+[data-motion-ready] .crm-email ul > li:nth-child(1) {
+  --d: 0.95s;
+}
+
+[data-motion-ready] .crm-email ul > li:nth-child(2) {
+  --d: 1.1s;
+}
+
+[data-motion-ready] .crm-email ul > li:nth-child(3) {
+  --d: 1.25s;
+}
+
+[data-motion-ready] .crm-email ul > li:nth-child(4) {
+  --d: 1.4s;
+}
+
+[data-motion-ready] :is(.crm-settings-email, .crm-settings-email-m) .card-b > :nth-child(2) {
+  --d: 1s;
+}
+
+/* The Google block is text and never moves: only its tint comes and goes. */
+[data-motion-ready] .email-callout {
+  transition: background-color 0.6s ease-in;
+}
+
+[data-motion-ready] .email-callout.is-in {
+  transition: background-color 1s var(--ease-arrive) 0.3s;
+}
+
+[data-motion-ready] .email-callout:not(.is-in) {
+  background-color: var(--color-canvas);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-ready] .email-card {
+    translate: none !important;
+    scale: none !important;
+  }
+
+  [data-motion-ready] .email-panel {
+    clip-path: none !important;
+  }
+
+  [data-motion-ready] :is(.email-frame, .crm-email ul > li, .crm-settings-email .card-b > *, .crm-settings-email-m .card-b > *) {
+    transform: none !important;
+  }
+}
+
+/* Below lg the grid stacks. */
+@media (width < 64rem) {
+  .email-bento {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .email-cell,
+  .email-cell-control {
+    grid-column: 1;
+    margin-bottom: 56px;
+  }
+
+  .email-callout {
+    grid-column: 1;
+  }
+}
+
+/* Phone: the cards stack in two rows, and the tinted panel is the picture's frame. */
+@media (width < 48rem) {
+  .email-cards {
+    height: 244px;
+    margin-bottom: 32px;
+  }
+
+  .email-card {
+    width: 216px;
+  }
+
+  .email-card:nth-child(1) {
+    top: 4px;
+  }
+
+  .email-card:nth-child(2) {
+    top: 58px;
+    right: 0;
+    left: auto;
+  }
+
+  .email-card:nth-child(3) {
+    top: 142px;
+    left: 8px;
+  }
+
+  .email-bento {
+    margin-top: 3rem;
+  }
+
+  .email-panel {
+    padding: 12px;
+  }
+
+  .email-frame {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .email-callout {
+    padding: 24px;
+  }
+}

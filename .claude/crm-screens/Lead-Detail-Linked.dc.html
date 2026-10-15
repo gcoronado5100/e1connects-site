@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lead detail · linked contact</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-i5{width:20px;height:20px;padding:0;border-radius:4px}
+.tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.task{display:flex;align-items:flex-start;gap:8px;border-radius:8.4px;padding:6px 8px}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="leads" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Leads" current="Marcus Ellery" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <div style="display:flex;align-items:center;gap:6px;min-width:0">
+          <button type="button" class="btn btn-sm" style="height:32px;padding:0 8px;gap:4px;color:var(--muted-fg)">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Back
+          </button>
+          <div style="display:flex;align-items:center;gap:4px;min-width:0">
+            <h1 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Marcus Ellery</h1>
+            <button type="button" aria-label="Edit name" class="btn btn-i5" style="width:24px;height:24px;color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+          </div>
+          <span style="font-size:12px;color:var(--muted-fg)">#12874 · Get Pre-Approved</span>
+          <button type="button" style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:inherit;cursor:pointer">
+            <span style="width:8px;height:8px;border-radius:9999px;background:#3b82f6"></span>
+            <span>Hot lead</span>
+            <svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+          <button type="button" class="btn btn-outline" style="height:32px;padding:0 10px;font-size:12px;gap:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Done</button>
+          <span style="display:inline-flex">
+            <button type="button" class="btn btn-outline btn-sm" style="border-top-right-radius:0;border-bottom-right-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</button>
+            <button type="button" class="btn btn-outline btn-sm" aria-label="Choose line" style="padding:0 6px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          </span>
+        </div>
+      </div>
+
+      <div style="flex:1;min-height:0;display:flex;overflow:hidden">
+
+        <aside style="width:320px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:8px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Details</button>
+            <button type="button" class="tab" aria-pressed="false">Files</button>
+          </div>
+          <div style="flex:1;min-height:0;overflow:hidden">
+            <dc-import name="Contact-Info-Panel" hint-size="320px,1040px"></dc-import>
+          </div>
+        </aside>
+
+        <section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:8px 16px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="false">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="true">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+          </div>
+
+          <!-- Tasks tab -->
+          <div style="flex:1;min-height:0;overflow:hidden">
+            <div style="border-bottom:1px solid var(--border)">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+                  <span style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.025em;text-transform:uppercase;color:var(--muted-fg)">Tasks</span>
+                  <span style="font-size:12px;font-weight:500;color:var(--muted-fg)">2</span>
+                </div>
+                <button type="button" aria-label="Add task" title="Add task" class="btn btn-i5" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+              </div>
+              <div style="padding:0 16px 12px;display:flex;flex-direction:column;gap:4px">
+                <sc-for list="{{tasks}}" as="t" hint-placeholder-count="3">
+                  <div class="task" style="{{t.rowStyle}}">
+                    <input type="checkbox" class="cb" aria-label="Complete task" checked="{{t.done}}" style="margin-top:2px">
+                    <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:2px;color:var(--muted-fg)"><path d="{{t.iconPath}}"/></svg>
+                    <div style="flex:1;min-width:0">
+                      <p style="margin:0;font-size:12px;line-height:1.25;{{t.titleStyle}}">{{t.title}}</p>
+                      <div style="display:flex;align-items:center;gap:6px;margin-top:2px;font-size:11px;line-height:16px">
+                        <span style="{{t.dueStyle}}">{{t.due}}</span>
+                        <span style="color:var(--muted-fg)">· {{t.who}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const PHONE = 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z';
+    const SMS = 'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z';
+    const MAIL = 'M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z';
+    const mk = (title, due, who, iconPath, opts) => {
+      const o = opts || {};
+      return {
+        title,
+        due,
+        who,
+        iconPath,
+        done: !!o.done,
+        rowStyle: o.done ? 'opacity:.6' : '',
+        titleStyle: o.done ? 'text-decoration:line-through;color:oklch(0.552 0.016 285.938)' : '',
+        dueStyle: o.overdue ? 'color:oklch(0.577 0.245 27.325);font-weight:500' : 'color:oklch(0.552 0.016 285.938)',
+      };
+    };
+    return {
+      tasks: [
+        mk('Call Marcus about financing documents', 'Today, 4:00 PM', 'Jordan Blake', PHONE),
+        mk('Text the trade-in photo checklist', 'Oct 1, 9:00 AM', 'Jordan Blake', SMS),
+        mk('Send welcome email with the Civic brochure', 'Sep 28, 11:00 AM', 'Jordan Blake', MAIL, { done: true }),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

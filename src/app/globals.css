@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* Reference material and tooling, not pages: keep their text out of the class scan. */
+@source not "../../.claude";
+@source not "../../.agents";
+@source not "../../.impeccable";
+/* The CRM's own markup: its class names must never produce site utilities. */
+@source not "../components/crm-shots";
+
+/* The tokens of DESIGN.md; its appendix lists the same values. */
+@theme {
+  /* Action */
+  --color-primary: #1463ff;
+  --color-primary-hover: #1257df;
+  --color-primary-pressed: #0d4ac2;
+  --color-primary-bright: #4d8bff;
+  --color-link: #1257df;
+
+  /* Text */
+  --color-ink: #0f0d16;
+  --color-ink-soft: #535768;
+  --color-ink-muted: #676b7b;
+
+  /* Surfaces and lines */
+  --color-canvas: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-line: #d0d4e4;
+  --color-line-strong: #808080;
+  --color-navy: #061029;
+  --color-on-navy-soft: #c5cbe9;
+
+  /* Tints */
+  --color-tint-blue: #e7ecff;
+  --color-tint-sky: #d1faff;
+  --color-tint-violet: #eddff7;
+
+  /* Status */
+  --color-success: #4ec375;
+  --color-warning: #ffbc00;
+
+  /* Layout */
+  --container-page: 75rem;
+
+  /* Shadows */
+  --shadow-card: 0 2px 48px 0 rgb(205 208 223 / 0.4);
+  --shadow-raised: 0 2px 6px 0 rgb(6 16 41 / 0.08), 0 14px 28px 0 rgb(6 16 41 / 0.16);
+
+  /* Type */
+  --text-display: 4rem;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.025em;
+  --text-display--font-weight: 600;
+
+  --text-heading-xl: 3rem;
+  --text-heading-xl--line-height: 1.15;
+  --text-heading-xl--letter-spacing: -0.025em;
+  --text-heading-xl--font-weight: 600;
+
+  --text-heading-lg: 2.25rem;
+  --text-heading-lg--line-height: 1.2;
+  --text-heading-lg--letter-spacing: -0.025em;
+  --text-heading-lg--font-weight: 600;
+
+  --text-heading-md: 1.875rem;
+  --text-heading-md--line-height: 1.2;
+  --text-heading-md--letter-spacing: -0.025em;
+  --text-heading-md--font-weight: 600;
+
+  --text-heading-sm: 1.5rem;
+  --text-heading-sm--line-height: 1.3;
+  --text-heading-sm--letter-spacing: -0.015em;
+  --text-heading-sm--font-weight: 600;
+
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.4;
+  --text-title--letter-spacing: -0.01em;
+  --text-title--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.75;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.45;
+}
+
+/* next/font sets --font-inter on <html>; this makes it the sans family. */
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
+/* The easing of every entrance (DESIGN.md › Focus and Motion): a quick start that settles slowly. */
+:root {
+  --ease-arrive: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* A link to a section must not land under the sticky header. */
+  scroll-padding-top: 5rem;
+}
+
+/* The parts of the page the browser draws carry the palette too. */
+@layer base {
+  ::selection {
+    background-color: var(--color-tint-blue);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /*
+   * A picture of the CRM (src/components/crm-shot.tsx): the screen is laid out at its own width
+   * (--crm-w), and the window --crop-x/y/w/h, in the screen's pixels, is scaled to the width of
+   * the frame. Below md a picture may show another window, --phone-x/y/w/h.
+   */
+  .crm-shot {
+    --x: var(--crop-x);
+    --y: var(--crop-y);
+    --w: var(--crop-w);
+    --h: var(--crop-h);
+    position: relative;
+    overflow: hidden;
+    container-type: inline-size;
+    aspect-ratio: var(--w) / var(--h);
+  }
+
+  @media (width < 48rem) {
+    .crm-shot[data-phone-crop] {
+      --x: var(--phone-x);
+      --y: var(--phone-y);
+      --w: var(--phone-w);
+      --h: var(--phone-h);
+    }
+  }
+
+  .crm-shot > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--crm-w) * 1px);
+    transform-origin: 0 0;
+    transform: scale(tan(atan2(100cqw, calc(var(--w) * 1px)))) translate(calc(var(--x) * -1px), calc(var(--y) * -1px));
+  }
+
+  /* The text of a legal page: plain headings, paragraphs and lists set for reading. */
+  .legal-text h2 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--color-ink);
+  }
+
+  .legal-text h3 {
+    margin-top: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .legal-text p,
+  .legal-text ul {
+    margin-top: 1rem;
+  }
+
+  .legal-text ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .legal-text li {
+    margin-top: 0.5rem;
+  }
+
+  .legal-text a {
+    font-weight: 500;
+    color: var(--color-link);
+    text-underline-offset: 4px;
+  }
+
+  .legal-text a:hover {
+    text-decoration: underline;
+  }
+
+  .legal-text strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+}

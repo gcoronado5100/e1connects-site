@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · General</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:16px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.dev{display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px}
+.pill{border-radius:9999px;padding:2px 8px;font-size:11px;line-height:16px;font-weight:500;white-space:nowrap}
+.opt{display:flex;align-items:center;justify-content:space-between;padding:16px;border:1px solid var(--border);border-radius:10.4px}
+.opt-on{border-color:var(--primary);background:oklch(0.623 0.214 259.815 / .05)}
+.rad{width:16px;height:16px;border-radius:9999px;border:2px solid var(--border);flex-shrink:0}
+.rad-on{border-color:var(--primary);background:var(--primary);display:flex;align-items:center;justify-content:center}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1600px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1600" hint-size="256px,1600px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="General" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="general" height="1520" hint-size="224px,1520px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="display:flex;flex-direction:column;gap:32px">
+
+          <!-- User preferences -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">User Preferences</div><p class="card-d">Personal preferences that apply only to your account.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span class="lab">Call Preferences</span>
+                <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px">
+                  <div style="padding-right:12px"><p style="margin:0;font-size:14px;font-weight:500">Auto-Record Calls</p><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Automatically record your calls. When off, calls start unrecorded and you can record on demand with the Record button.</p></div>
+                  <button type="button" role="switch" aria-checked="true" aria-label="Auto-Record Calls" class="sw sw-on"><span class="knob" style="left:14px"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active sessions -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Active sessions</div><p class="card-d">Devices currently signed in to your account. You can be signed in on up to 3 devices at a time.</p></div>
+            <div class="card-b" style="gap:12px">
+              <div class="dev">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                <div style="min-width:0;flex:1">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;font-weight:500">Chrome on macOS</span><span class="pill" style="background:rgb(16 185 129 / .1);color:#047857">This device</span><span class="pill" style="background:var(--muted);color:var(--muted-fg)">Remembered (3 days)</span></div>
+                  <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Halifax, NS · 24.114.0.21 · active just now</p>
+                </div>
+              </div>
+              <div class="dev">
+                <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                <div style="min-width:0;flex:1">
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;font-weight:500">Safari on iPhone</span></div>
+                  <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Halifax, NS · 24.114.3.87 · active 3 hours ago</p>
+                </div>
+                <button type="button" class="btn btn-sm" style="padding:0 12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>Sign out</button>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" style="align-self:flex-start">Sign out all other devices</button>
+              <button type="button" style="display:inline-flex;align-items:center;gap:4px;align-self:flex-start;border:0;background:transparent;padding:0;font-family:inherit;font-size:14px;color:var(--muted-fg);cursor:pointer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>Recent sign-ins</button>
+              <p style="margin:0;font-size:11px;line-height:16px;color:var(--muted-fg)">Locations are approximate. This product includes GeoLite2 data created by MaxMind.</p>
+            </div>
+          </div>
+
+          <!-- Timezone -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Timezone</div><p class="card-d">This timezone is used for all date filters and period presets (Today, This Week, etc.) across the entire app. Set it to match your dealership’s local timezone.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span class="lab">App Timezone</span>
+                <button type="button" class="trig" role="combobox" aria-expanded="false" style="width:320px;font-weight:400"><span>America/Halifax</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></button>
+              </div>
+              <div><button type="button" class="btn btn-pri" disabled style="opacity:.5">Save Timezone</button></div>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Language</div><p class="card-d">Choose the language for the app interface. Each user can set their own preference.</p></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px;max-width:320px">
+                <span class="lab">Language</span>
+                <button type="button" class="trig"><span>English</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Choose the language for the app interface.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance -->
+          <div class="card">
+            <div class="card-h"><div class="card-t">Appearance</div><p class="card-d">Personalize the appearance of the application.</p></div>
+            <div class="card-b" style="gap:16px">
+              <div class="opt opt-on">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#eab308"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><div><p style="margin:0;font-weight:500">Light</p><p style="margin:0;color:var(--muted-fg)">Light theme for better visibility during the day</p></div></div>
+                <span class="rad rad-on"><span style="width:8px;height:8px;border-radius:9999px;background:#fff"></span></span>
+              </div>
+              <div class="opt">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#3b82f6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><div><p style="margin:0;font-weight:500">Dark</p><p style="margin:0;color:var(--muted-fg)">Dark theme to reduce visual fatigue</p></div></div>
+                <span class="rad"></span>
+              </div>
+              <div class="opt">
+                <div style="display:flex;align-items:center;gap:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:#6b7280"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg><div><p style="margin:0;font-weight:500">System</p><p style="margin:0;color:var(--muted-fg)">Follow the system configuration</p></div></div>
+                <span class="rad"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

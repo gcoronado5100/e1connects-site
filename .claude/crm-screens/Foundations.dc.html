@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foundations</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.h2{margin:0 0 20px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-fg)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:16px;color:var(--muted-fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-default{background:var(--primary);color:var(--primary-fg)}
+.btn-destructive{background:var(--destructive);color:#fff}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-link{color:var(--primary);text-decoration:underline;text-underline-offset:4px;padding:0}
+.btn-xs{height:24px;padding:0 8px;gap:4px;font-size:12px}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-lg{height:40px;padding:0 24px}
+.btn-icon{width:36px;padding:0}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-default{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.badge-destructive{background:var(--destructive);color:#fff}
+.badge-outline{border-color:var(--border);color:var(--fg)}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.sw{position:relative;width:32px;height:18.4px;padding:0;border:1px solid transparent;border-radius:9999px;cursor:pointer}
+.sw-on{background:var(--primary)}
+.sw-off{background:var(--border)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.tab{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:2px solid transparent;color:var(--muted-fg);white-space:nowrap}
+.tab-on{border-bottom-color:var(--primary);color:var(--fg)}
+.row{display:grid;grid-template-columns:40px 1.4fr 120px 150px 80px 1fr;align-items:center;border-bottom:1px solid var(--border)}
+.c{padding:8px}
+.tile-box{height:56px;border-radius:8.4px;border:1px solid oklch(0.5 0 0 / .2)}
+</style>
+</helmet>
+<div class="app" style="width:1440px;padding:64px;display:flex;flex-direction:column;gap:56px">
+
+  <div>
+    <h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em">Every1Connects · UI foundations</h1>
+    <p class="mono" style="margin:8px 0 0">Source: front/src/index.css · Tailwind 4 · shadcn/ui new-york · base color neutral · lucide icons · radius 0.65rem</p>
+  </div>
+
+  <!-- Colors -->
+  <section>
+    <h2 class="h2">Color tokens · light and dark</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+      <div style="border:1px solid var(--border);border-radius:10.4px;padding:24px;background:oklch(0.99 0 0)">
+        <div style="font-weight:600;margin-bottom:16px">Light (default)</div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 12px">
+          <sc-for list="{{light}}" as="t" hint-placeholder-count="8">
+            <div>
+              <div class="tile-box" style="background:{{t.value}}"></div>
+              <div style="margin-top:6px;font-size:12px;line-height:16px;font-weight:500;color:oklch(0.141 0.005 285.823)">{{t.name}}</div>
+              <div class="mono">{{t.value}}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border:1px solid oklch(1 0 0 / 10%);border-radius:10.4px;padding:24px;background:oklch(0.141 0.005 285.823)">
+        <div style="font-weight:600;margin-bottom:16px;color:oklch(0.985 0 0)">Dark</div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 12px">
+          <sc-for list="{{dark}}" as="t" hint-placeholder-count="8">
+            <div>
+              <div class="tile-box" style="background:{{t.value}}"></div>
+              <div style="margin-top:6px;font-size:12px;line-height:16px;font-weight:500;color:oklch(0.985 0 0)">{{t.name}}</div>
+              <div class="mono" style="color:oklch(0.705 0.015 286.067)">{{t.value}}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Type + radius -->
+  <section style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+    <div>
+      <h2 class="h2">Typography · system UI stack</h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em">Page title</span><span class="mono">text-2xl · 24 · bold · tracking-tight</span></div>
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:16px;line-height:24px">Input text on small screens</span><span class="mono">text-base · 16</span></div>
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:14px;line-height:20px">Default UI text: tables, buttons, tabs, menus</span><span class="mono">text-sm · 14 · font-medium for labels</span></div>
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:12px;line-height:16px">Badges, captions, last message preview</span><span class="mono">text-xs · 12</span></div>
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:11px;line-height:16px;font-weight:500;letter-spacing:.025em;text-transform:uppercase">Smart Views</span><span class="mono">11 · uppercase · tracking-wide</span></div>
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-size:10px;line-height:16px;font-weight:600">NEW · 412</span><span class="mono">10 · semibold · tab counters and pills</span></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="h2">Radius</h2>
+      <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
+        <div><div style="width:80px;height:80px;border:1px solid var(--border);background:var(--muted);border-radius:6.4px"></div><div class="mono" style="margin-top:6px">sm · 6.4</div></div>
+        <div><div style="width:80px;height:80px;border:1px solid var(--border);background:var(--muted);border-radius:8.4px"></div><div class="mono" style="margin-top:6px">md · 8.4 (buttons, inputs, badges)</div></div>
+        <div><div style="width:80px;height:80px;border:1px solid var(--border);background:var(--muted);border-radius:10.4px"></div><div class="mono" style="margin-top:6px">lg · 10.4 (dialogs, sheets, tables)</div></div>
+        <div><div style="width:80px;height:80px;border:1px solid var(--border);background:var(--muted);border-radius:14.4px"></div><div class="mono" style="margin-top:6px">xl · 14.4 (cards)</div></div>
+        <div><div style="width:80px;height:80px;border:1px solid var(--border);background:var(--muted);border-radius:9999px"></div><div class="mono" style="margin-top:6px">full (pills, avatars)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section>
+    <h2 class="h2">Buttons</h2>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-destructive">Destructive</button>
+        <button type="button" class="btn btn-outline">Outline</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn">Ghost</button>
+        <button type="button" class="btn btn-link">Link</button>
+        <button type="button" class="btn btn-default" disabled style="opacity:.5">Disabled</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn btn-outline btn-xs">xs · 24</button>
+        <button type="button" class="btn btn-outline btn-sm">sm · 32</button>
+        <button type="button" class="btn btn-outline">default · 36</button>
+        <button type="button" class="btn btn-outline btn-lg">lg · 40</button>
+        <button type="button" class="btn btn-outline btn-icon" aria-label="Settings"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></button>
+        <button type="button" class="btn btn-outline btn-sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>With icon</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badges and pills -->
+  <section>
+    <h2 class="h2">Badges and pills</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="badge badge-default">Agent control</span>
+        <span class="badge badge-secondary">Chloe active</span>
+        <span class="badge badge-destructive">Needs agent</span>
+        <span class="badge badge-outline">Tier 2</span>
+        <span class="badge badge-outline">Closed</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <sc-for list="{{stages}}" as="s" hint-placeholder-count="6">
+          <span class="pill" style="{{s.style}}">{{s.name}}</span>
+        </sc-for>
+        <span class="pill" style="border:1px solid var(--border);color:var(--muted-fg);font-weight:400">No stage</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span style="display:inline-flex;align-items:center;border-radius:9999px;padding:2px 6px;font-size:10px;line-height:16px;font-weight:600;background:#fef3c7;color:#b45309;border:1px solid #fcd34d">Pending</span>
+        <span style="font-size:10px;line-height:16px;font-weight:600;padding:2px 6px;border-radius:9999px;background:#fbbf24;color:#451a03">New</span>
+        <span class="badge badge-secondary" style="font-size:10px">412</span>
+        <span class="badge badge-destructive" style="font-size:10px">8</span>
+        <span style="width:20px;height:20px;border-radius:9999px;background:var(--destructive);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center">3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms -->
+  <section>
+    <h2 class="h2">Form controls</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <label for="f-in" style="font-size:14px;font-weight:500">Input</label>
+        <input id="f-in" class="inp" type="text" placeholder="Search customers…">
+        <label for="f-sel" style="font-size:14px;font-weight:500;margin-top:8px">Select</label>
+        <select id="f-sel" class="inp"><option>25</option><option>50</option><option>100</option></select>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:14px;font-weight:500">Checkbox</div>
+        <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" class="cb"> Unchecked</label>
+        <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" class="cb" checked> Checked</label>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:14px;font-weight:500">Switch</div>
+        <div style="display:flex;align-items:center;gap:8px"><button type="button" role="switch" aria-checked="true" aria-label="On" class="sw sw-on"><span class="knob" style="left:14px"></span></button> On</div>
+        <div style="display:flex;align-items:center;gap:8px"><button type="button" role="switch" aria-checked="false" aria-label="Off" class="sw sw-off"><span class="knob" style="left:1px"></span></button> Off</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs + table row -->
+  <section>
+    <h2 class="h2">Page tabs and table</h2>
+    <div style="display:flex;align-items:center;gap:4px;border-bottom:1px solid var(--border);padding:0 16px;margin-bottom:16px">
+      <span class="tab tab-on">Chloe chats <span class="badge badge-secondary" style="margin-left:4px;font-size:10px">412</span></span>
+      <span class="tab">Needs Agent <span class="badge badge-destructive" style="margin-left:4px;font-size:10px">8</span></span>
+      <span class="tab">Agent chats</span>
+    </div>
+    <div role="table" aria-label="Table sample" style="border:1px solid var(--border);border-radius:10.4px;overflow:hidden">
+      <div role="row" class="row" style="height:40px;font-weight:500">
+        <div role="columnheader" style="padding:0 0 0 8px"><input type="checkbox" class="cb" aria-label="Select all"></div>
+        <div role="columnheader" class="c">Customer</div><div role="columnheader" class="c">Status</div><div role="columnheader" class="c">Stage</div><div role="columnheader" class="c">Tier</div><div role="columnheader" class="c">Last Message</div>
+      </div>
+      <div role="row" class="row">
+        <div role="cell" style="padding:8px 0 8px 8px"><input type="checkbox" class="cb" aria-label="Select row"></div>
+        <div role="cell" class="c" style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:9999px;background:var(--muted);display:inline-flex;align-items:center;justify-content:center;font-size:12px">M</span><span style="font-weight:500">Marcus Ellery</span></div>
+        <div role="cell" class="c"><span class="badge badge-secondary">Chloe active</span></div>
+        <div role="cell" class="c"><span class="pill" style="background:#3b82f622;color:#3b82f6">New Lead</span></div>
+        <div role="cell" class="c"><span class="badge badge-outline">Tier 2</span></div>
+        <div role="cell" class="c" style="font-size:12px;color:var(--muted-fg)"><span style="font-weight:500;margin-right:4px;color:oklch(0.141 0.005 285.823 / .8)">Them:</span>Is the 2021 Civic still available?</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2150}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const c = (name, value) => ({ name, value });
+    const stage = (name, hex) => ({ name, style: 'background:' + hex + '22;color:' + hex });
+    return {
+      light: [
+        c('background', 'oklch(0.99 0 0)'),
+        c('foreground', 'oklch(0.141 0.005 285.823)'),
+        c('card', 'oklch(0.99 0 0)'),
+        c('primary', 'oklch(0.623 0.214 259.815)'),
+        c('primary-foreground', 'oklch(0.97 0.014 254.604)'),
+        c('secondary · muted · accent', 'oklch(0.967 0.001 286.375)'),
+        c('muted-foreground', 'oklch(0.552 0.016 285.938)'),
+        c('destructive', 'oklch(0.577 0.245 27.325)'),
+        c('border · input', 'oklch(0.92 0.004 286.32)'),
+        c('ring', 'oklch(0.623 0.214 259.815)'),
+        c('sidebar', 'oklch(0.30 0.006 285.885)'),
+        c('sidebar-accent', 'oklch(0.37 0.006 285.885)'),
+        c('chart-1', 'oklch(0.646 0.222 41.116)'),
+        c('chart-2', 'oklch(0.6 0.118 184.704)'),
+        c('chart-3', 'oklch(0.398 0.07 227.392)'),
+        c('chart-4', 'oklch(0.828 0.189 84.429)'),
+        c('chart-5', 'oklch(0.769 0.188 70.08)'),
+      ],
+      dark: [
+        c('background', 'oklch(0.141 0.005 285.823)'),
+        c('foreground', 'oklch(0.985 0 0)'),
+        c('card', 'oklch(0.21 0.006 285.885)'),
+        c('primary', 'oklch(0.546 0.245 262.881)'),
+        c('primary-foreground', 'oklch(1 0 265.522)'),
+        c('secondary · muted · accent', 'oklch(0.274 0.006 286.033)'),
+        c('muted-foreground', 'oklch(0.705 0.015 286.067)'),
+        c('destructive', 'oklch(0.704 0.191 22.216)'),
+        c('border', 'oklch(1 0 0 / 10%)'),
+        c('ring', 'oklch(0.488 0.243 264.376)'),
+        c('sidebar', 'oklch(0.21 0.006 285.885)'),
+        c('sidebar-accent', 'oklch(0.274 0.006 286.033)'),
+        c('chart-1', 'oklch(0.488 0.243 264.376)'),
+        c('chart-2', 'oklch(0.696 0.17 162.48)'),
+        c('chart-3', 'oklch(0.769 0.188 70.08)'),
+        c('chart-4', 'oklch(0.627 0.265 303.9)'),
+        c('chart-5', 'oklch(0.645 0.246 16.439)'),
+      ],
+      stages: [
+        stage('New Lead', '#3b82f6'),
+        stage('Contacted', '#f59e0b'),
+        stage('Credit App Sent', '#8b5cf6'),
+        stage('Test Drive Booked', '#10b981'),
+        stage('Trade-in Quote', '#f97316'),
+        stage('Follow Up', '#14b8a6'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

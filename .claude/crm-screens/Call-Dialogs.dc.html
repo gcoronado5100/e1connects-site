@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Call dialogs</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.scrim{display:flex;align-items:center;justify-content:center;background:rgb(0 0 0 / .8);padding:32px}
+.dlg{position:relative;width:448px;display:grid;gap:16px;padding:24px;border:1px solid var(--border);border-radius:10.4px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)}
+.x{position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;cursor:pointer;color:var(--fg)}
+.h2{margin:0;font-size:18px;line-height:1;font-weight:600;letter-spacing:-.025em}
+.desc{margin:6px 0 0;font-size:14px;line-height:20px;color:var(--muted-fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-pri{background:var(--primary);color:var(--primary-fg)}
+.opt{border:1px solid var(--border);border-radius:8.4px;padding:8px 12px;text-align:left;font-family:inherit;font-size:14px;line-height:20px;background:transparent;color:var(--muted-fg);cursor:pointer}
+.opt-on{border-color:var(--primary);background:oklch(0.623 0.214 259.815 / .1);color:var(--fg)}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.hint{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.rad{display:flex;align-items:center;gap:8px;font-size:14px}
+</style>
+</helmet>
+<div class="app" style="width:1360px;display:grid;grid-template-columns:1fr 1fr;gap:0">
+
+  <!-- Disposition dialog -->
+  <div class="scrim" style="min-height:640px">
+    <div class="dlg" role="dialog" aria-label="How did the call go?">
+      <button type="button" class="x" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div>
+        <h2 class="h2">How did the call go?</h2>
+        <p class="desc">Log the outcome of your call with (902) 555-0142.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button type="button" class="opt opt-on">Interested</button>
+        <button type="button" class="opt">Callback scheduled</button>
+        <button type="button" class="opt">Left voicemail</button>
+        <button type="button" class="opt">No answer</button>
+        <button type="button" class="opt">Wrong number</button>
+        <button type="button" class="opt">Not interested</button>
+        <button type="button" class="opt">Other</button>
+      </div>
+      <label for="dispo-note" style="position:absolute;left:-9999px">Note</label>
+      <textarea id="dispo-note" rows="3" maxlength="2000" placeholder="Optional note (next steps, context…)" style="width:100%;resize:vertical;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)"></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px">
+        <button type="button" class="btn">Skip</button>
+        <button type="button" class="btn btn-pri">Save outcome</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start dialer dialog -->
+  <div class="scrim" style="min-height:640px">
+    <div class="dlg" role="dialog" aria-label="Start dialer">
+      <button type="button" class="x" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div>
+        <h2 class="h2">Start dialer</h2>
+        <p class="desc">Call a list of contacts one after another. Voicemail and unanswered calls are skipped automatically.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span class="lab">Contacts</span>
+          <label class="rad"><input type="radio" name="scope" checked style="accent-color:var(--primary)">Selected rows (3)</label>
+          <label class="rad"><input type="radio" name="scope" style="accent-color:var(--primary)">All rows matching the filters (214)</label>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span class="lab">Mode</span>
+          <button type="button" class="trig"><span>Batch — 2 at a time</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+          <p class="hint">Dials several contacts at once and connects you to the first person who answers. If two answer together, the second is offered to another available agent; if nobody is free, they hear a short message and are called back later.</p>
+          <p class="hint" style="color:#d97706">No other agent can take a second answer right now: if two people answer together, one hears the short message.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span class="lab">Caller ID</span>
+          <button type="button" class="trig"><span>Automatic (your default line)</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+
+        <p style="margin:0;border-radius:8.4px;background:var(--muted);padding:8px 12px;font-size:12px;line-height:16px;color:var(--muted-fg)">Calls are placed 9:00–21:30 on weekdays and 10:00–18:00 on weekends. Opted-out and invalid numbers are skipped. Calling hours are checked in America/Halifax.</p>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:8px">
+        <button type="button" class="btn">Cancel</button>
+        <button type="button" class="btn btn-pri"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>Start calling (3)</button>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

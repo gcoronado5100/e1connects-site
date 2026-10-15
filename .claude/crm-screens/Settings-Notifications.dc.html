@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings · Notifications</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic20{width:20px;height:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{display:flex;align-items:center;gap:8px;font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px;display:flex;flex-direction:column;gap:24px}
+.tr{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.tr b{display:block;font-size:16px;line-height:16px;font-weight:500}
+.tr p{margin:4px 0 0;font-size:14px;color:var(--muted-fg)}
+.sw{position:relative;width:32px;height:18.4px;padding:0;flex-shrink:0;border:1px solid transparent;border-radius:9999px}
+.sw-on{background:var(--primary)}
+.sw-off{background:var(--border)}
+.knob{position:absolute;top:0.7px;width:16px;height:16px;border-radius:9999px;background:#fff}
+.badge{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.help{margin:0;border:1px dashed var(--border);border-radius:8.4px;padding:8px;font-size:12px;line-height:16px;color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;max-width:320px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:1760px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="settings" height="1760" hint-size="256px,1760px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Settings" current="Notifications" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;overflow:hidden">
+      <dc-import name="Settings-Nav" active="notifications" height="1680" hint-size="224px,1680px"></dc-import>
+
+      <div style="flex:1;min-width:0;padding:24px;overflow:hidden">
+        <div style="max-width:896px;display:flex;flex-direction:column;gap:24px">
+
+          <!-- Permissions -->
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic ic20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Permissions</div></div>
+            <div class="card-b">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div class="tr">
+                  <div><b style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Microphone</b><p>Required to make and receive calls in the browser.</p></div>
+                  <div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span class="badge" style="background:#dcfce7;color:#166534">Granted</span></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div class="tr">
+                  <div><b style="display:flex;align-items:center;gap:8px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/></svg>Browser notifications</b><p>Get a desktop alert for incoming calls when this tab is in the background.</p></div>
+                  <div style="display:flex;align-items:center;gap:8px;flex-shrink:0"><span class="badge" style="background:#fef3c7;color:#92400e">Not requested</span><button type="button" class="btn btn-outline">Enable browser notifications</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- General -->
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic ic20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>General</div></div>
+            <div class="card-b">
+              <div class="tr"><div><b>Push notifications</b><p>Receive real-time in-app notifications</p></div><button type="button" role="switch" aria-checked="true" aria-label="Push notifications" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div class="tr"><div><b>Email notifications</b><p>Master switch: turn it off to stop every optional email below</p></div><button type="button" role="switch" aria-checked="true" aria-label="Email notifications" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+            </div>
+          </div>
+
+          <!-- Email alerts -->
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic ic20" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email alerts</div><p class="card-d">Choose which alerts reach your inbox. They stay off until you turn them on. The "client wants an agent" alert is in the Chloe section.</p></div>
+            <div class="card-b">
+              <div class="tr"><div><b>New lead registered</b><p>An email for every new lead from your websites</p></div><button type="button" role="switch" aria-checked="true" aria-label="New lead registered" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div class="tr"><div><b>Chloe health alerts</b><p>An email when Chloe hits an error (reply not sent, text not delivered)</p></div><button type="button" role="switch" aria-checked="false" aria-label="Chloe health alerts" class="sw sw-off"><span class="knob" style="left:1px"></span></button></div>
+              <div class="tr"><div><b>Conversation needs an agent</b><p>An email when a conversation is handed to your team</p></div><button type="button" role="switch" aria-checked="true" aria-label="Conversation needs an agent" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div class="tr"><div><b>Task reminders</b><p>An email shortly before a task assigned to you is due, when you are away from the app</p></div><button type="button" role="switch" aria-checked="false" aria-label="Task reminders" class="sw sw-off"><span class="knob" style="left:1px"></span></button></div>
+            </div>
+          </div>
+
+          <!-- Calls -->
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic ic20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Calls</div></div>
+            <div class="card-b">
+              <div class="tr"><div><b>Missed calls — in-app</b><p>Get an in-app alert when an inbound call is missed</p></div><button type="button" role="switch" aria-checked="true" aria-label="Missed calls in-app" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div class="tr"><div><b>Voicemails — in-app</b><p>Get an in-app alert when a caller leaves a voicemail</p></div><button type="button" role="switch" aria-checked="true" aria-label="Voicemails in-app" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div class="tr"><div><b>Voicemails — email</b><p>Get an email with the recording link when a voicemail is left</p></div><button type="button" role="switch" aria-checked="true" aria-label="Voicemails email" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+            </div>
+          </div>
+
+          <!-- Chloe -->
+          <div class="card">
+            <div class="card-h"><div class="card-t"><svg class="ic ic20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>Chloe Settings</div></div>
+            <div class="card-b">
+              <div class="tr"><div><b>Notify when a client wants to talk to an agent</b><p>Get notified when a customer in a Chloe chat asks to speak with a person</p></div><button type="button" role="switch" aria-checked="true" aria-label="Notify when a client wants an agent" class="sw sw-on"><span class="knob" style="left:14px"></span></button></div>
+              <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px;border-top:1px solid var(--border)">
+                <b style="font-size:16px;line-height:16px;font-weight:500">Notification method</b>
+                <button type="button" class="trig"><span>Email (to your account email)</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                <p class="help" style="border:0;padding:0">Add a phone number in your profile to use SMS.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

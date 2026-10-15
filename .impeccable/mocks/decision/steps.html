@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero sketch: the journey in five steps</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#061029;color:#fff;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.top{height:64px;padding-top:10px;padding-bottom:10px;background:#fff;border-bottom:1px solid #d0d4e4;display:flex;align-items:center;justify-content:space-between;padding-left:120px;padding-right:120px;color:#0f0d16}
+.logo{font-size:18px;font-weight:600;letter-spacing:-.025em}
+.nav{display:flex;gap:32px;font-size:14px;font-weight:500;color:#535768}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;font-weight:600;line-height:1;white-space:nowrap}
+.pill-sm{height:44px;padding:0 20px;font-size:14px;background:#1463ff;color:#fff}
+.pill-lg{height:48px;padding:0 24px;font-size:16px}
+.primary{background:#1463ff;color:#fff}
+.ghost{border:1px solid rgb(255 255 255 / .2);color:#fff}
+.lead{font-size:18px;line-height:1.75;color:#c5cbe9}
+.crop{position:relative;overflow:hidden}
+
+.crm-cda .app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}.crm-cda .app *{box-sizing:border-box}.crm-cda .ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.crm-cda .ic14{width:14px;height:14px}.crm-cda .ic12{width:12px;height:12px}.crm-cda .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}.crm-cda .btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-cda .btn-sm{height:32px;padding:0 12px;gap:6px}.crm-cda .btn-7{height:28px;padding:0 10px;gap:4px;font-size:12px}.crm-cda .btn-i7{width:28px;height:28px;padding:0}.crm-cda .badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}.crm-cda .badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}.crm-cda .pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}.crm-cda .tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}.crm-cda .tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}.crm-cda .li{display:flex;gap:12px}.crm-cda .rail{display:flex;flex-direction:column;align-items:center}.crm-cda .dot{margin-top:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);flex-shrink:0}.crm-cda .line{flex:1;width:1px;background:var(--border);margin-top:4px}.crm-cda .card{flex:1;min-width:0;padding-bottom:16px}.crm-cda .card-in{border:1px solid var(--border);border-radius:10.4px;background:var(--bg);overflow:hidden}.crm-cda .card-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px}.crm-cda .card-h-b{border-bottom:1px solid var(--border);background:oklch(0.967 0.001 286.375 / .3)}.crm-cda .card-b{padding:10px 12px}.crm-cda .ttl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;font-size:14px;font-weight:500;line-height:1.25}.crm-cda .by{margin-left:6px;font-size:12px;font-weight:400;color:var(--muted-fg)}.crm-cda .when{font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap;flex-shrink:0}
+
+
+
+
+
+
+
+
+
+
+.crm-chat .app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}.crm-chat .app *{box-sizing:border-box}.crm-chat .ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.crm-chat .ic14{width:14px;height:14px}.crm-chat .ic12{width:12px;height:12px}.crm-chat .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}.crm-chat .btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-chat .btn-primary{background:var(--primary);color:var(--primary-fg)}.crm-chat .btn-sm{height:32px;padding:0 12px;gap:6px}.crm-chat .btn-7{height:28px;padding:0 8px;gap:4px;font-size:12px}.crm-chat .btn-i7{width:28px;height:28px;padding:0}.crm-chat .btn-i9{width:36px;height:36px;padding:0}.crm-chat .tab{height:28px;padding:0 10px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;cursor:pointer}.crm-chat .tab[aria-pressed="true"]{background:var(--muted);color:var(--fg)}.crm-chat .ghost-x{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);font-family:inherit;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap}.crm-chat .bub{border-radius:16px;padding:8px 16px;font-size:14px;line-height:20px;white-space:pre-wrap;overflow-wrap:anywhere}.crm-chat .bub-in{background:var(--muted);color:var(--fg);border-top-left-radius:4px}.crm-chat .bub-out{background:var(--primary);color:var(--primary-fg);border-top-right-radius:4px}.crm-chat .meta{display:flex;align-items:center;gap:4px;font-size:12px;line-height:16px;color:var(--muted-fg)}
+
+
+
+
+
+
+
+
+
+
+.crm-soft .app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:oklch(0.975 0.002 286);-webkit-font-smoothing:antialiased}.crm-soft .app *{box-sizing:border-box}.crm-soft .ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.crm-soft .ic14{width:14px;height:14px}.crm-soft .ic12{width:12px;height:12px}.crm-soft .h1{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-.025em}.crm-soft .cap{margin:0 0 8px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:16px;color:var(--muted-fg)}.crm-soft .col{display:flex;flex-direction:column;gap:28px;min-width:0}.crm-soft .wcard{display:flex;flex-direction:column;gap:12px;padding:16px 0;overflow:hidden;background:var(--bg);border:1px solid var(--border);border-radius:14.4px;box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)}.crm-soft .pop{background:var(--bg);border:1px solid var(--border);border-radius:8.4px;box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}.crm-soft .px{padding-left:16px;padding-right:16px}.crm-soft .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}.crm-soft .btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-soft .btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}.crm-soft .btn-pri{background:var(--primary);color:var(--primary-fg)}.crm-soft .btn-des{background:var(--destructive);color:#fff}.crm-soft .btn-ico{width:36px;padding:0}.crm-soft .btn-7{height:28px;padding:0 8px;font-size:12px}.crm-soft .badge{display:inline-flex;align-items:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:10px;line-height:16px;font-weight:500;white-space:nowrap}.crm-soft .badge-out{border-color:var(--border);color:var(--fg);text-transform:uppercase}.crm-soft .badge-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}.crm-soft .name{margin:0;font-size:14px;line-height:20px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.crm-soft .sub{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.crm-soft .dot{width:10px;height:10px;border-radius:9999px;flex-shrink:0}.crm-soft .sep{border-top:1px solid var(--border);padding-top:12px}.crm-soft .agent{display:flex;align-items:center;gap:8px;height:32px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);font-family:inherit;font-size:12px;font-weight:500;color:var(--fg);text-align:left}.crm-soft .bar{height:6px;border-radius:9999px;background:var(--muted);overflow:hidden}.crm-soft .drow{display:flex;align-items:center;gap:8px;padding:4px 8px}.crm-soft .sw{position:relative;width:32px;height:18.4px;padding:0;border:1px solid transparent;border-radius:9999px;flex-shrink:0}.crm-soft .sel{display:flex;align-items:center;justify-content:space-between;height:32px;min-width:0;flex:1;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:12px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+
+.crm-pipe .app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}.crm-pipe .app *{box-sizing:border-box}.crm-pipe .ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.crm-pipe .ic14{width:14px;height:14px}.crm-pipe .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}.crm-pipe .btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-pipe .btn-primary{background:var(--primary);color:var(--primary-fg)}.crm-pipe .seg{display:flex;align-items:center;border:1px solid var(--border);border-radius:8.4px;overflow:hidden}.crm-pipe .seg button{display:flex;align-items:center;gap:6px;padding:6px 10px;border:0;background:transparent;font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);cursor:pointer}.crm-pipe .seg button[aria-pressed="true"]{background:var(--primary);color:var(--primary-fg)}.crm-pipe .col{display:flex;flex-direction:column;flex-shrink:0;width:288px;height:100%}.crm-pipe .col-h{flex-shrink:0;padding:10px 12px;border-top:2px solid;border-radius:8.4px 8.4px 0 0}.crm-pipe .col-b{flex:1;min-height:120px;overflow:hidden;border:1px solid var(--border);border-top:0;border-radius:0 0 8.4px 8.4px;padding:8px;background:oklch(0.967 0.001 286.375 / .3);display:flex;flex-direction:column;gap:8px}.crm-pipe .cnt{font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);background:var(--muted);border-radius:9999px;padding:2px 6px}.crm-pipe .card{background:var(--bg);border:1px solid var(--border);border-radius:8.4px;padding:12px;box-shadow:0 1px 2px rgb(0 0 0 / .05)}.crm-pipe .ib{display:inline-flex;align-items:center;justify-content:center;padding:4px;border:0;border-radius:9999px;background:transparent;color:var(--muted-fg);cursor:pointer}.crm-pipe .av{width:20px;height:20px;border-radius:9999px;background:var(--primary);color:var(--primary-fg);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}.crm-pipe .d{width:6px;height:6px;border-radius:9999px;display:inline-block}.crm-pipe .more{width:100%;padding:8px 0;border:1px dashed oklch(0.552 0.016 285.938 / .3);border-radius:8.4px;background:transparent;font-family:inherit;font-size:12px;color:var(--muted-fg);cursor:pointer}
+
+
+
+
+
+
+
+.band{height:836px;padding:72px 120px 0;background:radial-gradient(60% 70% at 20% 0%,rgb(20 99 255 / .3),transparent 70%),#061029}
+h1{font-size:64px;line-height:1.1;font-weight:600;letter-spacing:-.025em;max-width:980px;text-wrap:balance}
+.row{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.steps{margin-top:64px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;border-top:1px solid rgb(255 255 255 / .12);padding-top:24px}
+.n{font-size:64px;line-height:1;font-weight:600;letter-spacing:-.025em;color:#4d8bff}
+.st{margin-top:12px;font-size:20px;line-height:1.4;font-weight:600;letter-spacing:-.01em}
+.frame{margin-top:16px;padding:8px;border-radius:12px;background:#fff;width:224px}
+
+</style>
+</head>
+<body>
+<div class="top"><span class="logo">Every1Connects</span><div class="nav"><span>Product</span><span>Email</span><span>Security</span><span>Privacy</span></div><span class="pill pill-sm">Log in</span></div>
+<section class="band">
+  <h1>Every lead, from the form on your website to the sale.</h1>
+  <div class="row"><p class="lead" style="max-width:672px">Every1Connects brings the leads of your website, your contacts and your sales pipeline together with text messages, calls and email, so your team works every deal from a single screen.</p><div style="display:flex;gap:16px"><span class="pill pill-lg primary">Log in</span><span class="pill pill-lg ghost">See what it does</span></div></div>
+  <div class="steps">
+    <div><div class="n">01</div><div class="st">The form arrives</div><div class="frame"><div class="crop" aria-hidden="true" inert style="width:208px;height:46px;"><div class="crm-cda" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.4622222222222222) translate(-56px,-553px)"><div class="app" style="width:832px"><section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg></button>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+            <div style="max-width:768px">
+
+              <!-- Filter chips -->
+              <div style="display:flex;align-items:center;gap:2px;margin-bottom:16px;flex-wrap:wrap">
+                <button type="button" class="tab" aria-pressed="true">All</button>
+                <button type="button" class="tab" aria-pressed="false">Chats</button>
+                <button type="button" class="tab" aria-pressed="false">Notes</button>
+                <button type="button" class="tab" aria-pressed="false">Follow-ups</button>
+                <button type="button" class="tab" aria-pressed="false">Calls</button>
+                <button type="button" class="tab" aria-pressed="false">Forms</button>
+                <button type="button" class="tab" aria-pressed="false">Changes</button>
+              </div>
+
+              <ul style="list-style:none;margin:0;padding:0">
+
+                <!-- SMS burst -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#8b5cf6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">SMS with Marcus Ellery</div><time class="when">4 minutes ago</time></div>
+                    <div class="card-b" style="display:flex;flex-direction:column;gap:10px">
+                      <button type="button" style="align-self:center;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:9999px;background:oklch(0.967 0.001 286.375 / .5);padding:2px 10px;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show 2 more messages</button>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:40 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Finance. What would the monthly payments look like?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Chloe</span><time style="margin-left:6px;color:var(--muted-fg)">9:41 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Happy to help! Roughly how much would you like to put down?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:42 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Is the 2021 Civic still available?</p>
+                        </div>
+                      
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Stage move -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 7v7"></path><path d="M12 7v4"></path><path d="M16 7v9"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Opportunity moved<span class="by">· Chloe</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:6px"><span class="pill" style="background:#3b82f622;color:#3b82f6">New Lead</span><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span class="pill" style="background:#10b98122;color:#10b981">Test Drive Booked</span></span></div>
+                      <time class="when">2 hours ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Call -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#0ea5e9"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 8 22 2 16 2"></polyline><line x1="16" x2="22" y1="8" y2="2"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Outbound call<span class="by">· Jordan Blake</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="badge badge-secondary" style="font-size:10px">Completed</span><span style="font-size:12px;color:var(--muted-fg);font-variant-numeric:tabular-nums">02:14</span></span></div>
+                      <time class="when">1 day ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Note -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#eab308"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">Note<span class="by">· Jordan Blake</span></div><time class="when">1 day ago</time></div>
+                    <div class="card-b"><p style="margin:0;font-size:14px;line-height:1.35">Called after the form came in. Wants a Civic Sport, needs financing, trade-in is a 2014 Corolla. Booked a test drive for Saturday 10:30.</p></div>
+                  </div></div>
+                </li>
+
+                <!-- Form -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl"><span>Form submitted: Get Pre-Approved</span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="pill" style="background:#6366f122;color:#6366f1">Main site</span><a href="#form" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">Open form</a></span></div>
+                      <time class="when">2 days ago</time></div>
+                    <div class="card-b">
+                      <dl style="margin:0;display:grid;grid-template-columns:minmax(0,40%) 1fr;gap:4px 12px;font-size:12px;line-height:16px">
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Vehicle of interest</dt>
+                          <dd style="margin:0">2021 Honda Civic Sport</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Monthly budget</dt>
+                          <dd style="margin:0">$350</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Down payment</dt>
+                          <dd style="margin:0">$2,000</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Do you have a trade-in?</dt>
+                          <dd style="margin:0">Yes</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Employment status</dt>
+                          <dd style="margin:0">Full-time</dd>
+                        
+                      </dl>
+                      <button type="button" style="margin-top:6px;display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show all 14 fields</button>
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Chat started (last) -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"></path><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"></path><path d="M2 12h2"></path><path d="M9 11v2"></path><path d="M15 11v2"></path><path d="M20 12h2"></path></svg></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Chloe started a chat</span><a href="#chat" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">View chat →</a></div><time class="when">2 days ago</time></div>
+                  </div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section></div></div></div></div></div>
+    <div><div class="n">02</div><div class="st">Chloe answers</div><div class="frame"><div class="crop" aria-hidden="true" inert style="width:208px;height:23px;"><div class="crm-cda" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.48372093023255813) translate(-57px,-219px)"><div class="app" style="width:832px"><section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg></button>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+            <div style="max-width:768px">
+
+              <!-- Filter chips -->
+              <div style="display:flex;align-items:center;gap:2px;margin-bottom:16px;flex-wrap:wrap">
+                <button type="button" class="tab" aria-pressed="true">All</button>
+                <button type="button" class="tab" aria-pressed="false">Chats</button>
+                <button type="button" class="tab" aria-pressed="false">Notes</button>
+                <button type="button" class="tab" aria-pressed="false">Follow-ups</button>
+                <button type="button" class="tab" aria-pressed="false">Calls</button>
+                <button type="button" class="tab" aria-pressed="false">Forms</button>
+                <button type="button" class="tab" aria-pressed="false">Changes</button>
+              </div>
+
+              <ul style="list-style:none;margin:0;padding:0">
+
+                <!-- SMS burst -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#8b5cf6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">SMS with Marcus Ellery</div><time class="when">4 minutes ago</time></div>
+                    <div class="card-b" style="display:flex;flex-direction:column;gap:10px">
+                      <button type="button" style="align-self:center;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:9999px;background:oklch(0.967 0.001 286.375 / .5);padding:2px 10px;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show 2 more messages</button>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:40 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Finance. What would the monthly payments look like?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Chloe</span><time style="margin-left:6px;color:var(--muted-fg)">9:41 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Happy to help! Roughly how much would you like to put down?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:42 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Is the 2021 Civic still available?</p>
+                        </div>
+                      
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Stage move -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 7v7"></path><path d="M12 7v4"></path><path d="M16 7v9"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Opportunity moved<span class="by">· Chloe</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:6px"><span class="pill" style="background:#3b82f622;color:#3b82f6">New Lead</span><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span class="pill" style="background:#10b98122;color:#10b981">Test Drive Booked</span></span></div>
+                      <time class="when">2 hours ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Call -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#0ea5e9"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 8 22 2 16 2"></polyline><line x1="16" x2="22" y1="8" y2="2"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Outbound call<span class="by">· Jordan Blake</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="badge badge-secondary" style="font-size:10px">Completed</span><span style="font-size:12px;color:var(--muted-fg);font-variant-numeric:tabular-nums">02:14</span></span></div>
+                      <time class="when">1 day ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Note -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#eab308"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">Note<span class="by">· Jordan Blake</span></div><time class="when">1 day ago</time></div>
+                    <div class="card-b"><p style="margin:0;font-size:14px;line-height:1.35">Called after the form came in. Wants a Civic Sport, needs financing, trade-in is a 2014 Corolla. Booked a test drive for Saturday 10:30.</p></div>
+                  </div></div>
+                </li>
+
+                <!-- Form -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl"><span>Form submitted: Get Pre-Approved</span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="pill" style="background:#6366f122;color:#6366f1">Main site</span><a href="#form" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">Open form</a></span></div>
+                      <time class="when">2 days ago</time></div>
+                    <div class="card-b">
+                      <dl style="margin:0;display:grid;grid-template-columns:minmax(0,40%) 1fr;gap:4px 12px;font-size:12px;line-height:16px">
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Vehicle of interest</dt>
+                          <dd style="margin:0">2021 Honda Civic Sport</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Monthly budget</dt>
+                          <dd style="margin:0">$350</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Down payment</dt>
+                          <dd style="margin:0">$2,000</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Do you have a trade-in?</dt>
+                          <dd style="margin:0">Yes</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Employment status</dt>
+                          <dd style="margin:0">Full-time</dd>
+                        
+                      </dl>
+                      <button type="button" style="margin-top:6px;display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show all 14 fields</button>
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Chat started (last) -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"></path><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"></path><path d="M2 12h2"></path><path d="M9 11v2"></path><path d="M15 11v2"></path><path d="M20 12h2"></path></svg></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Chloe started a chat</span><a href="#chat" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">View chat →</a></div><time class="when">2 days ago</time></div>
+                  </div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section></div></div></div></div></div>
+    <div><div class="n">03</div><div class="st">Your team calls</div><div class="frame"><div class="crop" aria-hidden="true" inert style="width:208px;height:75px;"><div class="crm-soft" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.65) translate(0px,0px)"><div class="app" style="width:320px"><div class="wcard" style="width:320px">
+          <div class="px" style="display:flex;align-items:center;gap:12px">
+            <span class="dot" style="background:#22c55e"></span>
+            <div style="min-width:0;flex:1"><div style="display:flex;min-width:0;align-items:center;gap:6px"><p class="name">Marcus Ellery</p><span class="badge badge-sec" style="flex-shrink:0">Hot lead</span></div><p class="sub">(902) 555-0142 · 02:14</p></div>
+            <button type="button" class="btn" aria-label="Minimize call widget" style="width:28px;height:28px;padding:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+          </div>
+          <div class="px" style="display:flex;align-items:center;gap:6px">
+            <button type="button" class="btn btn-outline btn-ico" aria-label="Mute"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg></button>
+            <button type="button" class="btn btn-outline btn-ico" aria-label="Record call"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#ef4444"><circle cx="12" cy="12" r="10"></circle></svg></button>
+            <button type="button" class="btn btn-outline btn-ico" aria-label="Transfer call"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 2 22 6 18 10"></polyline><line x1="14" x2="22" y1="6" y2="6"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path></svg></button>
+            <button type="button" class="btn btn-outline btn-ico" aria-label="Invite an agent"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" x2="19" y1="8" y2="14"></line><line x1="22" x2="16" y1="11" y2="11"></line></svg></button>
+            <button type="button" class="btn btn-des" style="flex:1;min-width:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"></path><line x1="22" x2="2" y1="2" y2="22"></line></svg>Hang Up</button>
+          </div>
+        </div></div></div></div></div></div>
+    <div><div class="n">04</div><div class="st">The test drive is set</div><div class="frame"><div class="crop" aria-hidden="true" inert style="width:208px;height:18px;"><div class="crm-cda" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.48372093023255813) translate(-56px,-333px)"><div class="app" style="width:832px"><section style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex-shrink:0;display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--border)">
+            <button type="button" class="tab" aria-pressed="true">Activity</button>
+            <button type="button" class="tab" aria-pressed="false">Chat</button>
+            <button type="button" class="tab" aria-pressed="false">Notes</button>
+            <button type="button" class="tab" aria-pressed="false">Tasks</button>
+            <button type="button" class="tab" aria-pressed="false">Calls</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn btn-outline btn-7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:2px"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>Done</button>
+            <button type="button" class="btn btn-i7" aria-label="Delete client" title="Delete client" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H8c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg></button>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:hidden;padding:16px">
+            <div style="max-width:768px">
+
+              <!-- Filter chips -->
+              <div style="display:flex;align-items:center;gap:2px;margin-bottom:16px;flex-wrap:wrap">
+                <button type="button" class="tab" aria-pressed="true">All</button>
+                <button type="button" class="tab" aria-pressed="false">Chats</button>
+                <button type="button" class="tab" aria-pressed="false">Notes</button>
+                <button type="button" class="tab" aria-pressed="false">Follow-ups</button>
+                <button type="button" class="tab" aria-pressed="false">Calls</button>
+                <button type="button" class="tab" aria-pressed="false">Forms</button>
+                <button type="button" class="tab" aria-pressed="false">Changes</button>
+              </div>
+
+              <ul style="list-style:none;margin:0;padding:0">
+
+                <!-- SMS burst -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#8b5cf6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">SMS with Marcus Ellery</div><time class="when">4 minutes ago</time></div>
+                    <div class="card-b" style="display:flex;flex-direction:column;gap:10px">
+                      <button type="button" style="align-self:center;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:9999px;background:oklch(0.967 0.001 286.375 / .5);padding:2px 10px;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show 2 more messages</button>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:40 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Finance. What would the monthly payments look like?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Chloe</span><time style="margin-left:6px;color:var(--muted-fg)">9:41 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Happy to help! Roughly how much would you like to put down?</p>
+                        </div>
+                      
+                        <div style="min-width:0">
+                          <p style="margin:0;font-size:12px;line-height:16px"><span style="font-weight:600">Marcus Ellery</span><time style="margin-left:6px;color:var(--muted-fg)">9:42 AM</time></p>
+                          <p style="margin:2px 0 0;font-size:14px;line-height:1.35;color:oklch(0.141 0.005 285.823 / .9)">Is the 2021 Civic still available?</p>
+                        </div>
+                      
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Stage move -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 7v7"></path><path d="M12 7v4"></path><path d="M16 7v9"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Opportunity moved<span class="by">· Chloe</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:6px"><span class="pill" style="background:#3b82f622;color:#3b82f6">New Lead</span><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span class="pill" style="background:#10b98122;color:#10b981">Test Drive Booked</span></span></div>
+                      <time class="when">2 hours ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Call -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#0ea5e9"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 8 22 2 16 2"></polyline><line x1="16" x2="22" y1="8" y2="2"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Outbound call<span class="by">· Jordan Blake</span></span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="badge badge-secondary" style="font-size:10px">Completed</span><span style="font-size:12px;color:var(--muted-fg);font-variant-numeric:tabular-nums">02:14</span></span></div>
+                      <time class="when">1 day ago</time></div>
+                  </div></div>
+                </li>
+
+                <!-- Note -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#eab308"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl">Note<span class="by">· Jordan Blake</span></div><time class="when">1 day ago</time></div>
+                    <div class="card-b"><p style="margin:0;font-size:14px;line-height:1.35">Called after the form came in. Wants a Civic Sport, needs financing, trade-in is a 2014 Corolla. Booked a test drive for Saturday 10:30.</p></div>
+                  </div></div>
+                </li>
+
+                <!-- Form -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:#3b82f6"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="line"></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h card-h-b"><div class="ttl"><span>Form submitted: Get Pre-Approved</span>
+                      <span style="display:inline-flex;align-items:center;gap:8px"><span class="pill" style="background:#6366f122;color:#6366f1">Main site</span><a href="#form" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">Open form</a></span></div>
+                      <time class="when">2 days ago</time></div>
+                    <div class="card-b">
+                      <dl style="margin:0;display:grid;grid-template-columns:minmax(0,40%) 1fr;gap:4px 12px;font-size:12px;line-height:16px">
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Vehicle of interest</dt>
+                          <dd style="margin:0">2021 Honda Civic Sport</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Monthly budget</dt>
+                          <dd style="margin:0">$350</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Down payment</dt>
+                          <dd style="margin:0">$2,000</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Do you have a trade-in?</dt>
+                          <dd style="margin:0">Yes</dd>
+                        
+                          <dt style="margin:0;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Employment status</dt>
+                          <dd style="margin:0">Full-time</dd>
+                        
+                      </dl>
+                      <button type="button" style="margin-top:6px;display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0;font-family:inherit;font-size:11px;font-weight:500;color:var(--muted-fg);cursor:pointer"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Show all 14 fields</button>
+                    </div>
+                  </div></div>
+                </li>
+
+                <!-- Chat started (last) -->
+                <li class="li">
+                  <div class="rail"><div class="dot" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"></path><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"></path><path d="M2 12h2"></path><path d="M9 11v2"></path><path d="M15 11v2"></path><path d="M20 12h2"></path></svg></div></div>
+                  <div class="card"><div class="card-in">
+                    <div class="card-h"><div class="ttl"><span>Chloe started a chat</span><a href="#chat" style="font-size:12px;font-weight:400;color:var(--primary);text-decoration:none">View chat →</a></div><time class="when">2 days ago</time></div>
+                  </div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section></div></div></div></div></div>
+    <div><div class="n">05</div><div class="st">The deal moves</div><div class="frame"><div class="crop" aria-hidden="true" inert style="width:208px;height:89px;"><div class="crm-pipe" style="position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(0.7703703703703704) translate(0px,0px)"><div class="app" style="width:270px"><div class="card">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+                      <p style="margin:0;font-size:14px;line-height:1.35;font-weight:500;flex:1">Marcus Ellery</p>
+                      <div style="display:flex;align-items:center;flex-shrink:0">
+                        <button type="button" class="ib" aria-label="Pin to top of column" style="color:oklch(0.623 0.214 259.815)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor"><path d="M12 17v5"></path><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"></path></svg></button>
+                        <button type="button" class="ib" aria-label="Edit opportunity"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button>
+                      </div>
+                    </div>
+                    <p style="margin:2px 0 0;font-size:12px;line-height:16px;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">2021 Honda Civic Sport</p>
+                    
+                      <p style="margin:6px 0 0;font-size:11px;line-height:1.4;color:var(--muted-fg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Is the 2021 Civic still available?</p>
+                    
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px">
+                      <div style="display:flex;align-items:center;gap:6px">
+                        <span class="av">JB</span>
+                        <div role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-label="Confidence" style="display:flex;align-items:center;gap:4px">
+                          <div style="display:flex;align-items:center;gap:2px">
+                            <span class="d" style="background:oklch(0.769 0.188 70.08)"></span><span class="d" style="background:oklch(0.769 0.188 70.08)"></span><span class="d" style="background:oklch(0.769 0.188 70.08)"></span><span class="d" style="background:oklch(0.552 0.016 285.938 / .3)"></span>
+                          </div>
+                          <span style="margin-left:4px;font-size:12px;line-height:16px;color:oklch(0.769 0.188 70.08)">62%</span>
+                        </div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+                        <span style="font-size:12px;line-height:16px;font-weight:500">$24,900</span>
+                        <span style="font-size:10px;line-height:16px;color:var(--muted-fg);background:var(--muted);padding:0 4px;border-radius:4px">Oct 12</span>
+                      </div>
+                    </div>
+                  </div></div></div></div></div></div>
+  </div>
+</section>
+</body>
+</html>

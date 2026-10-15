@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Product tour · the three header steps</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="width:1440px;height:1140px;padding:32px 127px;background:oklch(0.967 0.001 286.375);display:flex;flex-direction:column;gap:28px;overflow:hidden"><div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Welcome · step 7 of 12 · phone</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Header · phone button (it opens the phone panel) · bottom, aligned to the end</div></div><div style="position:relative;width:1186px;height:290px;overflow:hidden;border:1px solid var(--border);background:var(--bg)"><header style="width:1184px;height:64px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid oklch(0.92 0.004 286.32);background:oklch(0.99 0 0);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="Toggle sidebar" style="margin-left:-4px;width:28px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+    </button>
+    <div style="width:1px;height:16px;background:oklch(0.92 0.004 286.32);margin-right:8px"></div>
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;color:oklch(0.552 0.016 285.938)">
+      
+        <a href="#parent" style="color:oklch(0.552 0.016 285.938);text-decoration:none">Inbox</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      
+      <span style="color:oklch(0.141 0.005 285.823)" aria-current="page">Chloe</span>
+    </nav>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="6 teammates online" style="position:relative;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span style="font-variant-numeric:tabular-nums">6</span>
+      <span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Phone, available for calls" title="Phone, available for calls" style="position:relative;width:32px;height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Search" style="width:220px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;gap:8px;border:1px solid oklch(0.92 0.004 286.32 / .6);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938);font-family:inherit;font-size:14px;line-height:20px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span style="flex:1;text-align:left">Search…</span>
+      <span style="display:flex;align-items:center;gap:4px;margin-left:auto">
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">⌘</span>
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">K</span>
+      </span>
+    </button>
+
+    <button type="button" aria-label="Notifications, 3 unread" style="position:relative;width:36px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      <span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:oklch(0.577 0.245 27.325);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span>
+    </button>
+
+    <div style="display:flex;align-items:center;gap:8px;height:48px;padding:8px;width:224px;border-radius:8.4px;box-sizing:border-box">
+      <div style="width:32px;height:32px;border-radius:8.4px;background:oklch(0.967 0.001 286.375);display:flex;align-items:center;justify-content:center;flex-shrink:0">J</div>
+      <div style="display:grid;flex:1;min-width:0;line-height:1.25">
+        <span style="font-weight:500">Jordan Blake</span>
+        <span style="font-size:12px">jordan.blake@example.com</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+    </div>
+  </div>
+</header><div aria-hidden="true" style="position:absolute;left:626px;top:10px;width:44px;height:44px;z-index:20;border-radius:8px;box-shadow:0 0 0 3000px rgb(0 0 0 / .55);pointer-events:none"></div><div role="dialog" aria-label="Your phone" style="position:absolute;left:350px;top:64px;z-index:30;width:320px;box-sizing:border-box;padding:16px;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:10.4px;box-shadow:0 10px 30px -10px rgb(0 0 0 / .35)"><span style="position:absolute;top:-6px;left:293px;width:10px;height:10px;transform:rotate(45deg);background:var(--bg);border-left:1px solid var(--border);border-top:1px solid var(--border)"></span><button type="button" aria-label="Close" style="position:absolute;right:8px;top:8px;border:0;background:transparent;padding:4px;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="font-size:16px;line-height:22.4px;font-weight:600;padding-right:20px">Your phone</div><div style="margin-top:6px;font-size:14px;line-height:21.7px;color:var(--muted-fg)">Open the phone panel to switch Receive calls on or off, pick your caller ID and dial any number. A green dot means you're taking calls; while you're not, incoming calls skip you and go to the rest of the team.</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px"><span style="font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap">7 of 12</span><div style="display:flex;align-items:center;gap:6px;margin-left:auto"><button type="button" style="border:1px solid var(--border);border-radius:6.4px;background:transparent;color:var(--fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Back</button><button type="button" style="border:1px solid var(--primary);border-radius:6.4px;background:var(--primary);color:var(--primary-fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Next</button></div></div></div></div></div><div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Welcome · step 8 of 12 · notifications</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Header · bell · bottom, aligned to the end</div></div><div style="position:relative;width:1186px;height:290px;overflow:hidden;border:1px solid var(--border);background:var(--bg)"><header style="width:1184px;height:64px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid oklch(0.92 0.004 286.32);background:oklch(0.99 0 0);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="Toggle sidebar" style="margin-left:-4px;width:28px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+    </button>
+    <div style="width:1px;height:16px;background:oklch(0.92 0.004 286.32);margin-right:8px"></div>
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;color:oklch(0.552 0.016 285.938)">
+      
+        <a href="#parent" style="color:oklch(0.552 0.016 285.938);text-decoration:none">Inbox</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      
+      <span style="color:oklch(0.141 0.005 285.823)" aria-current="page">Chloe</span>
+    </nav>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="6 teammates online" style="position:relative;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span style="font-variant-numeric:tabular-nums">6</span>
+      <span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Phone, available for calls" title="Phone, available for calls" style="position:relative;width:32px;height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Search" style="width:220px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;gap:8px;border:1px solid oklch(0.92 0.004 286.32 / .6);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938);font-family:inherit;font-size:14px;line-height:20px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span style="flex:1;text-align:left">Search…</span>
+      <span style="display:flex;align-items:center;gap:4px;margin-left:auto">
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">⌘</span>
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">K</span>
+      </span>
+    </button>
+
+    <button type="button" aria-label="Notifications, 3 unread" style="position:relative;width:36px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      <span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:oklch(0.577 0.245 27.325);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span>
+    </button>
+
+    <div style="display:flex;align-items:center;gap:8px;height:48px;padding:8px;width:224px;border-radius:8.4px;box-sizing:border-box">
+      <div style="width:32px;height:32px;border-radius:8.4px;background:oklch(0.967 0.001 286.375);display:flex;align-items:center;justify-content:center;flex-shrink:0">J</div>
+      <div style="display:grid;flex:1;min-width:0;line-height:1.25">
+        <span style="font-weight:500">Jordan Blake</span>
+        <span style="font-size:12px">jordan.blake@example.com</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+    </div>
+  </div>
+</header><div aria-hidden="true" style="position:absolute;left:894px;top:8px;width:48px;height:48px;z-index:20;border-radius:8px;box-shadow:0 0 0 3000px rgb(0 0 0 / .55);pointer-events:none"></div><div role="dialog" aria-label="Notifications" style="position:absolute;left:622px;top:66px;z-index:30;width:320px;box-sizing:border-box;padding:16px;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:10.4px;box-shadow:0 10px 30px -10px rgb(0 0 0 / .35)"><span style="position:absolute;top:-6px;left:291px;width:10px;height:10px;transform:rotate(45deg);background:var(--bg);border-left:1px solid var(--border);border-top:1px solid var(--border)"></span><button type="button" aria-label="Close" style="position:absolute;right:8px;top:8px;border:0;background:transparent;padding:4px;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="font-size:16px;line-height:22.4px;font-weight:600;padding-right:20px">Notifications</div><div style="margin-top:6px;font-size:14px;line-height:21.7px;color:var(--muted-fg)">You'll get an alert here when a customer asks for a human, a call is missed or a voicemail comes in.</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px"><span style="font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap">8 of 12</span><div style="display:flex;align-items:center;gap:6px;margin-left:auto"><button type="button" style="border:1px solid var(--border);border-radius:6.4px;background:transparent;color:var(--fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Back</button><button type="button" style="border:1px solid var(--primary);border-radius:6.4px;background:var(--primary);color:var(--primary-fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Next</button></div></div></div></div></div><div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Welcome · step 9 of 12 · profile</div><div style="margin-top:2px;font-size:12px;line-height:16px;color:var(--muted-fg)">Header · user menu · bottom, aligned to the end · desktop only</div></div><div style="position:relative;width:1186px;height:290px;overflow:hidden;border:1px solid var(--border);background:var(--bg)"><header style="width:1184px;height:64px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid oklch(0.92 0.004 286.32);background:oklch(0.99 0 0);color:oklch(0.141 0.005 285.823);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased">
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="Toggle sidebar" style="margin-left:-4px;width:28px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+    </button>
+    <div style="width:1px;height:16px;background:oklch(0.92 0.004 286.32);margin-right:8px"></div>
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;color:oklch(0.552 0.016 285.938)">
+      
+        <a href="#parent" style="color:oklch(0.552 0.016 285.938);text-decoration:none">Inbox</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      
+      <span style="color:oklch(0.141 0.005 285.823)" aria-current="page">Chloe</span>
+    </nav>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px">
+    <button type="button" aria-label="6 teammates online" style="position:relative;height:32px;padding:0 8px;display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8.4px;background:transparent;color:inherit;font-family:inherit;font-size:14px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span style="font-variant-numeric:tabular-nums">6</span>
+      <span style="position:absolute;right:4px;top:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Phone, available for calls" title="Phone, available for calls" style="position:relative;width:32px;height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span style="position:absolute;right:4px;bottom:4px;width:8px;height:8px;border-radius:9999px;background:#10b981;box-shadow:0 0 0 2px oklch(0.99 0 0)"></span>
+    </button>
+
+    <button type="button" aria-label="Search" style="width:220px;height:36px;padding:0 6px 0 10px;display:inline-flex;align-items:center;gap:8px;border:1px solid oklch(0.92 0.004 286.32 / .6);border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);color:oklch(0.552 0.016 285.938);font-family:inherit;font-size:14px;line-height:20px;cursor:pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;opacity:.7"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span style="flex:1;text-align:left">Search…</span>
+      <span style="display:flex;align-items:center;gap:4px;margin-left:auto">
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">⌘</span>
+        <span style="display:flex;height:20px;min-width:20px;align-items:center;justify-content:center;border:1px solid oklch(0.92 0.004 286.32 / .7);border-radius:4px;background:oklch(0.99 0 0);padding:0 4px;font-size:11px;font-weight:500;line-height:1;box-shadow:0 1px 2px rgb(0 0 0 / .05)">K</span>
+      </span>
+    </button>
+
+    <button type="button" aria-label="Notifications, 3 unread" style="position:relative;width:36px;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8.4px;background:transparent;color:inherit;cursor:pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      <span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:9999px;background:oklch(0.577 0.245 27.325);color:#fff;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</span>
+    </button>
+
+    <div style="display:flex;align-items:center;gap:8px;height:48px;padding:8px;width:224px;border-radius:8.4px;box-sizing:border-box">
+      <div style="width:32px;height:32px;border-radius:8.4px;background:oklch(0.967 0.001 286.375);display:flex;align-items:center;justify-content:center;flex-shrink:0">J</div>
+      <div style="display:grid;flex:1;min-width:0;line-height:1.25">
+        <span style="font-weight:500">Jordan Blake</span>
+        <span style="font-size:12px">jordan.blake@example.com</span>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+    </div>
+  </div>
+</header><div aria-hidden="true" style="position:absolute;left:938px;top:2px;width:236px;height:60px;z-index:20;border-radius:8px;box-shadow:0 0 0 3000px rgb(0 0 0 / .55);pointer-events:none"></div><div role="dialog" aria-label="Your profile" style="position:absolute;left:854px;top:72px;z-index:30;width:320px;box-sizing:border-box;padding:16px;background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:10.4px;box-shadow:0 10px 30px -10px rgb(0 0 0 / .35)"><span style="position:absolute;top:-6px;left:197px;width:10px;height:10px;transform:rotate(45deg);background:var(--bg);border-left:1px solid var(--border);border-top:1px solid var(--border)"></span><button type="button" aria-label="Close" style="position:absolute;right:8px;top:8px;border:0;background:transparent;padding:4px;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><div style="font-size:16px;line-height:22.4px;font-weight:600;padding-right:20px">Your profile</div><div style="margin-top:6px;font-size:14px;line-height:21.7px;color:var(--muted-fg)">Your profile, language, theme and notification preferences live here — and so does this tour if you ever want to run it again.</div><div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px"><span style="font-size:12px;line-height:16px;color:var(--muted-fg);white-space:nowrap">9 of 12</span><div style="display:flex;align-items:center;gap:6px;margin-left:auto"><button type="button" style="border:1px solid var(--border);border-radius:6.4px;background:transparent;color:var(--fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Back</button><button type="button" style="border:1px solid var(--primary);border-radius:6.4px;background:var(--primary);color:var(--primary-fg);padding:6px 12px;font-family:inherit;font-size:13px;font-weight:500;line-height:20px">Next</button></div></div></div></div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1140}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

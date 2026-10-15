@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List settings drawer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-ghost-xs{height:28px;padding:0 8px;font-size:12px}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.sel{height:36px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:0 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:8.4px;padding:2px}
+.seg button{border:0;background:transparent;border-radius:6px;padding:4px 12px;font-family:inherit;font-size:12px;line-height:16px;color:var(--muted-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--primary);color:var(--primary-fg)}
+.sec{display:flex;flex-direction:column;gap:8px}
+.sep{height:1px;background:var(--border)}
+.h3{margin:0;font-size:14px;line-height:20px;font-weight:500}
+.hint{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)}
+</style>
+</helmet>
+<aside class="app" style="width:448px;height:960px;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)">
+
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 24px;border-bottom:1px solid var(--border)">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <h2 style="margin:0;font-size:16px;line-height:24px;font-weight:600">List settings</h2>
+      <p class="hint" style="font-size:14px;line-height:20px">Your personal display preferences for the Leads list. They are saved to your profile and never touch filters or Smart Views.</p>
+    </div>
+    <button type="button" aria-label="Close" style="width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;background:transparent;color:var(--muted-fg);cursor:pointer;flex-shrink:0">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+
+  <div style="flex:1;min-height:0;overflow:hidden;padding:20px 24px;display:flex;flex-direction:column;gap:24px">
+
+    <div class="sec">
+      <h3 class="h3">Rows</h3>
+      <p class="hint">One row per person shows each person once, with their latest form. One row per form shows every form they sent.</p>
+      <div class="seg" style="align-self:flex-start">
+        <button type="button" aria-pressed="true">One per person</button>
+        <button type="button" aria-pressed="false">One per form</button>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="sec">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <h3 class="h3">Columns</h3>
+        <button type="button" class="btn btn-ghost-xs">Reset to default</button>
+      </div>
+      <p class="hint">Visible columns in this list.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;padding-top:4px">
+        <sc-for list="{{columns}}" as="c" hint-placeholder-count="10">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" class="cb" checked="{{c.on}}" aria-label="{{c.label}}"><span>{{c.label}}</span></label>
+        </sc-for>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="sec">
+      <h3 class="h3">Rows per page</h3>
+      <select class="sel" style="width:160px" aria-label="Rows per page"><option>10</option><option selected>25</option><option>50</option><option>100</option></select>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="sec">
+      <h3 class="h3">Default sort</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <label for="sort-col" class="hint">Column</label>
+          <select id="sort-col" class="sel"><option>Newest entry first (default)</option><option>Full name</option><option>Email</option></select>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <label for="sort-dir" class="hint">Direction</label>
+          <select id="sort-dir" class="sel" disabled style="opacity:.5"><option>Descending</option><option>Ascending</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="sec">
+      <h3 class="h3">Last message column</h3>
+      <p class="hint">Which message the Last Message column previews.</p>
+      <div class="seg" style="align-self:flex-start">
+        <button type="button" aria-pressed="true">Latest (any)</button>
+        <button type="button" aria-pressed="false">Customer only</button>
+        <button type="button" aria-pressed="false">Chloe / Agent only</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 24px;border-top:1px solid var(--border)">
+    <span class="hint">Changes are saved automatically to your profile.</span>
+    <button type="button" class="btn btn-primary">Done</button>
+  </div>
+</aside>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":448,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const on = ['Read / unread button', 'Full name', 'Email', 'Phone', 'Opportunity', 'Conversation State', 'Date', 'Last Message'];
+    const all = ['Read / unread button', 'Full name', 'Email', 'Phone', 'Opportunity', 'Form', 'Forms', 'Source', 'Agent Request', 'Conversation State', 'Phone Status', 'Tier', 'Date', 'Read status', 'Chloe', 'Last Message', 'Last Customer Reply', 'Edited', 'Last call', 'Last updated'];
+    return { columns: all.map((label) => ({ label, on: on.indexOf(label) !== -1 })) };
+  }
+}
+</script>
+</body>
+</html>

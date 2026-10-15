@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SMS template dialog</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px}
+.fld{display:flex;flex-direction:column;gap:6px}
+.lab{font-size:14px;line-height:14px;font-weight:500}
+.hint{margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.trig{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+</style>
+</helmet>
+<div class="app" style="width:1000px;height:900px;display:flex;align-items:center;justify-content:center;background:rgb(0 0 0 / .8)">
+
+  <div role="dialog" aria-label="New Template" style="position:relative;width:896px;display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--border);border-radius:10.4px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)">
+    <button type="button" aria-label="Close" style="position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;color:var(--fg);cursor:pointer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-right:24px">
+      <div>
+        <h2 style="margin:0;font-size:18px;line-height:1;font-weight:600;letter-spacing:-.025em">New Template</h2>
+        <p style="margin:6px 0 0;font-size:14px;color:var(--muted-fg)">Create a reusable SMS/MMS template.</p>
+      </div>
+      <button type="button" class="btn btn-outline btn-sm" style="gap:6px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>Hide preview</button>
+    </div>
+
+    <div style="display:flex;gap:24px;margin-top:8px">
+
+      <!-- Form -->
+      <form style="flex:1;min-width:0;display:flex;flex-direction:column;gap:20px" onsubmit="return false">
+        <div class="fld"><label class="lab" for="td-title">Title <span style="color:var(--destructive)">*</span></label><input id="td-title" class="inp" value="Welcome message" placeholder="e.g. Welcome message"></div>
+
+        <div class="fld">
+          <div style="display:flex;align-items:center;justify-content:space-between"><label class="lab" for="td-body">Message</label><span style="font-size:12px;color:var(--muted-fg)">117/1600</span></div>
+          <div style="display:flex;justify-content:flex-end"><button type="button" class="btn" style="height:28px;padding:0 8px;font-size:12px;gap:4px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>Insert variable</button></div>
+          <textarea id="td-body" rows="4" maxlength="1600" placeholder="Message content..." value="{{bodyText}}" readonly style="width:100%;resize:none;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:8px 12px;font-family:inherit;font-size:14px;line-height:20px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)"></textarea>
+        </div>
+
+        <div class="fld"><span class="lab">Visibility</span><button type="button" class="trig"><span>Public — all users</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button></div>
+
+        <div class="fld"><span class="lab">Language</span><button type="button" class="trig"><span>English</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+          <p class="hint">Templates in another language are skipped for chats set to a different language; Chloe writes the follow-up instead.</p></div>
+
+        <div class="fld" style="gap:8px"><span class="lab">Media (MMS)</span>
+          <button type="button" class="btn btn-outline btn-sm" style="align-self:flex-start"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>Add media</button>
+          <p class="hint">Max 10 files, 5 MB each.</p></div>
+
+        <div style="display:flex;gap:8px;padding-top:4px">
+          <button type="submit" class="btn btn-primary" style="flex:1">Create template</button>
+          <button type="button" class="btn btn-outline">Cancel</button>
+        </div>
+      </form>
+
+      <!-- Phone preview -->
+      <div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;align-items:center">
+        <div style="width:256px;border:2px solid var(--border);border-radius:32px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:center;padding:8px 0;background:oklch(0.967 0.001 286.375 / .5);border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg><span>SMS Preview</span></div>
+          </div>
+          <div style="padding:12px;min-height:240px;max-height:360px;background:oklch(0.967 0.001 286.375 / .2);display:flex;flex-direction:column;justify-content:flex-end;gap:8px">
+            <div style="align-self:flex-end;max-width:85%"><div style="background:var(--primary);color:var(--primary-fg);border-radius:16px;border-bottom-right-radius:6px;padding:8px 12px;font-size:14px;line-height:20px">{{bodyText}}</div></div>
+            <p style="margin:0;padding-right:4px;text-align:right;font-size:10px;color:var(--muted-fg)">Chloe · now</p>
+          </div>
+          <div style="height:20px;background:oklch(0.967 0.001 286.375 / .5);border-top:1px solid var(--border)"></div>
+        </div>
+        <p class="hint" style="margin-top:12px;text-align:center">117 chars · 1 SMS segment</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1000,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      bodyText: 'Hi {{first_name}}! This is {{agent_name}} from Every1Drives. Thanks for your interest — are you looking to finance or pay cash?',
+    };
+  }
+}
+</script>
+</body>
+</html>

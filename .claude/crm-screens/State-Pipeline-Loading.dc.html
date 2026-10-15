@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pipeline · loading</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.seg{display:flex;align-items:center;border:1px solid var(--border);border-radius:8.4px;overflow:hidden}
+.seg button{display:flex;align-items:center;gap:6px;padding:6px 10px;border:0;background:transparent;font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--primary);color:var(--primary-fg)}
+.col{display:flex;flex-direction:column;flex-shrink:0;width:288px;height:100%}
+.col-h{flex-shrink:0;padding:10px 12px;border-top:2px solid;border-radius:8.4px 8.4px 0 0}
+.col-b{flex:1;min-height:120px;overflow:hidden;border:1px solid var(--border);border-top:0;border-radius:0 0 8.4px 8.4px;padding:8px;background:oklch(0.967 0.001 286.375 / .3);display:flex;flex-direction:column;gap:8px}
+.cnt{font-size:12px;line-height:16px;font-weight:500;color:var(--muted-fg);background:var(--muted);border-radius:9999px;padding:2px 6px}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:8.4px;padding:12px;box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.ib{display:inline-flex;align-items:center;justify-content:center;padding:4px;border:0;border-radius:9999px;background:transparent;color:var(--muted-fg);cursor:pointer}
+.av{width:20px;height:20px;border-radius:9999px;background:var(--primary);color:var(--primary-fg);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}
+.d{width:6px;height:6px;border-radius:9999px;display:inline-block}
+.more{width:100%;padding:8px 0;border:1px dashed oklch(0.552 0.016 285.938 / .3);border-radius:8.4px;background:transparent;font-family:inherit;font-size:12px;color:var(--muted-fg);cursor:pointer}
+.sk{display:block;background:oklch(0.552 0.016 285.938 / .15);border-radius:6.4px;animation:skpulse 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes skpulse{50%{opacity:.5}}
+@media (prefers-reduced-motion:reduce){.sk{animation:none}}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="opportunities" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="" current="Opportunities" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button type="button" class="btn" aria-label="Back" style="width:32px;padding:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
+          <h1 style="margin:0;font-size:16px;line-height:24px;font-weight:600">Sales Pipeline</h1>
+          <span style="font-size:12px;color:var(--muted-fg)">148 opportunities</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="seg">
+            <button type="button" aria-pressed="true"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>Pipeline</button>
+            <button type="button" aria-pressed="false"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>List</button>
+          </div>
+          <button type="button" class="btn btn-outline"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>Columns<span style="margin-left:2px;border-radius:9999px;background:var(--muted);padding:0 6px;font-size:10px;font-weight:600;color:var(--muted-fg)">5/6</span></button>
+          <button type="button" class="btn btn-outline"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>Stages</button>
+          <button type="button" class="btn btn-primary"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>New</button>
+        </div>
+      </div>
+
+      <!-- Board -->
+      <div style="flex:1;min-height:0;overflow:hidden"><div role="status" aria-busy="true" style="display:flex;gap:16px;overflow:hidden;height:100%;padding:16px 16px 24px"><div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between"><span class="sk" style="height:16px;width:112px;"></span><span class="sk" style="height:16px;width:32px;border-radius:9999px"></span></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div></div><div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between"><span class="sk" style="height:16px;width:112px;"></span><span class="sk" style="height:16px;width:32px;border-radius:9999px"></span></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div></div><div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between"><span class="sk" style="height:16px;width:112px;"></span><span class="sk" style="height:16px;width:32px;border-radius:9999px"></span></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div></div><div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between"><span class="sk" style="height:16px;width:112px;"></span><span class="sk" style="height:16px;width:32px;border-radius:9999px"></span></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div></div><div style="width:288px;flex-shrink:0;display:flex;flex-direction:column;gap:12px;border-radius:10.4px;background:oklch(0.967 0.001 286.375 / .4);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between"><span class="sk" style="height:16px;width:112px;"></span><span class="sk" style="height:16px;width:32px;border-radius:9999px"></span></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div><div style="border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:10px"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:12px;width:50%;"></span><div style="display:flex;align-items:center;justify-content:space-between;padding-top:4px"><span class="sk" style="height:20px;width:64px;border-radius:9999px"></span><span class="sk" style="height:24px;width:24px;border-radius:9999px"></span></div></div></div></div></div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const BAND = {
+      cold: ['oklch(0.552 0.016 285.938 / .4)', 'oklch(0.552 0.016 285.938)'],
+      warm: ['oklch(0.769 0.188 70.08)', 'oklch(0.769 0.188 70.08)'],
+      hot: ['oklch(0.6 0.118 184.704)', 'oklch(0.6 0.118 184.704)'],
+      fin: ['oklch(0.623 0.214 259.815)', 'oklch(0.623 0.214 259.815)'],
+    };
+    const OFF = 'oklch(0.552 0.016 285.938 / .3)';
+    const card = (name, title, msg, av, conf, value, date, pinned) => {
+      const band = conf >= 85 ? 'fin' : conf >= 70 ? 'hot' : conf >= 50 ? 'warm' : 'cold';
+      const filled = Math.max(1, Math.min(4, Math.ceil(conf / 25)));
+      const on = BAND[band][0];
+      return {
+        name,
+        title,
+        msg: msg || '',
+        hasMsg: !!msg,
+        av,
+        conf,
+        d1: filled >= 1 ? on : OFF,
+        d2: filled >= 2 ? on : OFF,
+        d3: filled >= 3 ? on : OFF,
+        d4: filled >= 4 ? on : OFF,
+        bandText: BAND[band][1],
+        value: '$' + value.toLocaleString('en-CA'),
+        date: date || '',
+        hasDate: !!date,
+        pinStyle: pinned ? 'color:oklch(0.623 0.214 259.815)' : '',
+        pinFill: pinned ? 'currentColor' : 'none',
+      };
+    };
+    return {
+      cols: [
+        {
+          name: 'New Lead', color: '#3b82f6', count: '12 / 48', total: '$96,500', hasMore: true,
+          cards: [
+            card('Marcus Ellery', '2021 Honda Civic Sport', 'Is the 2021 Civic still available?', 'JB', 62, 24900, 'Oct 12', true),
+            card('Sofia Marchetti', '2022 Toyota Tacoma TRD', '', 'JB', 35, 41500, ''),
+            card('Carlos Mendoza', '2020 Nissan Rogue', 'Hi Carlos, any questions about the Rogue?', 'AR', 45, 27800, ''),
+          ],
+        },
+        {
+          name: 'Contacted', color: '#f59e0b', count: '31', total: '$64,200', hasMore: false,
+          cards: [
+            card('Jean-Luc Bouchard', '2019 Subaru Outback', "Pouvez-vous m'appeler demain matin?", 'AR', 58, 29900, 'Oct 8'),
+            card('Rachel Gagnon', '2021 Kia Sportage', "Thanks, I'll think about it", 'JB', 66, 22400, ''),
+            card('Aaliyah Brooks', '2020 Ford Escape', 'Do you have a monthly budget in mind?', 'JB', 41, 18900, ''),
+          ],
+        },
+        {
+          name: 'Credit App Sent', color: '#8b5cf6', count: '22', total: '$71,900', hasMore: false,
+          cards: [
+            card('Priya Nandakumar', '2023 Hyundai Tucson', 'Perfect, I just sent the credit application link to your phone.', 'JB', 78, 36200, 'Oct 5', true),
+            card('Brianna Foley', '2022 Mazda CX-5', 'Can I talk to someone about my financing?', 'AR', 82, 31000, 'Oct 6'),
+            card('Isabelle Roy', '2021 Toyota RAV4', 'Mon dossier est-il approuvé?', 'AR', 71, 33500, ''),
+          ],
+        },
+        {
+          name: 'Test Drive Booked', color: '#10b981', count: '17', total: '$58,300', hasMore: false,
+          cards: [
+            card('Daniel Okafor', '2022 Honda Accord', 'Saturday morning works for me', 'JB', 90, 38700, 'Oct 3'),
+            card('Hannah Lindqvist', '2023 Subaru Crosstrek', 'See you Thursday at 4!', 'AR', 74, 26400, 'Oct 2'),
+            card('Kevin Dubois', '2021 VW Tiguan', 'I need to reschedule, can a person call me?', 'JB', 88, 33100, 'Oct 4'),
+          ],
+        },
+        {
+          name: 'Trade-in Quote', color: '#f97316', count: '9', total: '$44,900', hasMore: false,
+          cards: [
+            card('Tom Whitfield', '2020 Ram 1500', "What's the actual number on my trade?", 'AR', 60, 44900, ''),
+            card('Nadia Rahman', '2019 Jeep Cherokee', '', 'JB', 55, 24800, ''),
+          ],
+        },
+        {
+          name: 'Follow Up', color: '#14b8a6', count: '21', total: '$39,900', hasMore: false,
+          cards: [
+            card('Omar Haddad', '2022 Chevrolet Silverado', 'Just checking in. Still interested in the Silverado?', 'AR', 48, 39900, ''),
+          ],
+        },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

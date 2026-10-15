@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smart View detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-9{height:36px;padding:0 12px}
+.btn-icon-8{width:32px;height:32px;padding:0}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-default{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.badge-outline{border-color:var(--border);color:var(--fg)}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.pill-none{border:1px solid var(--border);color:var(--muted-fg);font-weight:400}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px 4px 32px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.inp-pg{height:32px;width:56px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;text-align:center;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.sel{height:32px;width:80px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:0 8px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.av{width:28px;height:28px;border-radius:9999px;background:var(--muted);display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.row-h{height:40px;font-weight:500;white-space:nowrap;background:var(--bg)}
+.c{padding:8px;min-width:0}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:8.4px;background:var(--muted);color:oklch(0.21 0.006 285.885);padding:4px 8px;font-size:14px;line-height:20px;white-space:nowrap}
+.chip button{display:inline-flex;align-items:center;border:0;background:transparent;padding:0;color:inherit;font-family:inherit;font-size:14px;cursor:pointer}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="none" view="Credit Apps Pending" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Smart Views" current="Credit Apps Pending" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Top strip -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="btn btn-sm" style="color:var(--muted-fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back</button>
+          <span style="font-size:14px;font-weight:500">Credit Apps Pending</span>
+          <span style="font-size:12px;color:var(--muted-fg)">· Stage: Credit App Sent</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span style="font-size:12px;color:var(--muted-fg)">All leads &amp; contacts in this stage (regardless of inbox status)</span>
+        </div>
+      </div>
+
+      <!-- Search + toolbar -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="position:relative;width:256px">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;left:8px;top:10px;color:var(--muted-fg)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="inp" type="search" placeholder="Search by name, email, phone..." aria-label="Search">
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="btn btn-outline btn-9">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+            Filter
+            <span class="badge badge-default" style="height:20px;min-width:20px;padding:0 4px;font-size:11px">2</span>
+          </button>
+          <button type="button" class="btn btn-outline btn-9" title="Start dialer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>Dialer</button>
+          <button type="button" class="btn btn-outline btn-9"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Export<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+          <button type="button" class="btn btn-primary btn-9" style="gap:6px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>Save filters to view</button>
+          <button type="button" class="btn btn-9" style="gap:6px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>Reset to saved</button>
+          <button type="button" class="btn btn-outline btn-9" aria-label="List settings" title="List settings"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>Settings</button>
+        </div>
+      </div>
+
+      <!-- Chips -->
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <span class="chip"><button type="button" aria-label="Edit filter"><b style="font-weight:600">Lead state:</b>&nbsp;is any of Hot lead</button><button type="button" aria-label="Remove filter" style="opacity:.5;margin-left:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></span>
+        <span class="chip"><button type="button" aria-label="Edit filter"><b style="font-weight:600">Entry date:</b>&nbsp;is after Sep 1, 2026</button><button type="button" aria-label="Remove filter" style="opacity:.5;margin-left:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></span>
+        <button type="button" style="border:0;background:transparent;padding:0;margin-left:4px;font-family:inherit;font-size:14px;color:var(--primary);cursor:pointer">Clear all</button>
+      </div>
+
+      <!-- Pagination (top) -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="padding:0 4px;color:var(--muted-fg)">Showing 1 to 22 of 22</div>
+        <div style="display:flex;align-items:center;gap:24px">
+          <div style="display:flex;align-items:center;gap:8px"><label for="rpp" style="font-weight:500">Rows per page</label><select id="rpp" class="sel"><option>10</option><option selected>25</option><option>50</option></select></div>
+          <div style="display:flex;align-items:center;gap:8px;font-weight:500"><span>Page</span><input class="inp-pg" inputmode="numeric" value="1" aria-label="Go to page"><span>of 1</span></div>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="First page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="Previous page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="Next page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="Last page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div style="flex:1;min-height:0;overflow:hidden">
+        <div role="table" aria-label="Smart view results" style="--cols:44px 32px minmax(150px,1.2fr) 84px 112px 110px 140px 100px minmax(180px,2fr)">
+          <div role="row" class="row row-h">
+            <div role="columnheader" class="c"></div>
+            <div role="columnheader" class="c" style="padding-left:8px"><input type="checkbox" class="cb" aria-label="Select all"></div>
+            <div role="columnheader" class="c">Name</div>
+            <div role="columnheader" class="c">Type</div>
+            <div role="columnheader" class="c">Source</div>
+            <div role="columnheader" class="c">State</div>
+            <div role="columnheader" class="c">Stage</div>
+            <div role="columnheader" class="c">Inbox Status</div>
+            <div role="columnheader" class="c" style="display:flex;align-items:center;gap:4px">Last Message<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;opacity:.6"><path d="m6 9 6 6 6-6"/></svg></div>
+          </div>
+
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+            <div role="row" class="row">
+              <div role="cell" class="c"><span class="av">{{r.initials}}</span></div>
+              <div role="cell" class="c" style="padding-left:8px"><input type="checkbox" class="cb" aria-label="Select row"></div>
+              <div role="cell" class="c"><a href="#person" style="font-weight:500;color:inherit;text-decoration:none;white-space:nowrap">{{r.name}}</a></div>
+              <div role="cell" class="c"><span class="{{r.typeClass}}">{{r.type}}</span></div>
+              <div role="cell" class="c"><span class="pill" style="{{r.siteStyle}}">{{r.site}}</span></div>
+              <div role="cell" class="c"><span class="pill" style="{{r.stateStyle}}">{{r.state}}</span></div>
+              <div role="cell" class="c"><span class="pill" style="{{r.stageStyle}}">Credit App Sent</span></div>
+              <div role="cell" class="c"><span class="badge badge-outline">{{r.inbox}}</span></div>
+              <div role="cell" class="c">
+                <sc-if value="{{r.hasMsg}}" hint-placeholder-val="{{ true }}"><span style="display:block;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)"><span style="font-weight:500;color:oklch(0.141 0.005 285.823 / .8);margin-right:4px">{{r.dir}}</span>{{r.msg}}</span></sc-if>
+                <sc-if value="{{r.noMsg}}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:var(--muted-fg)">—</span></sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Pagination (bottom) -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 16px;border-top:1px solid var(--border)">
+        <div style="padding:0 4px;color:var(--muted-fg)">Showing 1 to 22 of 22</div>
+        <div style="display:flex;align-items:center;gap:8px;font-weight:500"><span>Page</span><input class="inp-pg" inputmode="numeric" value="1" aria-label="Go to page (bottom)"><span>of 1</span></div>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const SITE = { 'Main site': '#6366f1', 'Used inventory': '#0ea5e9', 'Financing': '#ec4899' };
+    const STATE = { 'Hot lead': '#f97316', 'New': '#3b82f6', 'Nurturing': '#14b8a6' };
+    const mk = (name, type, site, state, inbox, dir, msg) => {
+      const parts = name.split(' ');
+      return {
+        name,
+        initials: (parts[0].charAt(0) + (parts[1] ? parts[1].charAt(0) : '')).toUpperCase(),
+        type,
+        typeClass: type === 'Contact' ? 'badge badge-secondary' : 'badge badge-outline',
+        site,
+        siteStyle: 'background:' + SITE[site] + '22;color:' + SITE[site],
+        state,
+        stateStyle: 'background:' + STATE[state] + '22;color:' + STATE[state],
+        stageStyle: 'background:#8b5cf622;color:#8b5cf6',
+        inbox,
+        dir: dir === 'in' ? 'Them:' : 'You:',
+        msg: msg || '',
+        hasMsg: !!msg,
+        noMsg: !msg,
+      };
+    };
+    return {
+      rows: [
+        mk('Priya Nandakumar', 'Contact', 'Financing', 'Hot lead', 'Open', 'out', 'Perfect, I just sent the credit application link to your phone.'),
+        mk('Brianna Foley', 'Contact', 'Financing', 'Hot lead', 'Open', 'in', 'Can I talk to someone about my financing?'),
+        mk('Isabelle Roy', 'Lead', 'Main site', 'New', 'Open', 'in', 'Mon dossier est-il approuvé?'),
+        mk('Marcus Ellery', 'Contact', 'Main site', 'Hot lead', 'Open', 'in', 'Is the 2021 Civic still available?'),
+        mk('Tom Whitfield', 'Lead', 'Used inventory', 'Nurturing', 'Done', 'in', "What's the actual number on my trade?"),
+        mk('Rachel Gagnon', 'Contact', 'Main site', 'Nurturing', 'Future', 'in', "Thanks, I'll think about it"),
+        mk('Hannah Lindqvist', 'Lead', 'Used inventory', 'Hot lead', 'Open', 'in', 'See you Thursday at 4!'),
+        mk('Kevin Dubois', 'Contact', 'Financing', 'Hot lead', 'Open', 'in', 'I need to reschedule, can a person call me?'),
+        mk('Omar Haddad', 'Lead', 'Main site', 'New', 'Open', null, null),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

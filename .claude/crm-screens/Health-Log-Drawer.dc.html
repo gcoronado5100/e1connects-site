@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Health · log detail drawer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="position:relative;width:600px;height:1080px;background:rgb(0 0 0 / .5);display:flex;justify-content:flex-end;overflow:hidden">
+  <div role="dialog" aria-label="sheet" style="position:relative;width:100%;height:100%;display:flex;flex-direction:column;gap:16px;background:var(--bg);border-left:1px solid var(--border);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);overflow:hidden">
+    <button type="button" aria-label="Close" style="position:absolute;right:16px;top:16px;width:16px;height:16px;padding:0;border:0;background:transparent;opacity:.7;color:var(--fg);cursor:pointer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <div style="padding:24px 24px 0"><div style="display:flex;align-items:center;gap:12px"><div style="font-size:18px;line-height:28px;font-weight:600">Log Detail</div><span class="bdg" style="background:#fee2e2;color:#b91c1c;border-color:transparent">Error</span></div></div>
+    <div style="padding:0 24px 24px;display:flex;flex-direction:column;gap:24px;margin-top:8px;font-size:14px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div style=""><span style="color:var(--muted-fg)">Direction</span><div style="margin-top:4px;font-weight:500"><span style="display:inline-flex;align-items:center;gap:6px;font-size:14px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px;color:var(--muted-fg)"><path d="M17 7 7 17"/><path d="M17 17H7V7"/></svg>Inbound</span></div></div><div style=""><span style="color:var(--muted-fg)">Channel</span><div style="margin-top:4px;font-weight:500"><span class="bdg" style="background:#dbeafe;color:#1d4ed8;border-color:transparent">Twilio</span></div></div><div style=""><span style="color:var(--muted-fg)">Duration</span><div style="margin-top:4px;font-weight:500">0.4s</div></div><div style=""><span style="color:var(--muted-fg)">Attempt</span><div style="margin-top:4px;font-weight:500">#1</div></div><div style="grid-column:span 2"><span style="color:var(--muted-fg)">Timestamp</span><div style="margin-top:4px;font-weight:500">Sep 30, 2026, 04:41:07 PM</div></div></div>
+  <div><a href="#chat" style="display:inline-flex;align-items:center;gap:6px;color:var(--primary);text-decoration:none">View Conversation<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a><span style="margin-left:8px;color:var(--muted-fg)">(+1 (902) 555-0182)</span></div>
+  <div style="border:1px solid #fecaca;border-radius:8.4px;background:#fef2f2;padding:16px;display:flex;flex-direction:column;gap:8px"><div><span style="color:var(--muted-fg)">Error Code: </span><span style="font-family:ui-monospace,Menlo,monospace;color:#b91c1c">21211</span></div><p style="margin:0;color:#b91c1c">The 'To' number +1902555 is not a valid phone number.</p></div>
+  <div><div style="display:flex;align-items:center;gap:4px;font-weight:500">Payload<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;"><path d="m6 9 6 6 6-6"/></svg></div><pre style="margin:8px 0 0;padding:12px;background:var(--muted);border-radius:8.4px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:16px;overflow:auto;max-height:300px;white-space:pre">{
+  "from": "+19025550182",
+  "to": "+15065550111",
+  "conversation_id": 48213,
+  "body": "Hi! Is the RAV4 still available?",
+  "media": []
+}</pre></div>
+  <div><div style="display:flex;align-items:center;gap:4px;font-weight:500">Response<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;"><path d="m6 9 6 6 6-6"/></svg></div><pre style="margin:8px 0 0;padding:12px;background:var(--muted);border-radius:8.4px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:16px;overflow:auto;max-height:300px;white-space:pre">{
+  "error": {
+    "code": 21211,
+    "message": "The 'To' number is not a valid phone number"
+  }
+}</pre></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><h4 style="margin:0;font-size:14px;line-height:20px;font-weight:500">Retry History</h4><div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:8.4px;padding:12px;font-size:14px"><div style="display:flex;align-items:center;gap:12px"><span style="color:var(--muted-fg)">Attempt #1</span><span class="bdg" style="background:#fee2e2;color:#b91c1c;border-color:transparent">Error</span></div><div style="display:flex;align-items:center;gap:12px;color:var(--muted-fg)"><span style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Invalid phone number</span><span>Sep 30, 2026, 04:41:07 PM</span></div></div><div style="display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:8.4px;padding:12px;font-size:14px"><div style="display:flex;align-items:center;gap:12px"><span style="color:var(--muted-fg)">Attempt #2</span><span class="bdg" style="background:#fef3c7;color:#b45309;border-color:transparent">Retrying</span></div><div style="display:flex;align-items:center;gap:12px;color:var(--muted-fg)"><span style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Queued</span><span>Sep 30, 2026, 04:46:30 PM</span></div></div></div></div>
+  <div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)"><button type="button" class="btn btn-def btn-primary">Retry Message</button><button type="button" class="btn btn-def btn-outline">Resolve Error</button></div>
+</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":600,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

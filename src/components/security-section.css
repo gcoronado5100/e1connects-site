@@ -1,0 +1,322 @@
+/*
+ * The security section of the home page (security-section.tsx, security-swiper.tsx): a row of
+ * tinted cards that scrolls sideways, snaps to each card and ends at the content column, each card
+ * with a sample of the CRM over its text. SecuritySwiper adds the copies, the controls and the
+ * segments once it has run; HomeMotion adds .is-in and .is-out-up to the row. The hidden states
+ * apply only once HomeMotion has run (<html data-motion-ready>), so without JavaScript nothing is
+ * hidden and the row simply scrolls.
+ *
+ * The bottom padding leaves room for the sign-in card of the closing band, which crosses into it.
+ */
+
+.security-section {
+  padding-bottom: 200px;
+}
+
+.sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.sec-nav {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+/* The secondary pill of DESIGN.md as a 48px circle. */
+.sec-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-ink-soft);
+  border-radius: 9999px;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    background-color 150ms,
+    scale 100ms;
+}
+
+.sec-btn:hover {
+  background: var(--color-tint-blue);
+}
+
+.sec-btn:active {
+  scale: 0.96;
+}
+
+.sec-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sec-btn .sec-btn-fill {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.sec-track {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.sec-track::-webkit-scrollbar {
+  display: none;
+}
+
+.sec-track:focus-visible {
+  outline-offset: 4px;
+  border-radius: 24px;
+}
+
+.sec-track.is-dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* The unseen jump from a copy back to the same card in the middle set. */
+.sec-track.is-jumping {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+/* Positioned, so the sr-only caption of a card off to the side stays inside the row's clip. */
+.sec-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 760px;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--tint);
+  scroll-snap-align: start;
+}
+
+.sec-sample {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+}
+
+/* The display of a frame and of an icon is set by Tailwind utilities (one per breakpoint). */
+.sec-frame {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-surface);
+}
+
+.sec-frame > .crm-shot {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 12px;
+}
+
+/* The members of a dealership beside the sessions of an account, at their widths in the CRM. */
+.sec-pair > .crm-shot:first-child {
+  flex: 428 1 0;
+}
+
+.sec-pair > .crm-shot:last-child {
+  flex: 326 1 0;
+}
+
+.sec-icon {
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  border-radius: 9999px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.sec-copy {
+  padding: 24px 8px 8px;
+}
+
+/* Four segments: the current one fills while its card shows, the ones before it stay full. */
+.sec-segs {
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.sec-seg {
+  position: relative;
+  flex: 1;
+  height: 20px;
+  cursor: pointer;
+}
+
+.sec-seg::before,
+.sec-seg::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.sec-seg::before {
+  right: 0;
+  background: var(--color-line);
+}
+
+.sec-seg::after {
+  width: 0;
+  background: var(--color-primary);
+}
+
+.sec-seg.is-done::after {
+  width: 100%;
+}
+
+.sec-seg.is-on::after {
+  animation: sec-seg-fill var(--interval) linear forwards;
+}
+
+[data-paused] .sec-seg.is-on::after {
+  animation-play-state: paused;
+}
+
+.sec-seg:focus-visible {
+  border-radius: 6px;
+}
+
+@keyframes sec-seg-fill {
+  to {
+    width: 100%;
+  }
+}
+
+/*
+ * Entrance: the cards are dealt in from the right one after another, each icon rising last. Exit:
+ * they lift away and fade, and come back from the side they left by.
+ */
+[data-motion-ready] .sec-card {
+  transition:
+    opacity 0.5s ease-in,
+    translate 0.6s ease-in;
+}
+
+[data-motion-ready] .sec-track.is-in .sec-card {
+  transition:
+    opacity 0.9s var(--ease-arrive) calc(var(--i) * 0.14s),
+    translate 1.2s var(--ease-arrive) calc(var(--i) * 0.14s);
+}
+
+[data-motion-ready] .sec-track:not(.is-in) .sec-card {
+  opacity: 0;
+  translate: 80px 0;
+}
+
+[data-motion-ready] .sec-track.is-out-up .sec-card {
+  translate: 0 -32px;
+}
+
+[data-motion-ready] .sec-icon {
+  transition:
+    opacity 0.4s ease-in,
+    translate 0.4s ease-in;
+}
+
+[data-motion-ready] .sec-track.is-in .sec-icon {
+  transition:
+    opacity 0.8s var(--ease-arrive) calc(0.45s + var(--i) * 0.14s),
+    translate 1s var(--ease-arrive) calc(0.45s + var(--i) * 0.14s);
+}
+
+[data-motion-ready] .sec-track:not(.is-in) .sec-icon {
+  opacity: 0;
+  translate: 0 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-track {
+    scroll-behavior: auto;
+  }
+
+  [data-motion-ready] :is(.sec-card, .sec-icon) {
+    translate: none !important;
+  }
+}
+
+@media (width < 64rem) {
+  .sec-card {
+    flex-basis: 600px;
+  }
+
+  .sec-sample {
+    height: 340px;
+  }
+}
+
+/* On a phone the row is swiped: the arrows go, the pause button stays. */
+@media (width < 48rem) {
+  .security-section {
+    padding-bottom: 160px;
+  }
+
+  .sec-btn-step {
+    display: none;
+  }
+
+  .sec-track {
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .sec-card {
+    flex-basis: calc(100vw - 104px);
+    padding: 16px;
+  }
+
+  .sec-sample {
+    height: 320px;
+  }
+
+  /* The phone samples are cards of the CRM already; they need no frame of their own. */
+  .sec-frame {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .sec-icon {
+    width: 88px;
+    height: 88px;
+  }
+
+  .sec-copy {
+    padding: 20px 8px 8px;
+  }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Filter drawer · category with active filters</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.frow{display:flex;align-items:center;gap:8px;height:36px;padding:0 8px;border-radius:4px;font-size:14px}
+.edit{display:flex;flex-direction:column;gap:8px;padding:8px 8px 0 32px}
+.field{display:flex;align-items:center;justify-content:space-between;height:36px;width:100%;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);text-align:left}
+.field-ph{color:var(--muted-fg)}
+.ficon{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<aside class="app" style="width:448px;height:960px;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1);position:relative">
+
+  <div style="padding:16px;border-bottom:1px solid var(--border)">
+    <h2 style="margin:0;font-size:16px;line-height:24px;font-weight:600">Leads</h2>
+  </div>
+  <button type="button" aria-label="Close" style="position:absolute;top:16px;right:16px;width:20px;height:20px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:4px;background:transparent;opacity:.7;cursor:pointer;color:var(--fg)">
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+
+  <nav aria-label="Breadcrumb" style="padding:8px 16px;font-size:12px;line-height:16px;border-bottom:1px solid var(--border)">
+    <button type="button" style="border:0;background:transparent;padding:0;font-family:inherit;font-size:12px;color:var(--muted-fg);cursor:pointer">← Filters</button>
+  </nav>
+
+  <div style="flex:1;min-height:0;overflow:hidden">
+    <div style="padding:16px">
+      <section>
+        <h3 style="margin:0;padding:24px 0 8px;font-size:14px;line-height:20px;font-weight:600">Find Leads where</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+
+          <sc-for list="{{fields}}" as="f" hint-placeholder-count="6">
+            <li>
+              <div class="frow">
+                <input type="checkbox" class="cb" aria-label="Toggle filter" checked="{{f.on}}">
+                <svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" style="{{f.iconStyle}}"><path d="{{f.icon}}"/></svg>
+                <span style="flex:1;text-align:left">{{f.name}}</span>
+              </div>
+              <sc-if value="{{f.isStatus}}" hint-placeholder-val="{{ false }}">
+                <div class="edit">
+                  <button type="button" class="field"><span>{{f.op}}</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                  <button type="button" class="field"><span style="{{f.valStyle}}">{{f.val}}</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                </div>
+              </sc-if>
+              <sc-if value="{{f.isDate}}" hint-placeholder-val="{{ false }}">
+                <div class="edit">
+                  <button type="button" class="field"><span>{{f.op}}</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg></button>
+                  <label for="date-after" style="position:absolute;left:-9999px">Date</label>
+                  <input id="date-after" type="date" class="field" style="display:block">
+                </div>
+              </sc-if>
+            </li>
+          </sc-for>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Validation banner -->
+    <div role="status" style="margin:24px 16px 0;display:flex;align-items:center;gap:8px;padding:8px 12px;border-left:2px solid var(--destructive);border-radius:8.4px;background:oklch(0.577 0.245 27.325 / .1);color:var(--destructive);font-size:14px;line-height:20px;font-weight:600">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+      <span>Please enter a value for each selected filter before applying.</span>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:flex-end;gap:8px;padding:16px;border-top:1px solid var(--border)">
+    <button type="button" class="btn btn-outline">Cancel</button>
+    <button type="button" class="btn btn-primary">Done</button>
+  </div>
+</aside>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":448,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const TEXT = 'M4 7V4h16v3M9 20h6M12 4v16';
+    const LIST = 'M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01';
+    const TOGGLE = 'M2 12a6 6 0 0 1 6-6h8a6 6 0 0 1 0 12H8a6 6 0 0 1-6-6zM10 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0z';
+    const CAL = 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z';
+    const mk = (name, icon, on, kind, op, val, empty) => ({
+      name,
+      icon,
+      on: !!on,
+      iconStyle: on ? '' : 'color:oklch(0.552 0.016 285.938)',
+      isStatus: kind === 'status',
+      isDate: kind === 'date',
+      op: op || '',
+      val: val || '',
+      valStyle: empty ? 'color:oklch(0.552 0.016 285.938)' : '',
+    });
+    return {
+      fields: [
+        mk('First name', TEXT, false),
+        mk('Last name', TEXT, false),
+        mk('Email', TEXT, false),
+        mk('Phone', TEXT, false),
+        mk('Form name', LIST, true, 'status', 'is', 'Get Pre-Approved'),
+        mk('Channel', LIST, false),
+        mk('Lead state', LIST, true, 'status', 'is any of', 'Hot lead'),
+        mk('Source (website)', LIST, false),
+        mk('Import batch', LIST, false),
+        mk('Is read', TOGGLE, false),
+        mk('Entry date', CAL, true, 'date', 'is after'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

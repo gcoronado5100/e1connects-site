@@ -1,0 +1,358 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T03:58:46.091Z",
+        "reason": "Claude: the flagged text is the CRM's own stage chips inside a product picture (DESIGN.md Imagery keeps the CRM's colors; incidental text in a picture, aria-hidden on the site)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-14T04:01:17.418Z",
+        "reason": "user confirmed: Gabriel chose Inter as the site's typeface (chat, 2026-10-13); DESIGN.md and PRODUCT.md record it as binding"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html",
+          ".impeccable/mocks/decision/record.html",
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.270Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts and radii inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html",
+          ".impeccable/mocks/decision/record.html",
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.293Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts and radii inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html",
+          ".impeccable/mocks/decision/record.html",
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.318Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts and radii inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html",
+          ".impeccable/mocks/decision/record.html",
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.342Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts and radii inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html",
+          ".impeccable/mocks/decision/record.html",
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.367Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts and radii inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/steps.html"
+        ],
+        "createdAt": "2026-10-14T04:16:57.394Z",
+        "reason": "Claude: the flagged container is the CRM's own .app wrapper inside a cropped product picture"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.023Z",
+        "reason": "Claude: the remaining findings sit inside the CRM pictures, rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and sizes there"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.045Z",
+        "reason": "Claude: the remaining findings sit inside the CRM pictures, rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and sizes there"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.068Z",
+        "reason": "Claude: the remaining findings sit inside the CRM pictures, rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and sizes there"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.091Z",
+        "reason": "Claude: the remaining findings sit inside the CRM pictures, rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and sizes there"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.116Z",
+        "reason": "Claude: the remaining findings sit inside the CRM pictures, rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and sizes there"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-hero.html"
+        ],
+        "createdAt": "2026-10-14T04:32:48.139Z",
+        "reason": "Claude: the hero band has no bottom inset on purpose; the CRM record crosses its lower edge into the next section (direction contract, FIRST VIEWPORT)"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:25.898Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:25.926Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:25.952Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:25.977Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.004Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.031Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "icon-tile-stack",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.059Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.087Z",
+        "reason": "Claude: CRM product pictures rendered from the real canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.119Z",
+        "reason": "Claude: the mockup embeds the CRM's raw markup; scripts/render-crm-screens.mjs turns its headings into divs on the site, so the real page has no CRM headings"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-product.html"
+        ],
+        "createdAt": "2026-10-14T05:54:26.142Z",
+        "reason": "Claude: the record frame hanging off the bottom of the hero is the approved hero composition (same ignore as home-hero.html)"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.720Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.747Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.774Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.800Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.827Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.851Z",
+        "reason": "Claude: the mockup embeds the CRM's raw markup; scripts/render-crm-screens.mjs turns its headings into divs on the site"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-email.html"
+        ],
+        "createdAt": "2026-10-14T19:45:17.876Z",
+        "reason": "Claude: the flagged boxes are the CRM's own containers inside the pictures, and on a phone the tinted panel is the picture's frame (DESIGN.md Imagery), as in the product section"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.274Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.302Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.330Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.366Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.393Z",
+        "reason": "Claude: CRM product pictures rendered from the canvas screens; DESIGN.md Imagery keeps the CRM's own colors, fonts, radii and markup inside the picture, and the text is incidental to the image"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T20:35:52.421Z",
+        "reason": "Claude: the flagged boxes are the CRM's own containers inside the pictures, and on a phone the tinted panel is the picture's frame (DESIGN.md Imagery)"
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/home-security.html"
+        ],
+        "createdAt": "2026-10-14T22:03:57.984Z",
+        "reason": "Claude: DESIGN.md Colors and Do's put ink-soft on the three tints (lowest contrast 5.63:1, on tint-violet); the card text follows that rule"
+      }
+    ]
+  }
+}

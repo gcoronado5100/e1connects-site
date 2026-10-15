@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contacts · loading</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-9{height:36px;padding:0 12px}
+.btn-icon-8{width:32px;height:32px;padding:0}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-default{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.badge-destructive{background:var(--destructive);color:#fff}
+.badge-outline{border-color:var(--border);color:var(--fg)}
+.badge-muted{border-color:var(--border);color:var(--muted-fg)}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.pill-none{border:1px solid var(--border);color:var(--muted-fg);font-weight:400}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px 4px 32px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.inp-pg{height:32px;width:56px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;text-align:center;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.sel{height:32px;width:80px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:0 8px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.row-h{height:40px;font-weight:500;white-space:nowrap;background:var(--bg)}
+.c{padding:8px;min-width:0}
+.sorth{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;font-family:inherit;font-size:14px;font-weight:500;color:inherit;cursor:pointer}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border:0;border-radius:8.4px;background:transparent;color:var(--muted-fg);cursor:pointer}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid;border-radius:14.4px;padding:24px 0;box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.card-h{display:flex;align-items:center;justify-content:space-between;padding:0 24px 8px}
+.card-b{padding:0 24px}
+.sk{display:block;background:oklch(0.552 0.016 285.938 / .15);border-radius:6.4px;animation:skpulse 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes skpulse{50%{opacity:.5}}
+@media (prefers-reduced-motion:reduce){.sk{animation:none}}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="clients" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="" current="Clients" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Title + toolbar -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="btn btn-icon-8" aria-label="Back" style="padding:0">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          </button>
+          <div>
+            <h1 style="margin:0;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.025em">Clients</h1>
+            <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">2,386 clients found</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <div style="position:relative;width:256px">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;left:8px;top:10px;color:var(--muted-fg)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input class="inp" type="search" placeholder="Search name, email, phone..." aria-label="Search clients">
+          </div>
+          <button type="button" class="btn btn-outline btn-9">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+            Filters
+          </button>
+          <button type="button" class="btn btn-outline btn-9" title="Hide stats">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+            Stats
+          </button>
+          <button type="button" class="btn btn-outline btn-9" title="Duplicates">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+            Duplicates
+          </button>
+          <button type="button" class="btn btn-outline btn-9" title="List settings" aria-label="List settings">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+            Settings
+          </button>
+          <button type="button" class="btn btn-primary btn-9" style="padding:0 16px">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:0"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            New Client
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:12px 16px;border-bottom:1px solid var(--border)">
+        <div class="card" style="border-color:#bfdbfe;background:#eff6ff">
+          <div class="card-h"><span style="font-size:14px;line-height:14px;font-weight:500">Total Clients</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#2563eb"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="card-b"><div style="font-size:24px;line-height:32px;font-weight:700">2,386</div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">All clients in the dealer network</p></div>
+        </div>
+        <div class="card" style="border-color:#bbf7d0;background:#f0fdf4">
+          <div class="card-h"><span style="font-size:14px;line-height:14px;font-weight:500">New (30 days)</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#16a34a"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg></div>
+          <div class="card-b"><div style="font-size:24px;line-height:32px;font-weight:700">214</div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Clients registered in last 30 days</p></div>
+        </div>
+        <div class="card" style="border-color:#e9d5ff;background:#faf5ff">
+          <div class="card-h"><span style="font-size:14px;line-height:14px;font-weight:500">Channels</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#9333ea"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
+          <div class="card-b"><div style="font-size:24px;line-height:32px;font-weight:700">4</div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">Different client channels</p></div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="padding:0 4px;color:var(--muted-fg)">Showing 1 to 25 of 2,386</div>
+        <div style="display:flex;align-items:center;gap:24px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <label for="rpp" style="font-weight:500">Rows per page</label>
+            <select id="rpp" class="sel"><option>10</option><option selected>25</option><option>50</option><option>100</option></select>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-weight:500">
+            <span>Page</span>
+            <input class="inp-pg" inputmode="numeric" value="1" aria-label="Go to page">
+            <span style="white-space:nowrap">of 96</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="First page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="Previous page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" aria-label="Next page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" aria-label="Last page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div style="flex:1;min-height:0;overflow:hidden"><div role="status" aria-busy="true" style="overflow:hidden"><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;background:oklch(0.967 0.001 286.375 / .5);padding:12px 16px;align-items:center"><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span><span class="sk" style="height:12px;width:50%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span></div><div style="display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:16px;border-top:1px solid var(--border);padding:14px 16px;align-items:center"><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span><span class="sk" style="height:16px;width:66.667%;"></span><span class="sk" style="height:16px;width:83.333%;"></span><span class="sk" style="height:16px;width:40%;"></span><span class="sk" style="height:16px;width:60%;"></span><span class="sk" style="height:16px;width:75%;"></span><span class="sk" style="height:16px;width:50%;"></span></div></div></div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const ST = {
+      'New Lead': '#3b82f6',
+      'Contacted': '#f59e0b',
+      'Credit App Sent': '#8b5cf6',
+      'Test Drive Booked': '#10b981',
+      'Trade-in Quote': '#f97316',
+      'Follow Up': '#14b8a6',
+    };
+    const SITE = {
+      'Main site': '#6366f1',
+      'Used inventory': '#0ea5e9',
+      'Financing': '#ec4899',
+      'Other': '',
+    };
+    const STATE = {
+      chloe: ['Chloe active', 'badge badge-default'],
+      agent: ['Agent control', 'badge badge-default'],
+      needs: ['Needs agent', 'badge badge-destructive'],
+      done: ['Done', 'badge badge-secondary'],
+      unreachable: ['Unreachable', 'badge badge-outline'],
+      nosms: ['No SMS', 'badge badge-muted'],
+    };
+    const mk = (name, username, email, phone, opp, site, state, dir, msg) => ({
+      name,
+      username,
+      email,
+      phone,
+      opp,
+      hasOpp: !!opp,
+      noOpp: !opp,
+      oppStyle: opp ? 'background:' + ST[opp] + '22;color:' + ST[opp] : '',
+      site,
+      siteStyle: SITE[site] ? 'background:' + SITE[site] + '22;color:' + SITE[site] : 'border:1px solid oklch(0.92 0.004 286.32);color:oklch(0.552 0.016 285.938);font-weight:400',
+      state: STATE[state][0],
+      stateClass: STATE[state][1],
+      dir: dir === 'in' ? 'Them:' : 'You:',
+      msg,
+      hasMsg: !!msg,
+      noMsg: !msg,
+    });
+    return {
+      rows: [
+        mk('Marcus Ellery', 'marcus.ellery', 'marcus.ellery@example.com', '(902) 555-0142', 'New Lead', 'Main site', 'chloe', 'in', 'Is the 2021 Civic still available?'),
+        mk('Priya Nandakumar', 'priya.n', 'priya.n@example.com', '(416) 555-0198', 'Credit App Sent', 'Financing', 'chloe', 'out', 'Perfect, I just sent the credit application link to your phone.'),
+        mk('Daniel Okafor', 'd.okafor', 'd.okafor@example.com', '(506) 555-0121', 'Test Drive Booked', 'Used inventory', 'agent', 'in', 'Saturday morning works for me'),
+        mk('Sofia Marchetti', 'sofia.m', 'sofia.m@example.com', '(613) 555-0176', null, 'Other', 'nosms', null, null),
+        mk('Jean-Luc Bouchard', 'jl.bouchard', 'jl.bouchard@example.com', '(514) 555-0133', 'Contacted', 'Main site', 'chloe', 'in', "Pouvez-vous m'appeler demain matin?"),
+        mk('Aaliyah Brooks', 'aaliyah.b', 'aaliyah.b@example.com', '(902) 555-0165', 'New Lead', 'Used inventory', 'unreachable', 'out', 'Do you have a monthly budget in mind?'),
+        mk('Tom Whitfield', 'tom.whitfield', 'tom.whitfield@example.com', '(905) 555-0119', 'Trade-in Quote', 'Financing', 'needs', 'in', "What's the actual number on my trade?"),
+        mk('Wei Zhang', 'wei.zhang', 'wei.zhang@example.com', '(604) 555-0187', 'New Lead', 'Main site', 'done', 'out', 'Hi Wei, this is Chloe from Every1Drives. How can I help?'),
+        mk('Rachel Gagnon', 'rachel.g', 'rachel.g@example.com', '(819) 555-0154', 'Contacted', 'Other', 'chloe', 'in', "Thanks, I'll think about it"),
+        mk('Omar Haddad', 'omar.h', 'omar.h@example.com', '(587) 555-0102', 'Follow Up', 'Used inventory', 'chloe', 'out', 'Just checking in. Still interested in the Silverado?'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

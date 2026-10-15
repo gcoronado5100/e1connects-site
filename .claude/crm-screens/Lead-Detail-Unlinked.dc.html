@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lead detail · no linked contact</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.ic12{width:12px;height:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-h8{height:32px;padding:0 8px;gap:6px}
+.btn-i5{width:24px;height:24px;padding:0;border-radius:4px}
+.card-h{display:flex;align-items:center;padding:12px 16px}
+.card-t{display:flex;flex:1;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.f{display:flex;flex-direction:column;gap:2px}
+.f-l{font-size:12px;line-height:16px;color:var(--muted-fg)}
+.link{display:flex;align-items:center;gap:4px;color:var(--primary);text-decoration:none}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="leads" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="Leads" current="Sofia Marchetti" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <!-- Page header -->
+      <div style="flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg)">
+        <div style="display:flex;align-items:center;gap:6px;min-width:0">
+          <button type="button" class="btn btn-sm" style="height:32px;padding:0 8px;gap:4px;color:var(--muted-fg)">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Back
+          </button>
+          <div style="display:flex;align-items:center;gap:4px;min-width:0">
+            <h1 style="margin:0;font-size:14px;line-height:20px;font-weight:600">Sofia Marchetti</h1>
+            <button type="button" aria-label="Edit name" class="btn btn-i5" style="color:var(--muted-fg)"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></button>
+          </div>
+          <span style="font-size:12px;color:var(--muted-fg)">#12871 · Get Pre-Approved</span>
+          <button type="button" style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);font-family:inherit;font-size:12px;line-height:16px;font-weight:500;color:inherit;cursor:pointer">
+            <span style="width:8px;height:8px;border-radius:9999px;background:#94a3b8"></span>
+            <span>No state</span>
+            <svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+          <button type="button" class="btn btn-outline btn-h8"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>Connect Client</button>
+          <button type="button" class="btn btn-outline btn-h8"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>Start Chloe</button>
+          <button type="button" class="btn btn-outline" style="height:32px;padding:0 10px;font-size:12px;gap:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Done</button>
+          <span style="display:inline-flex">
+            <button type="button" class="btn btn-outline btn-sm" style="border-top-right-radius:0;border-bottom-right-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</button>
+            <button type="button" class="btn btn-outline btn-sm" aria-label="Choose line" style="padding:0 6px;border-left:0;border-top-left-radius:0;border-bottom-left-radius:0"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          </span>
+        </div>
+      </div>
+
+      <div style="flex:1;min-height:0;display:flex;overflow:hidden">
+
+        <!-- Lead-only panel -->
+        <aside style="width:320px;flex-shrink:0;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden">
+          <div style="flex:1;min-height:0;overflow:hidden">
+
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border)">
+              <span style="font-size:12px;line-height:16px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)">Lead Info</span>
+              <span style="display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;background:#6366f122;color:#6366f1">Main site</span>
+            </div>
+
+            <!-- Contact card -->
+            <div style="border-bottom:1px solid var(--border)">
+              <div class="card-h">
+                <div class="card-t">
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                  <span>Contact</span>
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:auto;color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;padding:4px 16px 16px">
+                <div class="f"><span class="f-l">Name</span><span>Sofia Marchetti</span></div>
+                <div class="f"><span class="f-l">Email</span><a href="#mail" class="link"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>sofia.m@example.com</a></div>
+                <div class="f"><span class="f-l">Phone</span><a href="#tel" class="link"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(613) 555-0176</a></div>
+                <div class="f"><span class="f-l">Form</span><span style="display:flex;align-items:center;gap:4px"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>Get Pre-Approved</span></div>
+                <div class="f"><span class="f-l">Entry Date</span><span style="display:flex;align-items:center;gap:4px"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>Sep 29, 2026</span></div>
+                <div class="f"><span class="f-l">Entry #</span><span style="display:flex;align-items:center;gap:4px"><svg class="ic ic12" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>12871</span></div>
+                <div class="f"><span class="f-l">Source</span><span><span style="display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;background:#6366f122;color:#6366f1">Main site</span></span></div>
+              </div>
+            </div>
+
+            <!-- Form fields -->
+            <div style="border-bottom:1px solid var(--border)">
+              <div class="card-h">
+                <div class="card-t">
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                  <span>Form Fields</span>
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:auto;color:var(--muted-fg)"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;padding:4px 16px 16px">
+                <sc-for list="{{fields}}" as="f" hint-placeholder-count="5">
+                  <div class="f"><span class="f-l">{{f.k}}</span><span>{{f.v}}</span></div>
+                </sc-for>
+              </div>
+            </div>
+
+            <!-- Opportunities -->
+            <div style="border-bottom:1px solid var(--border)">
+              <div class="card-h">
+                <div class="card-t">
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--muted-fg)"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>
+                  <span>Opportunities</span>
+                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:auto;color:var(--muted-fg)"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
+                <button type="button" aria-label="New opportunity" class="btn btn-i5" style="margin-left:8px"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+              </div>
+            </div>
+
+            <!-- Calls -->
+            <div style="padding:12px">
+              <p style="margin:0 0 8px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)">Calls</p>
+              <p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">No calls with this contact yet</p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Empty right pane -->
+        <section style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted-fg)">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity:.2"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>
+          <p style="margin:0;font-size:14px">No linked client yet.</p>
+          <button type="button" class="btn btn-outline btn-sm" style="color:var(--fg)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>Connect Client</button>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      fields: [
+        { k: 'Vehicle of interest', v: '2022 Toyota Tacoma TRD' },
+        { k: 'Monthly budget', v: '$450' },
+        { k: 'Down payment', v: '$3,000' },
+        { k: 'Do you have a trade-in?', v: 'No' },
+        { k: 'Employment status', v: 'Self-employed' },
+        { k: 'Comments', v: 'Looking for something I can use for work. Can you text me?' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

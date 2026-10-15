@@ -1,0 +1,58 @@
+/*
+ * The hero's entrance and exit (src/components/home-hero.tsx). The notices arrive from above in
+ * the order of their times and the record rises after them; they leave upward as the page scrolls
+ * and come back when it scrolls back. HomeMotion adds .is-in and .is-out-up and sets --delay.
+ *
+ * <html data-motion> is set by the script in the root layout before the first paint, so nothing
+ * here applies without JavaScript. If the page script never runs, everything shows after 3s.
+ */
+
+[data-motion] .hero-notice,
+[data-motion] .hero-record {
+  transition:
+    opacity 0.6s ease-in,
+    translate 0.6s ease-in,
+    scale 0.6s ease-in;
+}
+
+[data-motion] .hero-notice.is-in,
+[data-motion] .hero-record.is-in {
+  transition:
+    opacity 1s var(--ease-arrive) var(--delay, 0s),
+    translate 1.2s var(--ease-arrive) var(--delay, 0s),
+    scale 1.2s var(--ease-arrive) var(--delay, 0s);
+}
+
+[data-motion] .hero-notice:not(.is-in) {
+  opacity: 0;
+  translate: 0 -24px;
+  scale: 0.94;
+}
+
+[data-motion] .hero-record:not(.is-in) {
+  opacity: 0;
+  translate: 0 64px;
+}
+
+[data-motion] .hero-record.is-out-up {
+  translate: 0 -48px;
+}
+
+@keyframes hero-motion-fallback {
+  to {
+    opacity: 1;
+    translate: none;
+    scale: none;
+  }
+}
+
+[data-motion]:not([data-motion-ready]) :is(.hero-notice, .hero-record) {
+  animation: hero-motion-fallback 0.6s ease-out 3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] :is(.hero-notice, .hero-record) {
+    translate: none !important;
+    scale: none !important;
+  }
+}

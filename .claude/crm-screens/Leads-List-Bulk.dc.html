@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Leads list · filters and selection</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic14{width:14px;height:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 16px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sm{height:32px;padding:0 12px;gap:6px}
+.btn-9{height:36px;padding:0 12px}
+.btn-icon-8{width:32px;height:32px;padding:0}
+.badge{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.badge-default{background:var(--primary);color:var(--primary-fg)}
+.badge-secondary{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.badge-destructive{background:var(--destructive);color:#fff}
+.badge-outline{border-color:var(--border);color:var(--fg)}
+.badge-muted{border-color:var(--border);color:var(--muted-fg)}
+.pill{display:inline-flex;align-items:center;border-radius:9999px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.pill-none{border:1px solid var(--border);color:var(--muted-fg);font-weight:400}
+.inp{height:36px;width:100%;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px 4px 32px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.inp-pg{height:32px;width:56px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;text-align:center;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.sel{height:32px;width:80px;border:1px solid var(--border);border-radius:8.4px;background:var(--bg);padding:0 8px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;margin:0;border:1px solid var(--border);border-radius:4px;background:var(--bg);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex-shrink:0}
+.cb:checked{background:var(--primary);border-color:var(--primary)}
+.cb:checked::after{content:"";width:4px;height:8px;border:solid var(--primary-fg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.av{width:28px;height:28px;border-radius:9999px;background:var(--muted);display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.row{display:grid;grid-template-columns:var(--cols);align-items:center;border-bottom:1px solid var(--border)}
+.row-h{height:40px;font-weight:500;white-space:nowrap;background:var(--bg)}
+.c{padding:8px;min-width:0}
+.sorth{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;font-family:inherit;font-size:14px;font-weight:500;color:inherit;cursor:pointer}
+.ib{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;border:0;border-radius:4px;background:transparent;cursor:pointer}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:8.4px;background:var(--muted);color:oklch(0.21 0.006 285.885);padding:4px 8px;font-size:14px;line-height:20px;white-space:nowrap}
+.chip button{display:inline-flex;align-items:center;border:0;background:transparent;padding:0;color:inherit;font-family:inherit;font-size:14px;cursor:pointer}
+.bar-b{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid var(--border);background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;color:inherit;cursor:pointer;flex-shrink:0}
+</style>
+</helmet>
+<div class="app" style="position:relative;width:1440px;height:960px;display:flex;overflow:hidden">
+
+  <div style="width:256px;flex-shrink:0">
+    <dc-import name="Sidebar" active="leads" hint-size="256px,960px"></dc-import>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="margin-bottom:16px;flex-shrink:0">
+      <dc-import name="AppHeader" parent="" current="Leads" hint-size="1184px,64px"></dc-import>
+    </div>
+
+    <main style="flex:1;min-height:0;padding:0 16px;display:flex;flex-direction:column;overflow:hidden">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <button type="button" class="btn btn-sm" style="gap:6px;color:var(--muted-fg)">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Back
+        </button>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="btn btn-outline btn-sm" style="height:36px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Sync</button>
+          <button type="button" class="btn btn-outline btn-sm" style="height:36px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>Export</button>
+          <button type="button" class="btn btn-outline btn-sm" style="height:36px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>Import</button>
+        </div>
+      </div>
+
+      <!-- Toolbar with active filters -->
+      <div style="display:flex;flex-direction:column;gap:8px;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <div style="position:relative;width:256px">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;left:8px;top:10px;color:var(--muted-fg)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input class="inp" type="search" placeholder="Search leads..." aria-label="Search leads">
+            </div>
+            <button type="button" class="btn btn-outline btn-9">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+              Filter
+              <span class="badge badge-default" style="height:20px;min-width:20px;padding:0 4px;font-size:11px">2</span>
+            </button>
+            <button type="button" class="btn btn-outline btn-9" title="Start dialer">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+              Dialer
+            </button>
+            <button type="button" class="btn btn-outline btn-sm" style="gap:4px">
+              <span style="font-size:12px;font-weight:400;color:var(--muted-fg)">No view</span>
+              <svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <button type="button" class="btn btn-outline btn-9" style="gap:4px">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/><path d="M12 7v6"/><path d="M15 10H9"/></svg>
+              Save as
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline btn-9" style="gap:8px" title="List settings" aria-label="List settings">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+            Settings
+          </button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+          <span class="chip"><button type="button" aria-label="Edit filter: Lead state is any of Hot lead"><b style="font-weight:600">Lead state:</b>&nbsp;is any of Hot lead</button><button type="button" aria-label="Remove filter" style="opacity:.5;margin-left:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></span>
+          <span class="chip"><button type="button" aria-label="Edit filter: Entry date is after Sep 1, 2026"><b style="font-weight:600">Entry date:</b>&nbsp;is after Sep 1, 2026</button><button type="button" aria-label="Remove filter" style="opacity:.5;margin-left:4px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></span>
+          <button type="button" style="border:0;background:transparent;padding:0;margin-left:4px;font-family:inherit;font-size:14px;color:var(--primary);cursor:pointer">Clear all</button>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid var(--border)">
+        <div style="padding:0 4px;color:var(--muted-fg)">3 of 214 row(s) selected.</div>
+        <div style="display:flex;align-items:center;gap:24px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <label for="rpp" style="font-weight:500">Rows per page</label>
+            <select id="rpp" class="sel"><option>10</option><option selected>25</option><option>50</option><option>100</option></select>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-weight:500">
+            <span>Page</span>
+            <input class="inp-pg" inputmode="numeric" value="1" aria-label="Go to page">
+            <span style="white-space:nowrap">of 9</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="First page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" disabled style="opacity:.5" aria-label="Previous page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" aria-label="Next page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button type="button" class="btn btn-outline btn-icon-8" aria-label="Last page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div style="flex:1;min-height:0;overflow:hidden">
+        <div role="table" aria-label="Leads" style="--cols:44px 32px 36px minmax(150px,1.2fr) minmax(170px,1.5fr) 118px 130px 112px 100px minmax(180px,2fr) 40px">
+          <div role="row" class="row row-h">
+            <div role="columnheader" class="c"></div>
+            <div role="columnheader" class="c" style="padding-left:8px"><input type="checkbox" class="cb" aria-label="Select all"></div>
+            <div role="columnheader" class="c"></div>
+            <div role="columnheader" class="c"><button type="button" class="sorth">Full name<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.4"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></svg></button></div>
+            <div role="columnheader" class="c">Email</div>
+            <div role="columnheader" class="c">Phone</div>
+            <div role="columnheader" class="c">Opportunity</div>
+            <div role="columnheader" class="c">Conv. State</div>
+            <div role="columnheader" class="c"><button type="button" class="sorth">Date<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></button></div>
+            <div role="columnheader" class="c" style="display:flex;align-items:center;gap:4px">Last Message<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:12px;height:12px;opacity:.6"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div role="columnheader" class="c"></div>
+          </div>
+
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+            <div role="row" class="row" style="{{r.rowStyle}}">
+              <div role="cell" class="c"><span class="av">{{r.initials}}</span></div>
+              <div role="cell" class="c" style="padding-left:8px"><input type="checkbox" class="cb" aria-label="Select lead" checked="{{r.selected}}"></div>
+              <div role="cell" class="c">
+                <button type="button" class="ib" aria-label="{{r.readLabel}}" style="{{r.readStyle}}">
+                  <sc-if value="{{r.isRead}}" hint-placeholder-val="{{ true }}">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </sc-if>
+                  <sc-if value="{{r.isUnread}}" hint-placeholder-val="{{ false }}">
+                    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                  </sc-if>
+                </button>
+              </div>
+              <div role="cell" class="c"><a href="#lead" style="color:inherit;text-decoration:none;white-space:nowrap;{{r.nameStyle}}">{{r.name}}</a></div>
+              <div role="cell" class="c" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{r.email}}</div>
+              <div role="cell" class="c" style="white-space:nowrap">{{r.phone}}</div>
+              <div role="cell" class="c"><span class="pill" style="{{r.oppStyle}}">{{r.opp}}</span></div>
+              <div role="cell" class="c"><span class="{{r.stateClass}}">{{r.state}}</span></div>
+              <div role="cell" class="c" style="color:var(--muted-fg);white-space:nowrap">{{r.date}}</div>
+              <div role="cell" class="c">
+                <span style="display:block;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:16px;color:var(--muted-fg)"><span style="font-weight:500;color:oklch(0.141 0.005 285.823 / .8);margin-right:4px">{{r.dir}}</span>{{r.msg}}</span>
+              </div>
+              <div role="cell" class="c" style="padding:8px 0">
+                <button type="button" class="ib" style="width:32px;height:32px;color:var(--muted-fg)" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating bulk bar -->
+  <div style="position:absolute;left:50%;bottom:24px;transform:translateX(-50%);max-width:1368px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:8px 12px 8px 20px;border:1px solid var(--border);border-radius:9999px;background:var(--bg);box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)">
+    <span style="font-size:14px;font-weight:500;white-space:nowrap">3 selected</span>
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px">
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Send Template</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>Start Chloe</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg>Chloe<svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>Start dialer</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7v7"/><path d="M12 7v4"/><path d="M16 7v9"/></svg>Set Opportunity</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>Set State</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>Read</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Export CSV</button>
+      <button type="button" class="bar-b"><svg class="ic ic14" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>Assign</button>
+    </div>
+    <button type="button" class="btn" aria-label="Clear selection" title="Clear selection" style="width:32px;height:32px;padding:0;border-radius:9999px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const ST = {
+      'New Lead': '#3b82f6',
+      'Contacted': '#f59e0b',
+      'Credit App Sent': '#8b5cf6',
+      'Test Drive Booked': '#10b981',
+      'Trade-in Quote': '#f97316',
+      'Follow Up': '#14b8a6',
+    };
+    const STATE = {
+      chloe: ['Chloe active', 'badge badge-default'],
+      agent: ['Agent control', 'badge badge-default'],
+      needs: ['Needs agent', 'badge badge-destructive'],
+      done: ['Done', 'badge badge-secondary'],
+    };
+    const mk = (name, email, phone, opp, state, date, dir, msg, unread, selected) => {
+      const parts = name.split(' ');
+      return {
+        name,
+        initials: (parts[0].charAt(0) + (parts[1] ? parts[1].charAt(0) : '')).toUpperCase(),
+        email,
+        phone,
+        opp,
+        oppStyle: 'background:' + ST[opp] + '22;color:' + ST[opp],
+        state: STATE[state][0],
+        stateClass: STATE[state][1],
+        date,
+        dir: dir === 'in' ? 'Them:' : 'You:',
+        msg,
+        isUnread: !!unread,
+        isRead: !unread,
+        selected: !!selected,
+        readLabel: unread ? 'Mark as read' : 'Mark as unread',
+        readStyle: unread ? 'color:#2563eb' : 'color:oklch(0.552 0.016 285.938)',
+        rowStyle: unread ? 'background:rgb(239 246 255 / .5)' : '',
+        nameStyle: unread ? 'font-weight:600' : 'font-weight:500',
+      };
+    };
+    return {
+      rows: [
+        mk('Marcus Ellery', 'marcus.ellery@example.com', '(902) 555-0142', 'New Lead', 'chloe', 'Sep 30, 2026', 'in', 'Is the 2021 Civic still available?', true, true),
+        mk('Priya Nandakumar', 'priya.n@example.com', '(416) 555-0198', 'Credit App Sent', 'chloe', 'Sep 30, 2026', 'out', 'Perfect, I just sent the credit application link to your phone.', true, true),
+        mk('Daniel Okafor', 'd.okafor@example.com', '(506) 555-0121', 'Test Drive Booked', 'agent', 'Sep 29, 2026', 'in', 'Saturday morning works for me', false, true),
+        mk('Jean-Luc Bouchard', 'jl.bouchard@example.com', '(514) 555-0133', 'Contacted', 'chloe', 'Sep 29, 2026', 'in', "Pouvez-vous m'appeler demain matin?", false, false),
+        mk('Tom Whitfield', 'tom.whitfield@example.com', '(905) 555-0119', 'Trade-in Quote', 'needs', 'Sep 28, 2026', 'in', "What's the actual number on my trade?", true, false),
+        mk('Wei Zhang', 'wei.zhang@example.com', '(604) 555-0187', 'New Lead', 'done', 'Sep 27, 2026', 'out', 'Hi Wei, this is Chloe from Every1Drives. How can I help?', false, false),
+        mk('Rachel Gagnon', 'rachel.g@example.com', '(819) 555-0154', 'Contacted', 'chloe', 'Sep 27, 2026', 'in', "Thanks, I'll think about it", false, false),
+        mk('Hannah Lindqvist', 'hannah.l@example.com', '(780) 555-0138', 'Test Drive Booked', 'chloe', 'Sep 26, 2026', 'in', 'See you Thursday at 4!', false, false),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/*
+ * The 404 page (not-found.tsx): the CRM's search, finding nothing, in the white frame of the site's
+ * pictures. It opens as the CRM opens it, a little from above and growing from 96%, and then "No
+ * results found." appears; it leaves upward by the rule of the rest of the site. HomeMotion adds
+ * .is-in and .is-out-up.
+ *
+ * The picture is at the top of the page, so its hidden state applies from the first paint, as the
+ * hero's does (<html data-motion> is set by the script in the root layout); without JavaScript
+ * nothing is hidden, and if the page script never runs it shows after 3s.
+ */
+
+.not-found-shot {
+  width: 100%;
+  max-width: 560px;
+  padding: 12px;
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  background: var(--color-surface);
+}
+
+/* The dialog keeps its own border and corners; nothing of the screen shows around them. */
+.not-found-shot .crm-shot .app {
+  background: none;
+}
+
+@media (width < 48rem) {
+  .not-found-shot {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+}
+
+[data-motion] .not-found-shot {
+  transition:
+    opacity 0.6s ease-in,
+    translate 0.6s ease-in,
+    scale 0.6s ease-in;
+}
+
+[data-motion] .not-found-shot.is-in {
+  transition:
+    opacity 1s var(--ease-arrive) 0.15s,
+    translate 1.1s var(--ease-arrive) 0.15s,
+    scale 1.1s var(--ease-arrive) 0.15s;
+}
+
+[data-motion] .not-found-shot:not(.is-in) {
+  opacity: 0;
+  translate: 0 -16px;
+  scale: 0.96;
+}
+
+[data-motion] .not-found-shot.is-out-up {
+  translate: 0 -48px;
+}
+
+/* "No results found.", the dialog's second row. */
+[data-motion] .not-found-shot .app > div > div:last-child {
+  transition: opacity 0.3s ease-in;
+}
+
+[data-motion] .not-found-shot.is-in .app > div > div:last-child {
+  transition: opacity 0.8s var(--ease-arrive) 0.75s;
+}
+
+[data-motion] .not-found-shot:not(.is-in) .app > div > div:last-child {
+  opacity: 0;
+}
+
+@keyframes not-found-motion-fallback {
+  to {
+    opacity: 1;
+    translate: none;
+    scale: none;
+  }
+}
+
+[data-motion]:not([data-motion-ready]) :is(.not-found-shot, .not-found-shot .app > div > div:last-child) {
+  animation: not-found-motion-fallback 0.6s ease-out 3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] .not-found-shot {
+    translate: none !important;
+    scale: none !important;
+  }
+}

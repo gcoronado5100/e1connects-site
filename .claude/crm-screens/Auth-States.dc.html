@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Login · other states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.app{--bg:oklch(0.99 0 0);--fg:oklch(0.141 0.005 285.823);--muted:oklch(0.967 0.001 286.375);--muted-fg:oklch(0.552 0.016 285.938);--border:oklch(0.92 0.004 286.32);--primary:oklch(0.623 0.214 259.815);--primary-fg:oklch(0.97 0.014 254.604);--destructive:oklch(0.577 0.245 27.325);--c1:oklch(0.646 0.222 41.116);--c2:oklch(0.6 0.118 184.704);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:20px;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+.app *{box-sizing:border-box}
+.ic{width:16px;height:16px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8.4px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:500;line-height:20px;white-space:nowrap;cursor:pointer;background:transparent;color:inherit;flex-shrink:0}
+.btn-outline{background:var(--bg);border-color:var(--border);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.btn-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-icon{width:32px;padding:0}
+.card{display:flex;flex-direction:column;gap:24px;border:1px solid var(--border);border-radius:14.4px;padding:24px 0;background:var(--bg);box-shadow:0 1px 2px rgb(0 0 0 / .05);min-width:0}
+.card-h{display:grid;gap:6px;padding:0 24px}
+.card-t{font-weight:600;line-height:1}
+.card-d{margin:0;font-size:14px;color:var(--muted-fg)}
+.card-b{padding:0 24px}
+.tnum{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted-fg)}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05);white-space:nowrap}
+.inp{height:32px;border:1px solid var(--border);border-radius:8.4px;background:transparent;padding:4px 12px;font-family:inherit;font-size:14px;color:var(--fg);box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.bdg{display:inline-flex;align-items:center;border:1px solid transparent;border-radius:8.4px;padding:2px 8px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.bdg-def{background:var(--primary);color:var(--primary-fg)}
+.bdg-sec{background:var(--muted);color:oklch(0.21 0.006 285.885)}
+.bdg-dest{background:var(--destructive);color:#fff}
+.av{position:relative;display:inline-flex;flex-shrink:0}
+.av-c{display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted);font-size:10px;line-height:16px;color:var(--fg)}
+.pd{position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:9999px;box-shadow:0 0 0 2px var(--bg)}
+.pop{border:1px solid var(--border);border-radius:8.4px;background:oklch(0.99 0 0);box-shadow:0 4px 6px -1px rgb(0 0 0 / .1),0 2px 4px -2px rgb(0 0 0 / .1)}
+.gr{display:grid;grid-template-columns:var(--cols);align-items:center}
+.sr{border:0;padding:0;margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.bdg-out{background:transparent;border-color:var(--border);color:var(--fg)}
+.h36{height:36px}
+.btn-sm{height:32px}
+.btn-def{height:36px;padding:0 16px}
+.th-btn{display:inline-flex;align-items:center;gap:6px;height:32px;margin-left:-12px;padding:0 12px;border:0;border-radius:8.4px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:inherit;white-space:nowrap}
+.dt-h{display:flex;align-items:center;height:40px;padding:0 8px;font-weight:500;white-space:nowrap}
+.dt-c{padding:8px;min-width:0;display:flex;align-items:center}
+.lbl{font-size:14px;line-height:14px;font-weight:500}
+
+</style>
+</helmet>
+<div class="app" style="width:1680px;height:1300px;padding:48px;background:oklch(0.967 0.001 286.375);display:grid;grid-template-columns:768px 768px;gap:48px;align-content:start">
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Verification code (2FA)</div><div style="font-size:12px;line-height:16px;color:var(--muted-fg)">Shown after a correct password when 2FA is on</div></div><div class="card" style="width:768px;padding:0;gap:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 1fr"><form style="padding:32px" onsubmit="return false"><div style="display:flex;flex-direction:column;gap:24px"><div style="display:flex;flex-direction:column;align-items:center;text-align:center"><h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700">Verification code</h1><p style="margin:0;color:var(--muted-fg);text-wrap:balance">Check your email and enter the 6-digit code.</p></div><div style="background:oklch(0.577 0.245 27.325 / .15);color:var(--destructive);padding:8px 12px;border-radius:8.4px;font-size:14px;line-height:20px">Invalid or expired code.</div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">Code</label><input class="inp" type="text" value="482913" placeholder="000000" style="width:100%;height:36px;text-align:center;font-size:18px;line-height:28px;letter-spacing:.1em"></div><button type="submit" class="btn btn-primary btn-def" style="width:100%;">Verify</button><button type="button" class="btn btn-def" style="width:100%">Use a different account</button></div></form><div aria-hidden="true" style="position:relative;background:linear-gradient(135deg,#e5e7eb 0%,#cbd5e1 55%,#94a3b8 100%);display:flex;align-items:center;justify-content:center;color:rgb(255 255 255 / .8);font-size:12px">login image</div></div></div></div>
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Forgot password</div><div style="font-size:12px;line-height:16px;color:var(--muted-fg)">Link under the password field</div></div><div class="card" style="width:768px;padding:0;gap:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 1fr"><form style="padding:32px" onsubmit="return false"><div style="display:flex;flex-direction:column;gap:24px"><div style="display:flex;flex-direction:column;align-items:center;text-align:center"><h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700">Forgot password</h1><p style="margin:0;color:var(--muted-fg);text-wrap:balance">Enter your registered email and we’ll send you a reset code.</p></div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">Email</label><input class="inp" type="email" value="jordan.blake@example.com" placeholder="" style="width:100%;height:36px;"></div><button type="submit" class="btn btn-primary btn-def" style="width:100%;">Send reset code</button><button type="button" class="btn btn-def" style="width:100%">Back to login</button></div></form><div aria-hidden="true" style="position:relative;background:linear-gradient(135deg,#e5e7eb 0%,#cbd5e1 55%,#94a3b8 100%);display:flex;align-items:center;justify-content:center;color:rgb(255 255 255 / .8);font-size:12px">login image</div></div></div></div>
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Reset with code</div><div style="font-size:12px;line-height:16px;color:var(--muted-fg)">Reached after "Send reset code"</div></div><div class="card" style="width:768px;padding:0;gap:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 1fr"><form style="padding:32px" onsubmit="return false"><div style="display:flex;flex-direction:column;gap:24px"><div style="display:flex;flex-direction:column;align-items:center;text-align:center"><h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700">Create new password</h1><p style="margin:0;color:var(--muted-fg);text-wrap:balance">Enter the code we sent to your email and choose a new password.</p></div><div style="background:rgb(16 185 129 / .1);color:#059669;padding:8px 12px;border-radius:8.4px;font-size:14px;line-height:20px">We’ve sent you a reset code.</div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">Email</label><input class="inp" type="text" value="jordan.blake@example.com" placeholder="" style="width:100%;height:36px;opacity:.5;background:var(--muted);"></div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">Code</label><input class="inp" type="text" value="" placeholder="000000" style="width:100%;height:36px;text-align:center;font-size:18px;line-height:28px;letter-spacing:.1em"></div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">New password</label><input class="inp" type="password" value="" placeholder="" style="width:100%;height:36px;"></div><div style="display:grid;gap:12px"><label style="font-size:14px;line-height:14px;font-weight:500">Confirm password</label><input class="inp" type="password" value="" placeholder="" style="width:100%;height:36px;"></div><button type="submit" class="btn btn-primary btn-def" style="width:100%;opacity:.5">Change password</button><button type="button" class="btn btn-def" style="width:100%">Back to login</button></div></form><div aria-hidden="true" style="position:relative;background:linear-gradient(135deg,#e5e7eb 0%,#cbd5e1 55%,#94a3b8 100%);display:flex;align-items:center;justify-content:center;color:rgb(255 255 255 / .8);font-size:12px">login image</div></div></div></div>
+  <div><div style="margin-bottom:8px"><div style="font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Too many devices</div><div style="font-size:12px;line-height:16px;color:var(--muted-fg)">Appears when the account is already at its device limit</div></div><div class="card" style="width:768px;padding:0;gap:0;overflow:hidden"><div style="display:grid;grid-template-columns:1fr 1fr"><form style="padding:32px" onsubmit="return false"><div style="display:flex;flex-direction:column;gap:24px"><div style="display:flex;flex-direction:column;align-items:center;text-align:center"><h1 style="margin:0;font-size:24px;line-height:32px;font-weight:700">Too many devices</h1><p style="margin:0;color:var(--muted-fg);text-wrap:balance">You are already signed in on 2 devices. Choose one to sign out to continue here.</p></div><div role="radiogroup" aria-label="Too many devices" style="display:grid;gap:8px"><label style="display:block"><div style="display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg><div style="min-width:0;flex:1"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;line-height:20px;font-weight:500">Chrome on macOS</span><span style="border-radius:9999px;padding:2px 8px;font-size:11px;line-height:16px;font-weight:500;background:var(--muted);color:var(--muted-fg)">Remembered (3 days)</span></div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">active 12 min ago · Halifax, NS · 192.0.2.14</p></div><span style="width:16px;height:16px;border-radius:9999px;border:1px solid var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="width:8px;height:8px;border-radius:9999px;background:var(--primary)"></span></span></div></label><label style="display:block"><div style="display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:8.4px;padding:8px 12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;color:var(--muted-fg)"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg><div style="min-width:0;flex:1"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:14px;line-height:20px;font-weight:500">Safari on iPhone</span></div><p style="margin:0;font-size:12px;line-height:16px;color:var(--muted-fg)">active 2 h ago · Moncton, NB · 198.51.100.7</p></div><span style="width:16px;height:16px;border-radius:9999px;border:1px solid oklch(0.552 0.016 285.938 / .5);display:flex;align-items:center;justify-content:center;flex-shrink:0"></span></div></label></div><button type="submit" class="btn btn-primary btn-def" style="width:100%;">Sign out that device and continue</button><button type="button" class="btn btn-def" style="width:100%">Back to login</button></div></form><div aria-hidden="true" style="position:relative;background:linear-gradient(135deg,#e5e7eb 0%,#cbd5e1 55%,#94a3b8 100%);display:flex;align-items:center;justify-content:center;color:rgb(255 255 255 / .8);font-size:12px">login image</div></div></div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1680,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
