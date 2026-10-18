@@ -121,14 +121,19 @@ export default function PrivacyPage() {
       <ul>
         <li>You.</li>
         <li>
-          The people of your own dealership whose role lets them see the team’s conversations (administrators and the
-          account owner), because the emails are part of the dealership’s record of that customer.
+          The people of your own dealership who can open that lead or contact, because the emails are part of the
+          dealership’s record of that customer, as its text messages and calls are. Administrators and the account owner
+          also see the conversations of the team’s mailboxes in the inbox.
+        </li>
+        <li>
+          Our support team, only for a conversation you choose to share with them from the application (“Share with
+          support”). A share lasts 7 days and you can stop it at any time. Every time our staff open a shared
+          conversation it is recorded, and you can see who opened it and when.
         </li>
       </ul>
       <p>
-        Our own staff do not read the content of your emails unless you ask us to look at specific messages (for
-        example, when you request support), it is necessary for security purposes such as investigating abuse or a
-        fault, or the law requires it.
+        Otherwise, our own staff do not read the content of your emails, unless it is necessary for security purposes
+        such as investigating abuse or a fault, or the law requires it.
       </p>
       <h3>What we never do with it</h3>
       <ul>

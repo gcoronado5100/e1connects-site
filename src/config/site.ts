@@ -18,6 +18,16 @@ export const site = {
   appUrl: "https://app.e1dconnect.cloud",
 
   /**
+   * Umami, the visit counter Gabriel runs on his own Coolify server. It sets no cookies and keeps
+   * no IP address; the privacy policy says what it records. The website ID is public by design: it
+   * appears in the page of every site that uses it.
+   */
+  analytics: {
+    scriptUrl: "https://stats.e1dconnect.cloud/script.js",
+    websiteId: "4fa2d903-e625-40b6-bad7-2086a7ea00e6",
+  },
+
+  /**
    * Quoted by the privacy policy and the terms, as given by Gabriel on
    * 2026-10-14. Every1drives Inc. is the company that develops Every1Connects.
    */
@@ -31,7 +41,7 @@ export const site = {
     /** The law the terms are read under. */
     governingLaw: "the Province of New Brunswick and the federal laws of Canada applicable therein",
     /** The day the current text of the policies took effect (YYYY-MM-DD). */
-    effective: "2026-10-14",
+    effective: "2026-10-18",
   },
 } as const;
 

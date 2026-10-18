@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -38,6 +39,10 @@ const MOTION_SCRIPT = `document.documentElement.setAttribute("data-motion","")`;
  * The frame every page shares: the header, the page and the footer. `suppressHydrationWarning`
  * lets React accept the `data-motion` attribute the head script adds to `<html>`.
  *
+ * Every page also loads Umami's visit counter (`site.analytics`) once it is interactive, so it
+ * never delays the page. It counts only on this site's own domain, never on a local or preview
+ * address, and records nothing for a browser that sends Do Not Track.
+ *
  * @author Gabriel Coronado
  * @since main
  */
@@ -51,6 +56,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Script
+          src={site.analytics.scriptUrl}
+          data-website-id={site.analytics.websiteId}
+          data-domains={new URL(site.url).hostname}
+          data-do-not-track="true"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
