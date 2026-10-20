@@ -420,16 +420,16 @@ The closing band answers the hero: there the record rises out of the band into t
 
 ### Logo
 
-Four PNG files in `public/brand/`, served at `/brand/...`:
+The files in `public/brand/`, served at `/brand/...`, as given by Gabriel (the light full logo and the light symbol redrawn on 2026-10-19). Each logo is a PNG and, where Gabriel sent it, an SVG drawn the same; the site uses the SVG where there is one.
 
 | File | Size | Use |
 |---|---|---|
-| `full-logo-light.png` | 2204 × 387 | The logo on a light surface: header and footer |
-| `full-logo-dark.png` | 2204 × 387 | The logo on a dark surface. Not used on this site yet |
-| `logo-light.png` | 387 × 387 | The symbol alone, on a light surface, for square spots such as an app icon |
-| `logo-dark.png` | 387 × 387 | The symbol alone, on a dark surface |
+| `full-logo-light.svg` / `.png` | 2204 × 387 | The logo on a light surface: header and footer (the SVG) |
+| `full-logo-dark.svg` / `.png` | 2204 × 387 | The logo on a dark surface. Not used on this site yet |
+| `logo-light.svg` / `.png` | 387 × 387 | The symbol alone, on a light surface, for square spots such as an app icon; the site's icons |
+| `logo-dark.svg` / `.png` | 387 × 387 | The symbol alone, on a dark surface |
 
-"Light" and "dark" name the surface the file is for, not the color of the drawing: the light files draw the "1" and "Connects" in dark gray, the dark files in white.
+"Light" and "dark" name the surface the file is for, not the color of the drawing. In the light files the "1" is light gray (`#eeeeee`) with a dark blue outline (`#064c81`) and "Connects" is dark gray (`#2c2c2c`); in the dark files the "1" and "Connects" are white, "Connects" with a blue outline.
 
 - The full logo is 32px high in the header and footer (182px wide), and 28px high below `md`. It is never shown under 24px high.
 - Its `alt` is `site.name`, so the name stays in the HTML as text.
@@ -438,13 +438,13 @@ Four PNG files in `public/brand/`, served at `/brand/...`:
 - Do not put the logo on a navy band. In the dark files "Every" keeps its blue (`#1a5a8a`), which is only 2.6:1 on `navy`, so the first half of the name fades into the band. Header and footer sit on `surface`, where the light file is used.
 - The logo's two blues (`#1a5a8a` and about `#2878b8`) belong to the logo. They are not tokens: nothing else on the site uses them, and the logo is never recolored to `primary`.
 
-The site's icons, in `src/app/`, are made from the symbol files:
+The site's icons, in `src/app/`, all use the light symbol and only it (Gabriel, 2026-10-19), whatever the browser's theme:
 
-- `icon.svg`: both symbol files at 96px inside one SVG that shows `logo-light.png` under a light browser theme and `logo-dark.png` under a dark one (`prefers-color-scheme`). Browsers that read SVG favicons use it.
+- `icon.svg`: a copy of `logo-light.svg`. Browsers that read SVG favicons use it.
 - `favicon.ico`: `logo-light.png` at 16, 32 and 48px, for browsers that do not.
-- `apple-icon.png`: `logo-dark.png` at 80% of a 180px `navy` square, for a phone's home screen, which has no theme and fills transparency with black. The phone rounds the corners itself.
+- `apple-icon.png`: `logo-light.png` at 80% of a 180px white square, for a phone's home screen, which fills transparency with black. The phone rounds the corners itself.
 
-Not decided yet: a vector version of the logo (the files are PNG, 2204px wide for the full logo; an SVG would stay sharp at any size and weigh less).
+The outlined "1" reads on a dark tab and at 32px; on a light tab at 16px mostly the blue loop shows.
 
 ### Navigation
 

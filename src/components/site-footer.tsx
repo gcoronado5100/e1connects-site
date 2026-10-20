@@ -14,7 +14,7 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-surface">
       <div className="mx-auto flex w-full max-w-page flex-col gap-8 px-6 py-12 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
-          <Image src="/brand/full-logo-light.png" alt={site.name} width={182} height={32} className="h-8 w-auto" />
+          <Image src="/brand/full-logo-light.svg" alt={site.name} width={182} height={32} className="h-8 w-auto" />
           <p className="mt-4 text-body-sm text-ink-soft">{site.description}</p>
         </div>
 

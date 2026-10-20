@@ -23,7 +23,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-full w-full max-w-page items-center justify-between gap-8 px-6">
         <Link href="/" className="shrink-0">
           <Image
-            src="/brand/full-logo-light.png"
+            src="/brand/full-logo-light.svg"
             alt={site.name}
             width={182}
             height={32}
